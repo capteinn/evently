@@ -109,9 +109,15 @@
             {
             ?>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>eventListing" >
                 <i class="fa fa-thumb-tack"></i>
                 <span>Event</span>
+              </a>
+            </li>
+			<li class="treeview">
+              <a href="<?php echo base_url(); ?>mappingListing" >
+                <i class="fa fa-book"></i>
+                <span>Mapping Event</span>
               </a>
             </li>
 			<li class="treeview">
