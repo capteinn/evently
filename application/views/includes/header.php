@@ -115,8 +115,8 @@
               </a>
             </li>
 			<li class="treeview">
-              <a href="#" >
-                <i class="fa fa-thumb-tack"></i>
+              <a href="<?php echo base_url(); ?>sieListing" >
+                <i class="fa fa-pencil"></i>
                 <span>Sie</span>
               </a>
             </li>
