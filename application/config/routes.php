@@ -48,6 +48,8 @@ $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
 /*********** EVENT DEFINED ROUTES *******************/
 /*********** SIE DEFINED ROUTES *******************/
+$route['sieListing'] = 'sie/sieListing';
+
 /*********** THREAD DEFINED ROUTES *******************/
 
 /*********** USER DEFINED ROUTES *******************/
