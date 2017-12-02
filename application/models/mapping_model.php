@@ -14,7 +14,6 @@ class Mapping_model extends CI_Model
         $this->db->join('event as e', 'm.id_event = e.id_event');
         $this->db->join('sie as s', 'm.id_sie = s.id_sie');
         $this->db->where('m.createdBy', $userId);
-		$this->db->group_by('e.id_event');
         $query = $this->db->get();
         
         $result = $query->result();        
@@ -34,7 +33,7 @@ class Mapping_model extends CI_Model
     function addNewMapping($mappingInfo)
     {
         $this->db->trans_start();
-        $this->db->insert('mapping', $mappingInfo);
+        $this->db->insert('mapping_event', $mappingInfo);
         
         $insert_id = $this->db->insert_id();
         

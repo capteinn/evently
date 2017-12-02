@@ -67,7 +67,8 @@ class Mapping extends BaseController
     {
         $this->load->library('form_validation');
             
-        $this->form_validation->set_rules('nama','Nama','trim|required|max_length[128]|xss_clean');
+        $this->form_validation->set_rules('event','Event','trim|required|numeric');
+        $this->form_validation->set_rules('sie','Sie','trim|required|numeric');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
             
         if($this->form_validation->run() == FALSE)
@@ -76,10 +77,11 @@ class Mapping extends BaseController
         }
         else
         {
-            $nama = $this->input->post('nama');
+            $event = $this->input->post('event');
+            $sie = $this->input->post('sie');
             $deskripsi = $this->input->post('deskripsi');
                
-            $mappingInfo = array('nama'=>$nama, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
+            $mappingInfo = array('id_event'=>$event, 'id_sie'=>$sie, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
             
             $result = $this->mapping_model->addNewMapping($mappingInfo);
                
