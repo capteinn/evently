@@ -114,6 +114,12 @@
                 <span>Event</span>
               </a>
             </li>
+			<li class="treeview">
+              <a href="#" >
+                <i class="fa fa-thumb-tack"></i>
+                <span>Sie</span>
+              </a>
+            </li>
             <li class="treeview">
               <a href="#" >
                 <i class="fa fa-upload"></i>
