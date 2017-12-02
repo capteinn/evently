@@ -34,6 +34,34 @@ class Sie_model extends CI_Model
         return $insert_id;
     }
 	
+	/**
+     * This function used to get sie information by id
+     * @param number $sieId : This is sie id
+     * @return array $result : This is sie information
+     */
+    function sieInfo($id_sie)
+    {
+        $this->db->select('id_sie, nama, deskripsi');
+        $this->db->from('sie');
+        $this->db->where('id_sie', $id_sie);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+	
+	/**
+     * This function is used to update the sie information
+     * @param array $sieInfo : This is sie updated information
+     * @param number $id_sie : This is sie id
+     */
+    function editSie($sieInfo, $id_sie)
+    {
+        $this->db->where('id_sie', $id_sie);
+        $this->db->update('sie', $sieInfo);
+        
+        return TRUE;
+    }
+	
 }
 
   

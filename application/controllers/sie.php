@@ -56,7 +56,7 @@ class Sie extends BaseController
     }
 	
 	/**
-     * This function is used to add new user to the system
+     * This function is used to add new sie to the system
      */
     function addNewSie()
     {
@@ -88,6 +88,62 @@ class Sie extends BaseController
             }
                 
             redirect('addNewSie');
+        }
+    }
+	
+	/**
+     * This function is used load sie edit information
+     * @param number $userId : Optional : This is sie id
+     */
+    function editOld($id_sie = NULL)
+    {
+        if($id_sie == null)
+        {
+            redirect('sieListing');
+        }
+            
+        $data['sieInfo'] = $this->sie_model->sieInfo($id_sie);
+          
+        $this->global['pageTitle'] = 'CodeInsect : Edit User';
+            
+        $this->loadViews("editOldSie", $this->global, $data, NULL);
+    }
+	
+	/**
+     * This function is used to edit sie to the system
+     */
+    function editSie()
+    {
+        $this->load->library('form_validation');
+        
+		$id_sie = $this->input->post('id_sie');
+		
+        $this->form_validation->set_rules('nama','Nama','trim|required|max_length[128]|xss_clean');
+        $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
+            
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->editOld($id_sie);
+        }
+        else
+        {
+            $nama = $this->input->post('nama');
+            $deskripsi = $this->input->post('deskripsi');
+               
+            $sieInfo = array('nama'=>$nama, 'deskripsi'=>$deskripsi);
+            
+            $result = $this->sie_model->editSie($sieInfo, $id_sie);
+               
+            if($result > 0)
+            {
+                $this->session->set_flashdata('success', 'New Sie updated successfully');
+            }
+            else
+            {
+                $this->session->set_flashdata('error', 'Sie updation failed');
+            }
+                
+            redirect('sieListing');
         }
     }
     

@@ -51,6 +51,8 @@ $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 $route['sieListing'] = 'sie/sieListing';
 $route['addNewSie'] = "sie/addNew";
 $route['addNewSieNow'] = "sie/addNewSie";
+$route['editOldSie/(:num)'] = "sie/editOld/$1";
+$route['editSie'] = "sie/editSie";
 
 /*********** THREAD DEFINED ROUTES *******************/
 

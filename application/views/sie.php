@@ -40,7 +40,7 @@
 								<td><?php echo $record->nama ?></td>
 								<td><?php echo $record->deskripsi ?></td>
 								<td class="text-center">
-									<a class="btn btn-sm btn-info" href=""><i class="fa fa-pencil"></i></a>
+									<a class="btn btn-sm btn-info" href="<?php echo base_url(); ?>editOldSie/<?php echo $record->id_sie; ?>"><i class="fa fa-pencil"></i></a>
 								</td>
 							</tr>
 							<?php
