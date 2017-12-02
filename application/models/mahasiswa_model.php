@@ -1,0 +1,27 @@
+<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
+
+class Mahasiswa_model extends CI_Model
+{
+    /**
+     * This function is used to get the user listing count
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function listMahasiswa($userId)
+    {
+        $this->db->select('m.nim, m.kelas, m.nama as nama_mahasiswa, m.no_telp, m.angkatan, m.jenkel, pr.nama as nama_prodi');
+        $this->db->from('pendaftaran as p');
+        $this->db->join('mahasiswa as m', 'p.nim = m.nim');
+        $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
+        $this->db->join('event as e', 'me.id_event = e.id_event');
+        $this->db->join('sie as s', 'me.id_sie = s.id_sie');
+        $this->db->join('prodi as pr', 'm.id_prodi = pr.id_prodi');
+        $this->db->where('me.createdBy', $userId);
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+}
+
+  

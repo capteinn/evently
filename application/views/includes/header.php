@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>mahasiswaListing" >
                 <i class="fa fa-ticket"></i>
                 <span>Mahasiswa</span>
               </a>

@@ -46,6 +46,9 @@ $route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
 $route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
+/*********** MAHASISWA DEFINED ROUTES *******************/
+$route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
+
 /*********** EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
 $route['addNewEvent'] = "event/addNew";
@@ -68,6 +71,7 @@ $route['editOldMapping/(:num)'] = "mapping/editOld/$1";
 $route['editMapping'] = "mapping/editMapping";
 
 /*********** THREAD DEFINED ROUTES *******************/
+
 
 
 /*********** USER DEFINED ROUTES *******************/

@@ -4,7 +4,7 @@
         <div class="pull-right hidden-xs">
           <b>TEDI</b> Admin System | Version 1.0
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="<?php echo base_url(); ?>">TEDI</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017-2018 <a href="<?php echo base_url(); ?>">TEDI</a>.</strong> All rights reserved.
     </footer>
     
     <!-- jQuery UI 1.11.2 -->
