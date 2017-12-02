@@ -18,12 +18,6 @@ class Mapping_model extends CI_Model
         
         $result = $query->result();        
         return $result;
-		
-		// $this->db->select('e.id_mapping, e.nama, e.deskripsi, s.nama as nama_sie, me.deskripsi as deskripsi_sie');
-        // $this->db->from('mapping as e');
-        // $this->db->join('mapping_mapping as me', 'me.id_mapping = e.id_mapping');
-        // $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-        // $this->db->where('e.createdBy', $userId);
     }
 	
 	/**
@@ -49,9 +43,9 @@ class Mapping_model extends CI_Model
      */
     function mappingInfo($id_mapping)
     {
-        $this->db->select('id_mapping, nama, deskripsi');
-        $this->db->from('mapping');
-        $this->db->where('id_mapping', $id_mapping);
+        $this->db->select('id_mapping_event, id_event, id_sie, deskripsi');
+        $this->db->from('mapping_event');
+        $this->db->where('id_mapping_event', $id_mapping);
         $query = $this->db->get();
         
         return $query->result();
@@ -96,8 +90,8 @@ class Mapping_model extends CI_Model
      */
     function editMapping($mappingInfo, $id_mapping)
     {
-        $this->db->where('id_mapping', $id_mapping);
-        $this->db->update('mapping', $mappingInfo);
+        $this->db->where('id_mapping_event', $id_mapping);
+        $this->db->update('mapping_event', $mappingInfo);
         
         return TRUE;
     }

@@ -3,8 +3,8 @@
 require APPPATH . '/libraries/BaseController.php';
 
 /**
- * Class : User (UserController)
- * User Class to control all user related operations.
+ * Class : Mapping (MappingController)
+ * Mapping Class to control all mapping related operations.
  * @author : Proyek SI
  * @version : 1.1
  * @since : 11 Desember 2017
@@ -22,7 +22,7 @@ class Mapping extends BaseController
     }
     
     /**
-     * This function used to load the first screen of the user
+     * This function used to load the first screen of the mapping
      */
     public function index()
     {
@@ -32,7 +32,7 @@ class Mapping extends BaseController
     }
     
     /**
-     * This function is used to load the user list
+     * This function is used to load the mapping list
      */
     function mappingListing()
     {   
@@ -100,18 +100,22 @@ class Mapping extends BaseController
 	
 	/**
      * This function is used load mapping edit information
-     * @param number $userId : Optional : This is mapping id
+     * @param number $id_mapping : Optional : This is mapping id
      */
     function editOld($id_mapping = NULL)
     {
+		$userId = $this->vendorId;
+		
         if($id_mapping == null)
         {
             redirect('mappingListing');
         }
             
         $data['mappingInfo'] = $this->mapping_model->mappingInfo($id_mapping);
+        $data['event'] = $this->mapping_model->eventInfo($userId);
+        $data['sie'] = $this->mapping_model->sieInfo($userId);
           
-        $this->global['pageTitle'] = 'TEDI : Edit User';
+        $this->global['pageTitle'] = 'TEDI : Edit Mapping Event';
             
         $this->loadViews("editOldMapping", $this->global, $data, NULL);
     }
@@ -125,7 +129,8 @@ class Mapping extends BaseController
         
 		$id_mapping = $this->input->post('id_mapping');
 		
-        $this->form_validation->set_rules('nama','Nama','trim|required|max_length[128]|xss_clean');
+        $this->form_validation->set_rules('event','Event','trim|required|numeric');
+        $this->form_validation->set_rules('sie','Sie','trim|required|numeric');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
             
         if($this->form_validation->run() == FALSE)
@@ -134,10 +139,11 @@ class Mapping extends BaseController
         }
         else
         {
-            $nama = $this->input->post('nama');
+            $event = $this->input->post('event');
+            $sie = $this->input->post('sie');
             $deskripsi = $this->input->post('deskripsi');
-               
-            $mappingInfo = array('nama'=>$nama, 'deskripsi'=>$deskripsi);
+            
+            $mappingInfo = array('id_event'=>$event, 'id_sie'=>$sie,'deskripsi'=>$deskripsi);
             
             $result = $this->mapping_model->editMapping($mappingInfo, $id_mapping);
                
