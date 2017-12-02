@@ -115,6 +115,12 @@
               </a>
             </li>
 			<li class="treeview">
+              <a href="<?php echo base_url(); ?>mappingListing" >
+                <i class="fa fa-book"></i>
+                <span>Mapping Event</span>
+              </a>
+            </li>
+			<li class="treeview">
               <a href="<?php echo base_url(); ?>sieListing" >
                 <i class="fa fa-pencil"></i>
                 <span>Sie</span>

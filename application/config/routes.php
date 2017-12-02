@@ -60,7 +60,15 @@ $route['addNewSieNow'] = "sie/addNewSie";
 $route['editOldSie/(:num)'] = "sie/editOld/$1";
 $route['editSie'] = "sie/editSie";
 
+/*********** MAPPING EVENT DEFINED ROUTES *******************/
+$route['mappingListing'] = 'mapping/mappingListing';
+$route['addNewMapping'] = "mapping/addNew";
+$route['addNewMappingNow'] = "mapping/addNewMapping";
+$route['editOldMapping/(:num)'] = "mapping/editOld/$1";
+$route['editMapping'] = "mapping/editMapping";
+
 /*********** THREAD DEFINED ROUTES *******************/
+
 
 /*********** USER DEFINED ROUTES *******************/
 
