@@ -109,7 +109,7 @@
             {
             ?>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>eventListing" >
                 <i class="fa fa-thumb-tack"></i>
                 <span>Event</span>
               </a>

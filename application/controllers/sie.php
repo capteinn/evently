@@ -50,7 +50,7 @@ class Sie extends BaseController
      */
     function addNew()
     {       
-        $this->global['pageTitle'] = 'CodeInsect : Add New Sie';
+        $this->global['pageTitle'] = 'TEDI : Add New Sie';
 
         $this->loadViews("addNewSie", $this->global, NULL, NULL);
     }
@@ -104,7 +104,7 @@ class Sie extends BaseController
             
         $data['sieInfo'] = $this->sie_model->sieInfo($id_sie);
           
-        $this->global['pageTitle'] = 'CodeInsect : Edit User';
+        $this->global['pageTitle'] = 'TEDI : Edit User';
             
         $this->loadViews("editOldSie", $this->global, $data, NULL);
     }

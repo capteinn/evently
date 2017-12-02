@@ -47,6 +47,12 @@ $route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
 /*********** EVENT DEFINED ROUTES *******************/
+$route['eventListing'] = 'event/eventListing';
+$route['addNewEvent'] = "event/addNew";
+$route['addNewEventNow'] = "event/addNewEvent";
+$route['editOldEvent/(:num)'] = "event/editOld/$1";
+$route['editEvent'] = "event/editEvent";
+
 /*********** SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
 $route['addNewSie'] = "sie/addNew";
