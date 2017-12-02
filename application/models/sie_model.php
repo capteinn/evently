@@ -18,6 +18,22 @@ class Sie_model extends CI_Model
         return $result;
     }
 	
+	/**
+     * This function is used to add new sie to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addNewSie($sieInfo)
+    {
+        $this->db->trans_start();
+        $this->db->insert('sie', $sieInfo);
+        
+        $insert_id = $this->db->insert_id();
+        
+        $this->db->trans_complete();
+        
+        return $insert_id;
+    }
+	
 }
 
   

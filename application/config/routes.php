@@ -49,6 +49,8 @@ $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 /*********** EVENT DEFINED ROUTES *******************/
 /*********** SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
+$route['addNewSie'] = "sie/addNew";
+$route['addNewSieNow'] = "sie/addNewSie";
 
 /*********** THREAD DEFINED ROUTES *******************/
 

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNew"><i class="fa fa-plus"></i> Tambah Sie</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNewSie"><i class="fa fa-plus"></i> Tambah Sie</a>
                 </div>
             </div>
         </div>
@@ -31,10 +31,9 @@
 							<?php
 							if(!empty($sieRecords))
 							{
+								$no = 1;
 								foreach($sieRecords as $record)
 								{
-									
-									$no = 1;
 							?>
 							<tr>
 								<td><?php echo $no ?></td>
@@ -45,7 +44,8 @@
 								</td>
 							</tr>
 							<?php
-								$no++;}
+								$no++;
+								}
 							}
 							?>
 						</table> 
