@@ -17,6 +17,10 @@
     <input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>
     <br>
 </form>
+<form action="<?php echo base_url(); ?>pendaftaranListing/proses" method="post">
+    <input id="proses" type="radio" name="filterStatus" onclick="javascript:submit()" value="proses" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'proses') echo ' checked="checked"';?> /><label for="datedesc">Proses</label>
+    <br>
+</form>
 <form action="<?php echo base_url(); ?>pendaftaranListing/diterima" method="post">
     <input id="diterima" type="radio" name="filterStatus" onclick="javascript:submit()" value="diterima" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'diterima') echo ' checked="checked"';?> /><label for="datedesc">Diterima</label>
     <br>
@@ -66,9 +70,11 @@
 								<td><?php 
 										if($record->status == "diterima"){
 											echo "<span class='label label-success'>Diterima</span>";
-										}else{
+										}else if($record->status == "ditolak"){
 											echo "<span class='label label-danger'>Ditolak</span>";
-										} 
+										}else{
+											echo "<span class='label label-warning'>Proses</span>";
+										}
 								?></td>
 								<td><?php echo $record->nama_event ?></td>
 								<td><?php echo $record->nama_sie ?></td>
