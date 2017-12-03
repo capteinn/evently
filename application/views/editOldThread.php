@@ -1,7 +1,11 @@
 <?php
 
 	$id_thread = '';
+	$id_event = '';
 	$judul = '';
+	$poster = '';
+	$tgl_mulai = '';
+	$tgl_selesai = '';
 	$deskripsi = '';
 
 	if(!empty($threadInfo))
@@ -9,7 +13,11 @@
 		foreach ($threadInfo as $ti)
 		{
 			$id_thread = $ti->id_thread;
-			$judul = $ti->nama;
+			$id_event = $ti->id_event;
+			$judul = $ti->judul;
+			$poster = $ti->poster;
+			$tgl_mulai = DateTime::createFromFormat('Y-m-d', $ti->tgl_mulai)->format('m/d/Y');
+			$tgl_selesai = DateTime::createFromFormat('Y-m-d', $ti->tgl_selesai)->format('m/d/Y');
 			$deskripsi = $ti->deskripsi;
 		}
 	}
@@ -36,7 +44,7 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
-                    <form role="form" id="addThread" action="<?php echo base_url() ?>addNewThreadNow" method="post" role="form">
+                    <form role="form" id="addThread" action="<?php echo base_url() ?>editThread" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -50,7 +58,7 @@
                                                 foreach ($event as $ev)
                                                 {
                                                     ?>
-                                                    <option value="<?php echo $ev->id_event ?>"><?php echo $ev->nama ?></option>
+                                                    <option value="<?php echo $ev->id_event ?>" <?php if($ev->id_event == $id_event) {echo "selected=selected";} ?> ><?php echo $ev->nama ?></option>
                                                     <?php
                                                 }
                                             }
@@ -61,7 +69,7 @@
                                 <div class="col-md-6">                                
                                     <div class="form-group">
                                         <label for="fname">Judul Thread</label>
-                                        <input type="text" class="form-control required" id="judul" name="judul" maxlength="128">
+                                        <input type="text" class="form-control required" id="judul" name="judul" maxlength="128" value="<?php echo $judul; ?>" >
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +77,7 @@
                                 <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="fname">Poster Thread</label>
-                                        <input type="file" class="form-control required" id="poster" name="poster" maxlength="128">
+                                        <input type="file" class="form-control required" id="poster" name="poster" >
                                     </div>
                                 </div>   
                             </div>
@@ -82,7 +90,7 @@
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
 											</div>
-											<input type="text" name="tgl_mulai" class="form-control pull-right required" id="datepicker">
+											<input type="text" name="tgl_mulai" class="form-control pull-right required" id="datepicker" value="<?php echo $tgl_mulai; ?>" >
 										</div>
 										<!-- /.input group -->
 									</div>
@@ -96,7 +104,7 @@
 											<div class="input-group-addon">
 												<i class="fa fa-calendar"></i>
 											</div>
-											<input type="text" name="tgl_selesai" class="form-control pull-right required" id="datepicker2">
+											<input type="text" name="tgl_selesai" class="form-control pull-right required" id="datepicker2" value="<?php echo $tgl_selesai; ?>" >
 										</div>
 										<!-- /.input group -->
 									</div>
@@ -107,7 +115,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email">Deskripsi Thread</label>
-                                        <textarea type="text" class="form-control required" id="deskripsi"  name="deskripsi" rows="5" ></textarea>
+                                        <textarea type="text" class="form-control required" id="deskripsi"  name="deskripsi" rows="5" ><?php echo $deskripsi; ?></textarea>
                                     </div>
                                 </div>  
                             </div>
