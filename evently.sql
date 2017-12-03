@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01 Des 2017 pada 19.30
+-- Generation Time: 03 Des 2017 pada 04.29
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -32,15 +32,16 @@ CREATE TABLE IF NOT EXISTS `event` (
   `deskripsi` varchar(500) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `event`
 --
 
 INSERT INTO `event` (`id_event`, `nama`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
-(1, 'Algorithm', 'Event Algorithm', 4, '2017-12-01 17:19:15'),
-(2, 'Gebyar', 'Gebyar BCA', 5, '2017-12-01 17:45:11');
+(1, 'Algorithm', 'Event Algorithm KOMSI', 4, '2017-12-02 12:07:55'),
+(2, 'Gebyar', 'Gebyar BCA', 5, '2017-12-01 17:45:11'),
+(3, 'Child', 'Event Child KOMSI', 4, '2017-12-02 12:08:56');
 
 -- --------------------------------------------------------
 
@@ -79,15 +80,16 @@ CREATE TABLE IF NOT EXISTS `mapping_event` (
   `deskripsi` varchar(255) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `mapping_event`
 --
 
 INSERT INTO `mapping_event` (`id_mapping_event`, `id_event`, `id_sie`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
-(1, 1, 1, NULL, 4, '2017-12-01 17:21:32'),
-(2, 2, 2, NULL, 5, '2017-12-01 17:46:31');
+(1, 1, 1, 'Ahli dalam mengatur makanan dan minuman', 4, '2017-12-02 23:26:36'),
+(2, 2, 2, 'Makan dan minum adalah keseharian kamu', 5, '2017-12-02 23:27:40'),
+(3, 3, 1, 'Suka makan sehingga bisa mengatur makanan dan minuman', 4, '2017-12-02 23:26:52');
 
 -- --------------------------------------------------------
 
@@ -147,15 +149,17 @@ CREATE TABLE IF NOT EXISTS `sie` (
   `deskripsi` varchar(500) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `sie`
 --
 
 INSERT INTO `sie` (`id_sie`, `nama`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
-(1, 'Sie Konsumsi', 'Melayani Segala Urusan Konsumsi', 4, '2017-12-01 17:20:18'),
-(2, 'Sie Konsumsi', 'Melayani Segala Urusan Konsumsi', 5, '2017-12-01 17:45:50');
+(1, 'Sie Konsumsi', 'Melayani Segala Urusan Konsumsi dan makanan', 4, '2017-12-02 10:32:34'),
+(2, 'Sie Konsumsi', 'Melayani Segala Urusan Konsumsi', 5, '2017-12-01 17:45:50'),
+(3, 'Sie Keamanan', 'Mengurus segala jenis keamanan pada saat event berjalan dan berlangsung', 4, '2017-12-02 10:32:22'),
+(4, 'Sie Keadilan', 'Menjaga segala keadilan saat event sedang berlangsung agar tidak ricuh', 4, '2017-12-02 10:32:51');
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `tbl_reset_password` (
   `createdDtm` datetime NOT NULL,
   `updatedBy` bigint(20) DEFAULT NULL,
   `updatedDtm` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -266,14 +270,22 @@ INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleI
 CREATE TABLE IF NOT EXISTS `thread` (
 `id_thread` int(10) NOT NULL,
   `judul` varchar(300) DEFAULT NULL,
-  `poster` varchar(300) DEFAULT NULL,
+  `poster` varchar(50) DEFAULT NULL,
   `tgl_mulai` date DEFAULT NULL,
   `tgl_selesai` date DEFAULT NULL,
   `deskripsi` varchar(1000) DEFAULT NULL,
   `id_event` int(10) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `thread`
+--
+
+INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`, `deskripsi`, `id_event`, `createdBy`, `createdDtm`) VALUES
+(1, 'Pendaftaran Algorithm', 'algorithm.png', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-02 23:53:38'),
+(2, 'Let''s Start Giving', 'algorithm.jpg', '2017-12-06', '2017-12-20', 'Event HIMAKOMSI rutin dilakukan setiap tahunnya', 1, 4, '2017-12-02 20:41:05');
 
 --
 -- Indexes for dumped tables
@@ -353,12 +365,12 @@ ALTER TABLE `thread`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-MODIFY `id_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `mapping_event`
 --
 ALTER TABLE `mapping_event`
-MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pendaftaran`
 --
@@ -373,7 +385,7 @@ MODIFY `id_prodi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `sie`
 --
 ALTER TABLE `sie`
-MODIFY `id_sie` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_sie` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_items`
 --
@@ -383,7 +395,7 @@ MODIFY `itemId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `tbl_reset_password`
 --
 ALTER TABLE `tbl_reset_password`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_roles`
 --
@@ -398,7 +410,7 @@ MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 -- AUTO_INCREMENT for table `thread`
 --
 ALTER TABLE `thread`
-MODIFY `id_thread` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id_thread` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
