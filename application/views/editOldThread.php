@@ -70,7 +70,8 @@
                                     <div class="form-group">
                                         <label for="fname">Judul Thread</label>
                                         <input type="text" class="form-control required" id="judul" name="judul" maxlength="128" value="<?php echo $judul; ?>" >
-                                    </div>
+										<input type="hidden" id="id_thread" name="id_thread" value="<?php echo $id_thread; ?>">
+									</div>
                                 </div>
                             </div>
                             <div class="row">

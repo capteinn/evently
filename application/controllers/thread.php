@@ -145,10 +145,11 @@ class Thread extends BaseController
     function editThread()
     {
         $this->load->library('form_validation');
-            
+		
+		$id_thread = $this->input->post('id_thread');
+		
         $this->form_validation->set_rules('event','Event','trim|required|numeric');
         $this->form_validation->set_rules('judul','Judul','trim|required|max_length[128]|xss_clean');
-        $this->form_validation->set_rules('poster','Poster','required');
         $this->form_validation->set_rules('tgl_mulai','Tanggal Mulai','trim|required');
         $this->form_validation->set_rules('tgl_selesai','Tanggal Selesai','trim|required');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
@@ -174,16 +175,20 @@ class Thread extends BaseController
 			$tgl_mulai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_mulai'))->format('Y-m-d');
 			$tgl_selesai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_selesai'))->format('Y-m-d');
             $deskripsi = $this->input->post('deskripsi');
-               
-            $threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$poster, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
             
-            $result = $this->thread_model->editThread($threadInfo);
-            
-			if ( ! $this->upload->do_upload('poster')){
-				$error = array('error' => $this->upload->display_errors());
+			if (empty($poster)) {
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
 			}else{
-				$terupload = array('upload_data' => $this->upload->data());
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$poster, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
+				
+				if ( ! $this->upload->do_upload('poster')){
+					$error = array('error' => $this->upload->display_errors());
+				}else{
+					$terupload = array('upload_data' => $this->upload->data());
+				}
 			}
+            
+            $result = $this->thread_model->editThread($threadInfo, $id_thread);
 			
             if($result > 0)
             {
