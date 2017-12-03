@@ -51,6 +51,22 @@ class Thread_model extends CI_Model
     }
 	
 	/**
+     * This function is used to get the event listing
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function eventInfo($userId)
+    {
+        $this->db->select('id_event, nama, deskripsi');
+        $this->db->from('event');
+        $this->db->where('createdBy', $userId);
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+	
+	/**
      * This function is used to update the thread information
      * @param array $threadInfo : This is thread updated information
      * @param number $id_thread : This is thread id

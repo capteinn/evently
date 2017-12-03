@@ -72,10 +72,10 @@ $route['editMapping'] = "mapping/editMapping";
 
 /*********** THREAD DEFINED ROUTES *******************/
 $route['threadListing'] = 'thread/threadListing';
-$route['addNewEvent'] = "thread/addNew";
-$route['addNewEventNow'] = "thread/addNewEvent";
-$route['editOldEvent/(:num)'] = "thread/editOld/$1";
-$route['editEvent'] = "thread/editEvent";
+$route['addNewThread'] = "thread/addNew";
+$route['addNewThreadNow'] = "thread/addNewThread";
+$route['editOldThread/(:num)'] = "thread/editOld/$1";
+$route['editThread'] = "thread/editThread";
 
 
 /*********** USER DEFINED ROUTES *******************/

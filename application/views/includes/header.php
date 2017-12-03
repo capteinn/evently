@@ -12,6 +12,8 @@
     <link href="<?php echo base_url(); ?>assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/bootstrap/css/bootstrap-datepicker.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
@@ -23,6 +25,8 @@
     </style>
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
+	<!-- datepicker javascript -->
+	<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript">
         var baseURL = "<?php echo base_url(); ?>";
     </script>

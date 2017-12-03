@@ -50,9 +50,13 @@ class Thread extends BaseController
      */
     function addNew()
     {       
+		$userId = $this->vendorId;
+		
         $this->global['pageTitle'] = 'TEDI : Add New Thread';
-
-        $this->loadViews("addNewThread", $this->global, NULL, NULL);
+		
+		$data['event'] = $this->thread_model->eventInfo($userId);
+		
+        $this->loadViews("addNewThread", $this->global, $data, NULL);
     }
 	
 	/**
@@ -62,7 +66,11 @@ class Thread extends BaseController
     {
         $this->load->library('form_validation');
             
-        $this->form_validation->set_rules('nama','Nama','trim|required|max_length[128]|xss_clean');
+        $this->form_validation->set_rules('event','Event','trim|required|numeric');
+        $this->form_validation->set_rules('judul','Judul','trim|required|max_length[128]|xss_clean');
+        $this->form_validation->set_rules('poster','Poster','required');
+        $this->form_validation->set_rules('tgl_mulai','Tanggal Mulai','trim|required');
+        $this->form_validation->set_rules('tgl_selesai','Tanggal Selesai','trim|required');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
             
         if($this->form_validation->run() == FALSE)
@@ -71,13 +79,31 @@ class Thread extends BaseController
         }
         else
         {
-            $nama = $this->input->post('nama');
+			$config['upload_path'] = './assets/poster/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size'] = 100;
+			$config['max_width'] = 1024;
+			$config['max_height'] = 768;
+			
+			$this->load->library('upload', $config);
+			
+            $event = $this->input->post('event');
+            $judul = $this->input->post('judul');
+            $poster = $this->input->post('poster');
+			$tgl_mulai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_mulai'))->format('Y-m-d');
+			$tgl_selesai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_selesai'))->format('Y-m-d');
             $deskripsi = $this->input->post('deskripsi');
                
-            $threadInfo = array('nama'=>$nama, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
+            $threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$poster, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
             
             $result = $this->thread_model->addNewThread($threadInfo);
-               
+            
+			if ( ! $this->upload->do_upload('poster')){
+				$error = array('error' => $this->upload->display_errors());
+			}else{
+				$terupload = array('upload_data' => $this->upload->data());
+			}
+			
             if($result > 0)
             {
                 $this->session->set_flashdata('success', 'New Thread created successfully');
