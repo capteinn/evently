@@ -44,8 +44,8 @@
 								<td><?php echo $record->nama ?></td>
 								<td><?php echo $record->judul ?></td>
 								<td><?php echo $record->poster ?></td>
-								<td><?php echo $record->tgl_mulai ?></td>
-								<td><?php echo $record->tgl_selesai ?></td>
+								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></td>
+								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></td>
 								<td><?php echo $record->deskripsi ?></td>
 								<td class="text-center">
 									<a class="btn btn-sm btn-info" href="<?php echo base_url(); ?>editOldThread/<?php echo $record->id_thread; ?>"><i class="fa fa-pencil"></i></a>
