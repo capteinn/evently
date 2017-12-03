@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<h1>
-			<i class="fa fa-list"></i> List Pendaftaran
-			<small>Lihat List Pendaftaran</small>
+			<i class="fa fa-list"></i> Daftar Pendaftaran
+			<small>Lihat Daftar Pendaftaran</small>
 		</h1>
     </section>
     <section class="content">
@@ -11,7 +11,7 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">List Pendaftaran</h3>
+						<h3 class="box-title">Daftar Pendaftaran</h3>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -24,7 +24,7 @@
 								<th>Status</th>
 								<th>Event</th>
 								<th>Sie</th>
-								<th class="text-center">Actions</th>
+								<th class="text-center">Aksi</th>
 							</tr>
 							<?php
 							if(!empty($pendaftaranRecords))

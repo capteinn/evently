@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Mapping Event Management
-        <small>Add / Edit Mapping Event</small>
+        <i class="fa fa-users"></i> Manajemen Mapping Event
+        <small>Tambah / Ubah Mapping Event</small>
       </h1>
     </section>
     
@@ -15,7 +15,7 @@
               <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Enter Mapping Event Details</h3>
+                        <h3 class="box-title">Masukkan Detail Mapping Event</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="role">Nama Event</label>
                                         <select class="form-control required" id="event" name="event">
-                                            <option value="0">Select Event</option>
+                                            <option value="0">Pilih Event</option>
                                             <?php
                                             if(!empty($event))
                                             {
@@ -45,7 +45,7 @@
                                     <div class="form-group">
                                         <label for="role">Jenis Sie</label>
                                         <select class="form-control required" id="sie" name="sie">
-                                            <option value="0">Select Sie</option>
+                                            <option value="0">Pilih Sie</option>
                                             <?php
                                             if(!empty($sie))
                                             {

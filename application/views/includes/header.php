@@ -119,15 +119,15 @@
               </a>
             </li>
 			<li class="treeview">
-              <a href="<?php echo base_url(); ?>mappingListing" >
-                <i class="fa fa-book"></i>
-                <span>Mapping Event</span>
-              </a>
-            </li>
-			<li class="treeview">
               <a href="<?php echo base_url(); ?>sieListing" >
                 <i class="fa fa-tag"></i>
                 <span>Sie</span>
+              </a>
+            </li>
+      <li class="treeview">
+              <a href="<?php echo base_url(); ?>mappingListing" >
+                <i class="fa fa-book"></i>
+                <span>Mapping Event</span>
               </a>
             </li>
             <li class="treeview">
@@ -144,7 +144,7 @@
             <li class="treeview">
               <a href="<?php echo base_url(); ?>userListing">
                 <i class="fa fa-users"></i>
-                <span>Users</span>
+                <span>Pengguna</span>
               </a>
             </li>
             <li class="treeview">
