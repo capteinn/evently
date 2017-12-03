@@ -86,6 +86,7 @@ class Thread extends BaseController
 			$config['max_height'] = 768;
 			
 			$this->load->library('upload', $config);
+			//masih error boss, belum bisa upload gambar ke directory assets/poster
 			
             $event = $this->input->post('event');
             $judul = $this->input->post('judul');
