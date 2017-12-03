@@ -42,7 +42,8 @@ $route['default_controller'] = "login";
 $route['404_override'] = 'error';
 
 /*********** PENDAFTARAN DEFINED ROUTES *******************/
-$route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
+$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+$route['pendaftaranListings'] = 'pendaftaran/pendaftaranListings';
 $route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
