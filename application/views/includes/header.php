@@ -97,7 +97,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>pendaftaranListing" >
+              <a href="<?php echo base_url(); ?>pendaftaranListings" >
                 <i class="fa fa-pencil"></i>
                 <span>Pendaftaran</span>
               </a>
