@@ -71,7 +71,11 @@ $route['editOldMapping/(:num)'] = "mapping/editOld/$1";
 $route['editMapping'] = "mapping/editMapping";
 
 /*********** THREAD DEFINED ROUTES *******************/
-
+$route['threadListing'] = 'thread/threadListing';
+$route['addNewEvent'] = "thread/addNew";
+$route['addNewEventNow'] = "thread/addNewEvent";
+$route['editOldEvent/(:num)'] = "thread/editOld/$1";
+$route['editEvent'] = "thread/editEvent";
 
 
 /*********** USER DEFINED ROUTES *******************/

@@ -16,12 +16,6 @@ class Event_model extends CI_Model
         
         $result = $query->result();        
         return $result;
-		
-		// $this->db->select('e.id_event, e.nama, e.deskripsi, s.nama as nama_sie, me.deskripsi as deskripsi_sie');
-        // $this->db->from('event as e');
-        // $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
-        // $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-        // $this->db->where('e.createdBy', $userId);
     }
 	
 	/**

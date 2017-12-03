@@ -94,13 +94,13 @@
             </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>pendaftaranListing" >
-                <i class="fa fa-plane"></i>
+                <i class="fa fa-pencil"></i>
                 <span>Pendaftaran</span>
               </a>
             </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>mahasiswaListing" >
-                <i class="fa fa-ticket"></i>
+                <i class="fa fa-user"></i>
                 <span>Mahasiswa</span>
               </a>
             </li>
@@ -122,12 +122,12 @@
             </li>
 			<li class="treeview">
               <a href="<?php echo base_url(); ?>sieListing" >
-                <i class="fa fa-pencil"></i>
+                <i class="fa fa-tag"></i>
                 <span>Sie</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>threadListing" >
                 <i class="fa fa-upload"></i>
                 <span>Thread</span>
               </a>
