@@ -43,7 +43,7 @@
 								<td><?php echo $no ?></td>
 								<td><?php echo $record->nama ?></td>
 								<td><?php echo $record->judul ?></td>
-								<td><?php echo $record->poster ?></td>
+								<td><img src="<?php echo base_url();?>assets/poster/<?php echo $record->poster ?>" style="max-width: 50px;"></td>
 								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></td>
 								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></td>
 								<td><?php echo $record->deskripsi ?></td>
