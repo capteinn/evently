@@ -171,28 +171,25 @@ class Thread extends BaseController
 			
             $event = $this->input->post('event');
             $judul = $this->input->post('judul');
-            $poster = $this->input->post('poster');
 			$tgl_mulai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_mulai'))->format('Y-m-d');
 			$tgl_selesai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_selesai'))->format('Y-m-d');
             $deskripsi = $this->input->post('deskripsi');
             
-			if (empty($poster)) {
+			if ( ! $this->upload->do_upload('poster')){
+				$error = array('error' => $this->upload->display_errors());
 				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
-			}else{
-				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$poster, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
 				
-				if ( ! $this->upload->do_upload('poster')){
-					$error = array('error' => $this->upload->display_errors());
-				}else{
-					$terupload = array('upload_data' => $this->upload->data());
-				}
+			}else{
+				// $terupload = array('upload_data' => $this->upload->data());
+				$terupload = $this->upload->data();
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$terupload['file_name'], 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
 			}
             
             $result = $this->thread_model->editThread($threadInfo, $id_thread);
 			
             if($result > 0)
             {
-                $this->session->set_flashdata('success', 'New Thread updated successfully');
+                $this->session->set_flashdata('success', "New Thread updated successfully");
             }
             else
             {
