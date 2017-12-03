@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Patua One';
+    src: url("../font/PatuaOne-Regular.otf");
+}
+
+@font-face {
+    font-family: "Quattrocento";
+    src: url("../font/Quattrocento-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Quattrocento-Bold.ttf";
+    src: url("../font/Quattrocento-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../font/OpenSans-Regular.ttf") format("truetype");
+}
+
 /* ---------------------------------------------------------------------------------------------------------- 
 01 Sensible defaults ----------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
