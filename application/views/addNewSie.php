@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Sie Management
-        <small>Add / Edit Sie</small>
+        <i class="fa fa-users"></i> Manajemen Sie
+        <small>Tambah / Ubah Sie</small>
       </h1>
     </section>
     
@@ -15,7 +15,7 @@
               <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Enter Sie Details</h3>
+                        <h3 class="box-title">Masukkan Detail Sie</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     

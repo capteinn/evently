@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<h1>
-			<i class="fa fa-list"></i> List Mahasiswa
-			<small>Lihat List Mahasiswa</small>
+			<i class="fa fa-list"></i> Daftar Mahasiswa
+			<small>Lihat Daftar Mahasiswa</small>
 		</h1>
     </section>
     <section class="content">
@@ -11,7 +11,7 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">List Mahasiswa</h3>
+						<h3 class="box-title">Daftar Mahasiswa</h3>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -21,8 +21,8 @@
 								<th>Nama</th>
 								<th>Kelas</th>
 								<th>Angkatan</th>
-								<th>Gender</th>
-								<th>Nomor Telepon</th>
+								<th>Jenis Kelamin</th>
+								<th>Telepon</th>
 								<th>Prodi</th>
 							</tr>
 							<?php

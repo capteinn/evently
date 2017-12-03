@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<h1>
-			<i class="fa fa-list"></i> List Mapping Event
+			<i class="fa fa-list"></i> Daftar Mapping Event
 			<small>Lihat, Tambah, Edit Mapping Event</small>
 		</h1>
     </section>
@@ -18,7 +18,7 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">List Mapping Event</h3>
+						<h3 class="box-title">Daftar Mapping Event</h3>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -27,7 +27,7 @@
 								<th>Nama Event</th>
 								<th>Sie</th>
 								<th>Deskripsi</th>
-								<th class="text-center">Actions</th>
+								<th class="text-center">Aksi</th>
 							</tr>
 							<?php
 							if(!empty($mappingRecords))

@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Thread Management
-        <small>Add / Edit Thread</small>
+        <i class="fa fa-users"></i> Manajemen Thread
+        <small>Tambah / Ubah Thread</small>
       </h1>
     </section>
     
@@ -15,7 +15,7 @@
               <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Enter Thread Details</h3>
+                        <h3 class="box-title">Masukkan Thread Details</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="role">Nama Event</label>
                                         <select class="form-control required" id="event" name="event">
-                                            <option value="0">Select Event</option>
+                                            <option value="0">Pilih Event</option>
                                             <?php
                                             if(!empty($event))
                                             {

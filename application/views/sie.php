@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<h1>
-			<i class="fa fa-list"></i> List Sie
+			<i class="fa fa-list"></i> Daftar Sie
 			<small>Lihat, Tambah, Edit Sie</small>
 		</h1>
     </section>
@@ -18,7 +18,7 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">List Sie</h3>
+						<h3 class="box-title">Daftar Sie</h3>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -26,7 +26,7 @@
 								<th>No</th>
 								<th>Nama Sie</th>
 								<th>Deskripsi</th>
-								<th class="text-center">Actions</th>
+								<th class="text-center">Aksi</th>
 							</tr>
 							<?php
 							if(!empty($sieRecords))

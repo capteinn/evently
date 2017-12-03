@@ -2,15 +2,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> User Management
-        <small>Add, Edit, Delete</small>
+        <i class="fa fa-users"></i> Manajemen Pengguna
+        <small>Tambah, Ubah, Hapus</small>
       </h1>
     </section>
     <section class="content">
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNewSie"><i class="fa fa-plus"></i> Add New</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNewSie"><i class="fa fa-plus"></i> Tambah Baru</a>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Users List</h3>
+                    <h3 class="box-title">Daftar Pengguna</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>userListing" method="POST" id="searchList">
                             <div class="input-group">
@@ -34,11 +34,11 @@
                   <table class="table table-hover">
                     <tr>
                       <th>Id</th>
-                      <th>Name</th>
+                      <th>Nama</th>
                       <th>Email</th>
-                      <th>Mobile</th>
+                      <th>Telepon</th>
                       <th>Role</th>
-                      <th class="text-center">Actions</th>
+                      <th class="text-center">Aksi</th>
                     </tr>
                     <?php
                     if(!empty($userRecords))
