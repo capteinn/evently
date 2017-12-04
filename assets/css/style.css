@@ -224,3 +224,5 @@ footer {
 	margin-top: 50px;
 	padding: 20px 0;
 }
+
+#success_message{ display: none;}
