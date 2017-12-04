@@ -77,6 +77,9 @@ $route['addNewThreadNow'] = "thread/addNewThread";
 $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
 
+/*********** REGIST DEFINED ROUTES *******************/
+$route['addNewRegist'] = "regist/addNew";
+$route['addNewRegistNow'] = "regist/addNewRegist";
 
 /*********** USER DEFINED ROUTES *******************/
 
