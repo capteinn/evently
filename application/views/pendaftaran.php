@@ -66,11 +66,11 @@
 								<td><?php echo $record->nim ?></td>
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td>
-									<a href="<?php echo base_url();?>assets/mahasiswa/cv<?php echo $record->cv ?>" target="_blank" style="max-width: 25px;">
+									<a href="<?php echo base_url();?>assets/mahasiswa/cv<?php echo $record->cv ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 50px;"></a> 
 								</td>
 								<td>
-									<a href="<?php echo base_url();?>assets/mahasiswa/krs<?php echo $record->krs ?>" target="_blank" style="max-width: 25px;">
+									<a href="<?php echo base_url();?>assets/mahasiswa/krs<?php echo $record->krs ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 50px;"></a>
 								</td>
 								<td><?php 

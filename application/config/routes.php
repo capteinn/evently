@@ -81,6 +81,10 @@ $route['editThread'] = "thread/editThread";
 $route['beranda'] = 'beranda';
 $route['form_regist'] = 'form_regist';
 
+/*********** REGIST DEFINED ROUTES *******************/
+$route['addNewRegist'] = "regist/addNew";
+$route['addNewRegistNow'] = "regist/addNewRegist";
+
 /*********** USER DEFINED ROUTES *******************/
 
 $route['loginMe'] = 'login/loginMe';

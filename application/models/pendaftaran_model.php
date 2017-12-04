@@ -14,19 +14,19 @@ class Pendaftaran_model extends CI_Model
             $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status, e.nama as nama_event, s.nama as nama_sie');
             $this->db->from('pendaftaran as p');
             $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-            $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
-            $this->db->join('event as e', 'me.id_event = e.id_event');
-            $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-            $this->db->where('me.createdBy', $userId);
+            $this->db->join('mapping_event as me', 'p.id_pendaftaran=me.id_pendaftaran');
+            $this->db->join('event as e', 'e.id_event=me.id_event');
+            $this->db->join('sie as s', 's.id_sie=me.id_sie');
+            $this->db->where('e.createdBy', $userId);
         }else{
             $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status, e.nama as nama_event, s.nama as nama_sie');
             $this->db->from('pendaftaran as p');
             $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-            $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
-            $this->db->join('event as e', 'me.id_event = e.id_event');
-            $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-            $this->db->where('me.createdBy', $userId);
+            $this->db->join('mapping_event as me', 'p.id_pendaftaran=me.id_pendaftaran');
+            $this->db->join('event as e', 'e.id_event=me.id_event');
+            $this->db->join('sie as s', 's.id_sie=me.id_sie');
             $this->db->where('p.status', $ztatuz);
+            $this->db->where('e.createdBy', $userId);
         }
         $query = $this->db->get();
         
