@@ -3,42 +3,12 @@
 
 <head>
   <title>Form Registration Evently</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https:////maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https:////cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
+</head>
+<body>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="y_key" content="d92e23811007b438">
-  <meta name="msvalidate.01" content="A9AB07B7E430E4608E0BC57AFA5004AA" />
-  <meta http-equiv="Content-Language" content="en" />
-
-
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Evently - Judul Event - Hari, Tanggal Bulan, Tahun at Tempat terselenggara." />
-
-
-  <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.evbstatic.com/s3-build/perm_001/1aab42/django/images/touch_icons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.evbstatic.com/s3-build/perm_001/0ca989/django/images/touch_icons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.evbstatic.com/s3-build/perm_001/35fa6c/django/images/touch_icons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.evbstatic.com/s3-build/perm_001/075c67/django/images/touch_icons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.evbstatic.com/s3-build/perm_001/c544fc/django/images/touch_icons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.evbstatic.com/s3-build/perm_001/d02ee1/django/images/touch_icons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.evbstatic.com/s3-build/perm_001/918a9e/django/images/touch_icons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.evbstatic.com/s3-build/perm_001/c4a5c9/django/images/touch_icons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.evbstatic.com/s3-build/perm_001/1d8fef/django/images/touch_icons/apple-touch-icon-180x180.png">
-
-    <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/perm_001/32ad77/django/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/perm_001/e04503/django/images/favicons/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/perm_001/87c3d6/django/images/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/perm_001/e95298/django/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/perm_001/7a11c3/django/images/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="https://cdn.evbstatic.com/s3-build/perm_001/8ec5a4/django/images/favicons/manifest.json">
-    <link rel="mask-icon" href="https://cdn.evbstatic.com/s3-build/perm_001/a24d6e/django/images/favicons/safari-pinned-tab.svg" color="#f6682f">
-    <link rel="shortcut icon" href="https://cdn.evbstatic.com/s3-build/perm_001/609192/django/images/favicons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Eventbrite">
-    <meta name="application-name" content="Eventbrite">
-    <meta name="msapplication-TileColor" content="#f6682f">
-    <meta name="msapplication-TileImage" content="https://cdn.evbstatic.com/s3-build/perm_001/a48453/django/images/favicons/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
 
   <div class="container">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
@@ -50,7 +20,7 @@
           <!-- Text input-->
 
           <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>  
+  <label class="col-md-4 control-label">First Name</label>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -62,7 +32,7 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label> 
+  <label class="col-md-4 control-label" >Last Name</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -73,7 +43,7 @@
 
 <!-- Text input-->
        <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>  
+  <label class="col-md-4 control-label">E-Mail</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -84,9 +54,9 @@
 
 
 <!-- Text input-->
-       
+
 <div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>  
+  <label class="col-md-4 control-label">Phone #</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -96,9 +66,9 @@
 </div>
 
 <!-- Text input-->
-      
+
 <div class="form-group">
-  <label class="col-md-4 control-label">Address</label>  
+  <label class="col-md-4 control-label">Address</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -108,9 +78,9 @@
 </div>
 
 <!-- Text input-->
- 
+
 <div class="form-group">
-  <label class="col-md-4 control-label">City</label>  
+  <label class="col-md-4 control-label">City</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -120,8 +90,8 @@
 </div>
 
 <!-- Select Basic -->
-   
-<div class="form-group"> 
+
+<div class="form-group">
   <label class="col-md-4 control-label">State</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
@@ -187,7 +157,7 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>  
+  <label class="col-md-4 control-label">Zip Code</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -198,7 +168,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label">Website or domain name</label>  
+  <label class="col-md-4 control-label">Website or domain name</label>
    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
@@ -225,7 +195,7 @@
                     </div>
 
 <!-- Text area -->
-  
+
 <div class="form-group">
   <label class="col-md-4 control-label">Project Description</label>
     <div class="col-md-4 inputGroupContainer">
@@ -252,11 +222,137 @@
 </div>
     </div><!-- /.container -->
 
-</head>
+</body>
 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/main.js">
-  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 </script>
+<script type="text/javascript" src="https:////maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="https:////cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#contact_form').bootstrapValidator({
+    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        first_name: {
+            validators: {
+                    stringLength: {
+                    min: 2,
+                },
+                    notEmpty: {
+                    message: 'Please supply your first name'
+                }
+            }
+        },
+         last_name: {
+            validators: {
+                 stringLength: {
+                    min: 2,
+                },
+                notEmpty: {
+                    message: 'Please supply your last name'
+                }
+            }
+        },
+        email: {
+            validators: {
+                notEmpty: {
+                    message: 'Please supply your email address'
+                },
+                emailAddress: {
+                    message: 'Please supply a valid email address'
+                }
+            }
+        },
+        phone: {
+            validators: {
+                notEmpty: {
+                    message: 'Please supply your phone number'
+                },
+                phone: {
+                    country: 'US',
+                    message: 'Please supply a vaild phone number with area code'
+                }
+            }
+        },
+        address: {
+            validators: {
+                 stringLength: {
+                    min: 8,
+                },
+                notEmpty: {
+                    message: 'Please supply your street address'
+                }
+            }
+        },
+        city: {
+            validators: {
+                 stringLength: {
+                    min: 4,
+                },
+                notEmpty: {
+                    message: 'Please supply your city'
+                }
+            }
+        },
+        state: {
+            validators: {
+                notEmpty: {
+                    message: 'Please select your state'
+                }
+            }
+        },
+        zip: {
+            validators: {
+                notEmpty: {
+                    message: 'Please supply your zip code'
+                },
+                zipCode: {
+                    country: 'US',
+                    message: 'Please supply a vaild zip code'
+                }
+            }
+        },
+        comment: {
+            validators: {
+                  stringLength: {
+                    min: 10,
+                    max: 200,
+                    message:'Please enter at least 10 characters and no more than 200'
+                },
+                notEmpty: {
+                    message: 'Please supply a description of your project'
+                }
+                }
+            }
+        }
+    })
+    .on('success.form.bv', function(e) {
+        $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+            $('#contact_form').data('bootstrapValidator').resetForm();
+
+        // Prevent form submission
+        e.preventDefault();
+
+        // Get the form instance
+        var $form = $(e.target);
+
+        // Get the BootstrapValidator instance
+        var bv = $form.data('bootstrapValidator');
+
+        // Use Ajax to submit form data
+        $.post($form.attr('action'), $form.serialize(), function(result) {
+            console.log(result);
+        }, 'json');
+    });
+});
 
 
+</script>
 </html>
