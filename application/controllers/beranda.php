@@ -17,7 +17,7 @@ class Beranda extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $this->load->model('mahasiswa_model');  
+        $this->load->model('beranda_model');  
     }
     
     /**
@@ -25,7 +25,8 @@ class Beranda extends CI_Controller
      */
     public function index()
     {
-        $this->load->view("index.php");
+		$data['threadRecords'] = $this->beranda_model->listThread();
+        $this->load->view("index.php", $data);
     }
     
 }
