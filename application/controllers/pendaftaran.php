@@ -44,20 +44,6 @@ class Pendaftaran extends BaseController
             
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
     } 
-
-    /**
-     * This function is used to load the user list
-     */
-    function pendaftaranListings()
-    {   
-        $userId = $this->vendorId;
-            
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftarans($userId);
-            
-        $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
-            
-        $this->loadViews("pendaftaran", $this->global, $data, NULL);
-    } 
 	
 	/**
      * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima

@@ -13,7 +13,7 @@
 					<div class="box-header">
 						<h3 class="box-title">Daftar Pendaftaran</h3>
 
-<form action="<?php echo base_url(); ?>pendaftaranListings" method="post">
+<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
     <input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>
     <br>
 </form>
