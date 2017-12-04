@@ -10,11 +10,8 @@ class Regist_model extends CI_Model
     {
         $this->db->trans_start();
         $this->db->insert('pendaftaran', $regInfo);
-        
         $insert_id = $this->db->insert_id();
-        
         $this->db->trans_complete();
-        
         return $insert_id;
     }
 

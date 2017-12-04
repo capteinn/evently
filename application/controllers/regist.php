@@ -19,6 +19,9 @@ class Regist extends CI_Controller
         parent::__construct();
         $this->load->model('regist_model'); 
         $this->load->model('mape_model'); 
+        $this->load->model('mapping_model'); 
+        $this->load->model('event_model'); 
+        $this->load->model('sie_model'); 
     }
 
     /**
@@ -29,7 +32,11 @@ class Regist extends CI_Controller
 		// $userId = $this->vendorId;
   //       $this->global['pageTitle'] = 'TEDI : Add New Data';
 		// $data['regist'] = $this->regist_model->addNewReg($userId);
-        $this->load->view("addNewRegist");
+		$data['event'] = $this->mape_model->eventInfo(4);
+		$data['sie'] = $this->mape_model->sieInfo(4);
+
+        //$this->loadViews("addNewMapping", $this->global, $data, NULL);
+        $this->load->view("addNewRegist", $data, NULL);
     }
 
     function addNewRegist()

@@ -10,11 +10,8 @@ class Mape_model extends CI_Model
     {
         $this->db->trans_start();
         $this->db->insert('mapping_event', $mapeInfo);
-        
         $insert_id = $this->db->insert_id();
-        
         $this->db->trans_complete();
-        
         return $insert_id;
     }
 
@@ -27,6 +24,38 @@ class Mape_model extends CI_Model
     {
         $this->db->select('me.id_mapping_event');
         $this->db->from('mapping_event as me');
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+
+    /**
+     * This function is used to get the sie listing
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function sieInfo($userId)
+    {
+        $this->db->select('id_sie, nama, deskripsi');
+        $this->db->from('sie');
+        $this->db->where('createdBy', $userId);
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+    
+    /**
+     * This function is used to get the event listing
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function eventInfo($userId)
+    {
+        $this->db->select('id_event, nama, deskripsi');
+        $this->db->from('event');
+        $this->db->where('createdBy', $userId);
         $query = $this->db->get();
         
         $result = $query->result();        

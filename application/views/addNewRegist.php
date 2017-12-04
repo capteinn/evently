@@ -24,6 +24,27 @@
                             <div class="row">
                                 <div class="col-md-6">                                
                                     <div class="form-group">
+                                        <label for="role">Nama Event</label>
+                                        <select class="form-control required" id="event" name="event">
+                                            <option value="0">Pilih Event</option>
+                                            <?php
+                                            if(!empty($event))
+                                            {
+                                                foreach ($event as $ev)
+                                                {
+                                                    ?>
+                                                    <option value="<?php echo $ev->id_event ?>"><?php echo $ev->nama ?></option>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
                                         <label for="fname">NIM</label>
                                         <input type="text" class="form-control required" id="nim" name="nim" maxlength="128">
                                     </div>
@@ -45,6 +66,26 @@
                                     </div>
                                 </div>   
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">                                
+                                    <div class="form-group">
+                                        <label for="role">Jenis Sie</label>
+                                        <label for="fname">SIE</label>
+                                        <?php
+                                            if(!empty($sie))
+                                            {
+                                                foreach ($sie as $si)
+                                                {
+                                                    ?>
+                                        <input type="checkbox" class="form-control required" id="sie" name="sie" value="<?php echo $si->id_sie ?>"><?php echo $si->nama ?>
+                                        <?php
+                                                }
+                                            }
+                                            ?>
+                                    </div>
+                                </div>   
+                            </div>
+
 							
                         </div><!-- /.box-body -->
     
