@@ -67,7 +67,7 @@
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td>
 									<a href="<?php echo base_url();?>assets/mahasiswa/cv<?php echo $record->cv ?>" target="_blank" style="max-width: 25px;">
-									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 50px;"></a>
+									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 50px;"></a> 
 								</td>
 								<td>
 									<a href="<?php echo base_url();?>assets/mahasiswa/krs<?php echo $record->krs ?>" target="_blank" style="max-width: 25px;">
