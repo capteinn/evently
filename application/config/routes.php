@@ -79,7 +79,7 @@ $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'beranda';
-
+$route['form_regist'] = 'form_regist';
 
 /*********** USER DEFINED ROUTES *******************/
 
