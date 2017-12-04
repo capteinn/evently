@@ -42,7 +42,7 @@ $route['default_controller'] = "login";
 $route['404_override'] = 'error';
 
 /*********** PENDAFTARAN DEFINED ROUTES *******************/
-$route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
+$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
 $route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
@@ -77,6 +77,9 @@ $route['addNewThreadNow'] = "thread/addNewThread";
 $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
 
+/*********** BERANDA DEFINED ROUTES *******************/
+$route['beranda'] = 'beranda';
+$route['form_regist'] = 'form_regist';
 
 /*********** USER DEFINED ROUTES *******************/
 

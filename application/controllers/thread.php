@@ -79,12 +79,14 @@ class Thread extends BaseController
         }
         else
         {
-			$config['upload_path'] = './assets/poster/';
+			$namaFile = "gambarEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
+            $config['upload_path'] = './assets/poster/';
 			$config['allowed_types'] = 'gif|jpg|png';
 			$config['max_size'] = 100;
 			$config['max_width'] = 1024;
 			$config['max_height'] = 768;
-			
+			$config['file_name'] = $namaFile; //nama yang terupload nantinya
+
 			$this->load->library('upload', $config);
 			//masih error boss, belum bisa upload gambar ke directory assets/poster
 			

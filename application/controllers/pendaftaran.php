@@ -32,18 +32,18 @@ class Pendaftaran extends BaseController
     }
     
     /**
-     * This function is used to load the user list
+     * This function is used to load the user list by criteria
      */
-    function pendaftaranListing()
+    function pendaftaranListing($ztatuz)
     {   
         $userId = $this->vendorId;
             
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz);
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
-    }
+    } 
 	
 	/**
      * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
@@ -56,7 +56,7 @@ class Pendaftaran extends BaseController
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
-        $this->pendaftaranListing();
+        $this->pendaftaranListings();
     }
 	
 	/**
@@ -70,7 +70,7 @@ class Pendaftaran extends BaseController
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
-        $this->pendaftaranListing();
+        $this->pendaftaranListings();
     }
 
     function pageNotFound()
