@@ -12,7 +12,6 @@ class Beranda_model extends CI_Model
         $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
-        // $this->db->where('t.createdBy', $userId);
         $query = $this->db->get();
         
         $result = $query->result();        
