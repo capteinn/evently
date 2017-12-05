@@ -10,13 +10,15 @@ class Mahasiswa_model extends CI_Model
     function listMahasiswa($userId)
     {
         $this->db->select('m.nim, m.kelas, m.nama as nama_mahasiswa, m.no_telp, m.angkatan, m.jenkel, pr.nama as nama_prodi');
-        $this->db->from('pendaftaran as p');
+        $this->db->from('detail_pendaftaran as dp');
+        $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-        $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
+        $this->db->join('mapping_event as me', 'dp.id_mapping_event = me.id_mapping_event');
         $this->db->join('event as e', 'me.id_event = e.id_event');
         $this->db->join('sie as s', 'me.id_sie = s.id_sie');
         $this->db->join('prodi as pr', 'm.id_prodi = pr.id_prodi');
         $this->db->where('me.createdBy', $userId);
+		$this->db->group_by('m.nim');
         $query = $this->db->get();
         
         $result = $query->result();        
