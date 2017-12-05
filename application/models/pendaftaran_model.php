@@ -70,11 +70,16 @@ class Pendaftaran_model extends CI_Model
      */
     function diterima($id_pendaftaran, $id_sie)
     {	
-		$sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
-				SET dp.status = 'diterima'
-				WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
+		// $sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
+				// SET dp.status = 'diterima'
+				// WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
         
-		$this->db->query($sql);
+		$this->db->set('dp.status', 'diterima');
+		$this->db->where('dp.id_pendaftaran', $id_pendaftaran);
+		$this->db->where('me.id_sie', $id_sie);
+		$this->db->update('detail_pendaftaran as dp JOIN mapping_event as me ON dp.id_mapping_event=me.id_mapping_event');
+		
+		// $this->db->query($sql);
         
 		return TRUE;
     } 
@@ -90,11 +95,11 @@ class Pendaftaran_model extends CI_Model
 		// $sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
 				// SET dp.status = 'ditolak'
 				// WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
+		
 		$this->db->set('dp.status', 'ditolak');
-		$this->db->where('dp.id_mapping_event', 'me.id_mapping_event');
 		$this->db->where('dp.id_pendaftaran', $id_pendaftaran);
 		$this->db->where('me.id_sie', $id_sie);
-		$this->db->update('detail_pendaftaran as dp, mapping_event as me');
+		$this->db->update('detail_pendaftaran as dp JOIN mapping_event as me ON dp.id_mapping_event=me.id_mapping_event');
 		
 		// $this->db->query($sql);
 		

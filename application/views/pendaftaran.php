@@ -74,8 +74,6 @@
 										$diterima = "block";
 										$ditolak = "block";
 									}
-									
-									
 							?>
 							<tr>
 								<td></td>
@@ -90,10 +88,16 @@
 									<a href="<?php echo base_url();?>assets/mahasiswa/krs<?php echo $record->krs ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>
 								</td>
-								<!-- status ini sengaja disembunyikan dulu, kalau mau lihat detailnya klik diterima-->
 								<td>
-								<?php 
+								<?php
+									
+									//------------ STATUS PENDAFTARAN -----------------//
+									
+									//----- mengambil status pendaftaran -----
+									
 									$status_pendaftaran = $this->pendaftaran_model->status_pendaftaran($record->id_pendaftaran);
+									
+									//----- cek user mendaftar 1 / 2 sie -----
 									
 									if (!empty($status_pendaftaran[1])) {
 										if($status_pendaftaran[0]->status=='proses' && $status_pendaftaran[1]->status=='proses' || $status_pendaftaran[0]->status=='ditolak' && $status_pendaftaran[1]->status=='proses' || $status_pendaftaran[0]->status=='proses' && $status_pendaftaran[1]->status=='ditolak') {
@@ -108,6 +112,8 @@
 									}
 									
 									// echo $statusnya;
+
+									//----- cek statusnya dan dioutputkan ----
 									
 									if($statusnya == "diterima"){
 										echo "<span class='label label-success'>Diterima</span>";
@@ -116,13 +122,6 @@
 									}else{
 										echo "<span class='label label-warning'>Proses</span>";
 									}
-										// if($record->status == "diterima"){
-											// echo "<span class='label label-success'>Diterima</span>";
-										// }else if($record->status == "ditolak"){
-											// echo "<span class='label label-danger'>Ditolak</span>";
-										// }else{
-											// echo "<span class='label label-warning'>Proses</span>";
-										// }
 								?>
 								</td>
 								<td width="100px" >
@@ -204,23 +203,6 @@
 												<?php
 													}
 												?>
-												<br>
-												<!--untuk menampilkan dia diterimanya di sie yang mana, tapi masih bug, dan angel le mikir :v -->
-												<!--<div class="row">
-													<center><div class="col-md-12">
-														<p>Diterima pada</p>
-														<h3>
-														<i>
-														<?php 
-															if($record->status == "diterima"){
-																echo $record->nama_sie;
-															} else {
-																echo "Sedang dalam pemeriksaan";
-															}
-														?>
-														</i></h3>
-													</div></center>
-												</div>-->
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

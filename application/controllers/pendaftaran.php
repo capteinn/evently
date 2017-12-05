@@ -58,7 +58,7 @@ class Pendaftaran extends BaseController
     }
 	
 	/**
-     * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
+     * Fungsi ini berguna untuk mengubah status pendaftar menjadi ditolak
      */
     function ditolak($id_pendaftaran, $id_sie)
     {           
