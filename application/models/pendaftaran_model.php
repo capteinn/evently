@@ -85,11 +85,11 @@ class Pendaftaran_model extends CI_Model
      * @param string $status : merubah status menjadi ditolak
 	 * @return array $result : This is result
      */
-    function ditolak($id_pendaftaran)
+    function ditolak($id_pendaftaran, $id_sie)
     {
 		$sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
 				SET dp.status = 'ditolak'
-				WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran";
+				WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
 		
 		$this->db->query($sql);
 		

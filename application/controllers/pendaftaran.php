@@ -60,9 +60,9 @@ class Pendaftaran extends BaseController
 	/**
      * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
      */
-    function ditolak($id_pendaftaran)
+    function ditolak($id_pendaftaran, $id_sie)
     {           
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran, $id_sie);
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
