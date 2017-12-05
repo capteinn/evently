@@ -18,6 +18,7 @@ class Pendaftaran_model extends CI_Model
             $this->db->join('event as e', 'e.id_event=me.id_event');
             $this->db->join('sie as s', 's.id_sie=me.id_sie');
             $this->db->where('e.createdBy', $userId);
+            $this->db->group_by('p.id_pendaftaran');
         }else{
             $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status, e.nama as nama_event, s.nama as nama_sie');
             $this->db->from('pendaftaran as p');
@@ -27,6 +28,7 @@ class Pendaftaran_model extends CI_Model
             $this->db->join('sie as s', 's.id_sie=me.id_sie');
             $this->db->where('p.status', $ztatuz);
             $this->db->where('e.createdBy', $userId);
+            $this->db->group_by('p.id_pendaftaran');
         }
         $query = $this->db->get();
         
