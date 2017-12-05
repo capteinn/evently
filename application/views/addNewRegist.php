@@ -51,6 +51,64 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="fname">Nama</label>
+                                        <input type="text" class="form-control required" id="nama" name="nama" maxlength="128">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="fname">Telepon</label>
+                                        <input type="text" class="form-control required" id="telepon" name="telepon" maxlength="128">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="role">Prodi</label>
+                                        <select class="form-control required" id="prodi" name="prodi">
+                                            <option value="0">Pilih Prodi</option>
+                                                <option value="1">KOMSI</option>
+                                                <option value="2">METINS</option>
+                                                <option value="3">DTE</option>
+                                                <option value="4">DTJ</option>
+                                                <option value="5">ELINS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="fname">Angkatan</label>
+                                        <input type="text" class="form-control required" id="angkatan" name="angkatan" maxlength="128">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="fname">Kelas</label>
+                                        <input type="radio" class="form-control required" id="kelas" name="kelas" maxlength="128" value="A">A
+                                        <input type="radio" class="form-control required" id="kelas" name="kelas" maxlength="128" value="B">B
+                                        <input type="radio" class="form-control required" id="kelas" name="kelas" maxlength="128" value="C">C
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="fname">Jenis Kelamin</label>
+                                        <input type="radio" class="form-control required" id="jenkel" name="jenkel" maxlength="128" value="L">Laki-laki
+                                        <input type="radio" class="form-control required" id="jenkel" name="jenkel" maxlength="128" value="P">Perempuan
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="fname">CV</label>
@@ -69,7 +127,6 @@
                             <div class="row">
                                 <div class="col-md-12">                                
                                     <div class="form-group">
-                                        <label for="role">Jenis Sie</label>
                                         <label for="fname">SIE</label>
                                         <?php
                                             if(!empty($sie))
@@ -77,8 +134,8 @@
                                                 foreach ($sie as $si)
                                                 {
                                                     ?>
-                                        <input type="checkbox" class="form-control required" id="sie" name="sie" value="<?php echo $si->id_sie ?>"><?php echo $si->nama ?>
-                                        <?php
+                                                <input type="checkbox" class="form-control required" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>"><?php echo $si->nama ?>
+                                                <?php
                                                 }
                                             }
                                             ?>
@@ -86,7 +143,7 @@
                                 </div>   
                             </div>
 
-							
+                            
                         </div><!-- /.box-body -->
     
                         <div class="box-footer">
@@ -130,19 +187,19 @@
     
 </div>
 <script>
-	$(function () {
-		$('#datepicker').datepicker();
-		$('#datepicker2').datepicker();
-		
-		//Date picker
-		$('#datepicker').datepicker({
-		  autoclose: true
-		})
-		
-		//Date picker
-		$('#datepicker2').datepicker({
-		  autoclose: true
-		})
-	})
+    $(function () {
+        $('#datepicker').datepicker();
+        $('#datepicker2').datepicker();
+        
+        //Date picker
+        $('#datepicker').datepicker({
+          autoclose: true
+        })
+        
+        //Date picker
+        $('#datepicker2').datepicker({
+          autoclose: true
+        })
+    })
 </script>
 <script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>

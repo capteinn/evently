@@ -1,6 +1,5 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-//require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : User (UserController)
@@ -9,7 +8,7 @@
  * @version : 1.1
  * @since : 11 Desember 2017
  */
-class Regist extends CI_Controller
+class Uregist extends CI_Controller
 {
      /**
      * This is default constructor of the class
@@ -29,11 +28,12 @@ class Regist extends CI_Controller
     /**
      * This function is used to load the add new regist form
      */
-    function addNew($idMape)
+    function addNew()
     {       
         // $userId = $this->vendorId;
   //       $this->global['pageTitle'] = 'TEDI : Add New Data';
         // $data['regist'] = $this->regist_model->addNewReg($userId);
+        $idMape = $this->uri->segment('2');
         $data['event'] = $this->mape_model->eventInfo($idMape);
         $data['sie'] = $this->mape_model->mapeventInfo($idMape);
 

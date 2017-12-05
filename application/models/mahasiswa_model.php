@@ -24,6 +24,19 @@ class Mahasiswa_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
+
+    /**
+     * This function is used to add new register to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addNewMhs($mhsInfo)
+    {
+        $this->db->trans_start();
+        $this->db->insert('mahasiswa', $mhsInfo);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();
+        return $insert_id;
+    }
 }
 
   

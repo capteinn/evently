@@ -40,38 +40,42 @@
 
 $route['default_controller'] = "beranda";
 $route['admin'] = "login"; // admin panel
+
 $route['404_override'] = 'error';
 
-/*********** PENDAFTARAN DEFINED ROUTES *******************/
+/*********** ADMIN LOGIN DEFINED ROUTES *******************/
+$route['admin'] = 'login';
+
+/*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
 $route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran/ditolak/$1/$2';
 
-/*********** MAHASISWA DEFINED ROUTES *******************/
+/*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
 
-/*********** EVENT DEFINED ROUTES *******************/
+/*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
 $route['addNewEvent'] = "event/addNew";
 $route['addNewEventNow'] = "event/addNewEvent";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
 $route['editEvent'] = "event/editEvent";
 
-/*********** SIE DEFINED ROUTES *******************/
+/*********** ADMIN SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
 $route['addNewSie'] = "sie/addNew";
 $route['addNewSieNow'] = "sie/addNewSie";
 $route['editOldSie/(:num)'] = "sie/editOld/$1";
 $route['editSie'] = "sie/editSie";
 
-/*********** MAPPING EVENT DEFINED ROUTES *******************/
+/*********** ADMIN MAPPING EVENT DEFINED ROUTES *******************/
 $route['mappingListing'] = 'mapping/mappingListing';
 $route['addNewMapping'] = "mapping/addNew";
 $route['addNewMappingNow'] = "mapping/addNewMapping";
 $route['editOldMapping/(:num)'] = "mapping/editOld/$1";
 $route['editMapping'] = "mapping/editMapping";
 
-/*********** THREAD DEFINED ROUTES *******************/
+/*********** ADMIN THREAD DEFINED ROUTES *******************/
 $route['threadListing'] = 'thread/threadListing';
 $route['addNewThread'] = "thread/addNew";
 $route['addNewThreadNow'] = "thread/addNewThread";
@@ -79,38 +83,40 @@ $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
-$route['beranda'] = 'beranda';
-$route['form_regist'] = 'form_regist';
+$route['beranda'] = 'uberanda';
+$route['viewDetail/(:num)'] = 'uregist/addNew/$1';
+$route['viewDetail/(:num)'] = 'uregist/addNewRegist/$1';
+$route['form_regist'] = 'uform_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
-$route['addNewRegist'] = "regist/addNew";
-$route['addNewRegistNow'] = "regist/addNewRegist";
+// $route['addNewRegist'] = "uregist/addNew";
+// $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
 
 /*********** USER DEFINED ROUTES *******************/
 
 $route['loginMe'] = 'login/loginMe';
 $route['dashboard'] = 'user';
 $route['logout'] = 'user/logout';
-$route['userListing'] = 'user/userListing';
-$route['userListing/(:num)'] = "user/userListing/$1";
-$route['addNew'] = "user/addNew";
+// $route['userListing'] = 'user/userListing';
+// $route['userListing/(:num)'] = "user/userListing/$1";
+// $route['addNew'] = "user/addNew";
 
-$route['addNewUser'] = "user/addNewUser";
-$route['editOld'] = "user/editOld";
-$route['editOld/(:num)'] = "user/editOld/$1";
-$route['editUser'] = "user/editUser";
-$route['deleteUser'] = "user/deleteUser";
-$route['loadChangePass'] = "user/loadChangePass";
-$route['changePassword'] = "user/changePassword";
-$route['pageNotFound'] = "user/pageNotFound";
-$route['checkEmailExists'] = "user/checkEmailExists";
+// $route['addNewUser'] = "user/addNewUser";
+// $route['editOld'] = "user/editOld";
+// $route['editOld/(:num)'] = "user/editOld/$1";
+// $route['editUser'] = "user/editUser";
+// $route['deleteUser'] = "user/deleteUser";
+// $route['loadChangePass'] = "user/loadChangePass";
+// $route['changePassword'] = "user/changePassword";
+// $route['pageNotFound'] = "user/pageNotFound";
+// $route['checkEmailExists'] = "user/checkEmailExists";
 
-$route['forgotPassword'] = "login/forgotPassword";
-$route['resetPasswordUser'] = "login/resetPasswordUser";
-$route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
-$route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
-$route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
-$route['createPasswordUser'] = "login/createPasswordUser";
+// $route['forgotPassword'] = "login/forgotPassword";
+// $route['resetPasswordUser'] = "login/resetPasswordUser";
+// $route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
+// $route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
+// $route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
+// $route['createPasswordUser'] = "login/createPasswordUser";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

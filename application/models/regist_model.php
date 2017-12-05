@@ -2,7 +2,7 @@
 
 class Regist_model extends CI_Model
 {
-	/**
+    /**
      * This function is used to add new register to system
      * @return number $insert_id : This is last inserted id
      */
