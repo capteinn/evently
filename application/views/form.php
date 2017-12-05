@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 	  <title>Form Registration Evently</title>
 	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
@@ -9,7 +8,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetail" method="post"  id="contact_form">
+			<form class="well form-horizontal" action="<?php echo base_url() ?>pushForm" method="post"  id="contact_form">
 				<fieldset>
 					<!-- Form Name -->
 					<legend>Lengkapi Identitas Anda</legend>
@@ -63,6 +62,26 @@
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-4 control-label" >Prodi</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<select name="prodi" class="form-control selectpicker">
+									<option value="">-- Pilih Prodi Anda --</option>
+									<option value="1">KOMSI</option>
+									<option value="2">METINS</option>
+									<option value="3">DTE</option>
+									<option value="4">DTJ</option>
+									<option value="5">ELINS</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -212,6 +231,13 @@
 						},
 						notEmpty: {
 							message: 'Mohon isi angkatan Anda (contoh : 2015)'
+						}
+					}
+				},
+				prodi: {
+					validators: {
+						notEmpty: {
+							message: 'Mohon isi Prodi Anda'
 						}
 					}
 				},

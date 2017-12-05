@@ -31,13 +31,12 @@ class Uregist extends CI_Controller
     function addNew()
     {       
         // $userId = $this->vendorId;
-  //       $this->global['pageTitle'] = 'TEDI : Add New Data';
+		// $this->global['pageTitle'] = 'TEDI : Add New Data';
         // $data['regist'] = $this->regist_model->addNewReg($userId);
         $idMape = $this->uri->segment('2');
         $data['event'] = $this->mape_model->eventInfo($idMape);
         $data['sie'] = $this->mape_model->mapeventInfo($idMape);
 
-        //$this->loadViews("addNewMapping", $this->global, $data, NULL);
         $this->load->view("form", $data, NULL);
     }
 
@@ -62,6 +61,7 @@ class Uregist extends CI_Controller
         }
         else
         {
+			// Mengambil segala inputan dari inputan user
             $nim = $this->input->post('nim');
             $nama = $this->input->post('nama');
             $telepon = $this->input->post('telepon');
@@ -72,7 +72,9 @@ class Uregist extends CI_Controller
             $cv = $this->input->post('cv');
             $krs = $this->input->post('krs');
             $sie = $this->input->post('sie');
-
+			
+			// ----------- Upload PDF dan KRS -----------//
+			
             $namaFile = "dokumenEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
             $config['upload_path'] = './assets/mahasiswa/';
             $config['allowed_types'] = 'pdf';
@@ -81,28 +83,42 @@ class Uregist extends CI_Controller
 
             $this->load->library('upload', $config);
             
-           
-
+			// ----------- push data ke tabel PENDAFTARAN -----------//
+			
             $regInfo = array('nim'=>$nim,'cv'=>$cv,'krs'=>$krs, 'createdDtm'=>date('Y-m-d H:i:s'));
             $result = $this->regist_model->addNewReg($regInfo);
-            $getIdRegist = $this->regist_model->getRegist();
+            
+			// --------- get id_pendaftaran -----------
+			
+			$getIdRegist = $this->regist_model->getRegist();
+			
             foreach ($getIdRegist as $record) {
                 $idRegist = $record->id_pendaftaran;
             }
+			
+			// --------- get id_event -----------------
+			
             $getIdEvent = $this->event_model->listEvent(4);
-            foreach ($getIdEvent as $record2) {
+            
+			foreach ($getIdEvent as $record2) {
                 $idEvent = $record2->id_event;
             }
+			
+			// ----------- push data ke tabel MAHASISWA -----------//
             
             $mhsInfo = array('nim' =>$nim,'kelas' =>$kelas,'nama' =>$nama,'no_telp' =>$telepon,'angkatan' =>$angkatan,'jenkel' =>$jenkel,'id_prodi' =>$prodi);
             $this->mahasiswa_model->addNewMhs($mhsInfo);
 
-            $ziez = implode(",",$sie);
+			// --------- get id_mapping_event ----------
+            
+			$ziez = implode(",",$sie);
             $getIdMape = $this->mape_model->getMape($idEvent,$ziez[0]);
-            foreach ($getIdMape as $record3) {
+            
+			foreach ($getIdMape as $record3) {
                 $idMape1 = $record3->id_sie;
             }
-            if($ziez[2] != null){
+            
+			if($ziez[2] != null){
                 $getIdMape = $this->mape_model->getMape($idEvent,$ziez[2]);
                 foreach ($getIdMape as $record3) {
                     $idMape2 = $record3->id_sie;
@@ -111,7 +127,7 @@ class Uregist extends CI_Controller
                 $dpInfo2 = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape2,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
                 $this->detailpendaftaran_model->addNewDp($dpInfo2);
-            }else{
+            } else {
                 $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape1,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
             }

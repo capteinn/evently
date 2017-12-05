@@ -38,9 +38,7 @@
 |
 */
 
-$route['default_controller'] = "beranda";
-$route['admin'] = "login"; // admin panel
-
+$route['default_controller'] = "uberanda";
 $route['404_override'] = 'error';
 
 /*********** ADMIN LOGIN DEFINED ROUTES *******************/
@@ -85,26 +83,29 @@ $route['editThread'] = "thread/editThread";
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'uberanda';
 $route['viewDetail/(:num)'] = 'uregist/addNew/$1';
-$route['viewDetail/(:num)'] = 'uregist/addNewRegist/$1';
+$route['pushForm'] = 'uregist/addNewRegist';
 $route['form_regist'] = 'uform_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
 // $route['addNewRegist'] = "uregist/addNew";
 // $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
 
-/*********** USER DEFINED ROUTES *******************/
+/*********** USER SUPER ADMIN DEFINED ROUTES *******************/
+
+//btw.. ini adalah routes buat super admin, yakni buat kita.. 
+// disinilah kita bisa membuatkan user/panitia event organizer.
 
 $route['loginMe'] = 'login/loginMe';
 $route['dashboard'] = 'user';
 $route['logout'] = 'user/logout';
-// $route['userListing'] = 'user/userListing';
-// $route['userListing/(:num)'] = "user/userListing/$1";
-// $route['addNew'] = "user/addNew";
+$route['userListing'] = 'user/userListing';
+$route['userListing/(:num)'] = "user/userListing/$1";
+$route['addNew'] = "user/addNew";
 
-// $route['addNewUser'] = "user/addNewUser";
-// $route['editOld'] = "user/editOld";
-// $route['editOld/(:num)'] = "user/editOld/$1";
-// $route['editUser'] = "user/editUser";
+$route['addNewUser'] = "user/addNewUser";
+$route['editOld'] = "user/editOld";
+$route['editOld/(:num)'] = "user/editOld/$1";
+$route['editUser'] = "user/editUser";
 // $route['deleteUser'] = "user/deleteUser";
 // $route['loadChangePass'] = "user/loadChangePass";
 // $route['changePassword'] = "user/changePassword";
@@ -116,7 +117,7 @@ $route['logout'] = 'user/logout';
 // $route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
 // $route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
 // $route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
-// $route['createPasswordUser'] = "login/createPasswordUser";
+$route['createPasswordUser'] = "login/createPasswordUser";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
