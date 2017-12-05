@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Des 2017 pada 03.56
+-- Generation Time: 04 Des 2017 pada 18.19
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `detail_pendaftaran` (
 --
 
 INSERT INTO `detail_pendaftaran` (`id_detail_pendaftaran`, `id_pendaftaran`, `id_mapping_event`, `status`, `createdDtm`) VALUES
-(1, 1, 1, 'proses', '2017-12-05 00:29:22'),
-(2, 1, 4, 'proses', '2017-12-05 00:29:18'),
+(1, 1, 1, 'proses', '2017-12-04 16:44:32'),
+(2, 1, 4, 'proses', '2017-12-04 16:44:32'),
 (3, 2, 2, 'proses', '2017-12-04 16:44:32');
 
 -- --------------------------------------------------------
@@ -306,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `thread` (
 --
 
 INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`, `deskripsi`, `id_event`, `createdBy`, `createdDtm`) VALUES
-(1, 'Pendaftaran Algorithm', 'algorithm1.jpg', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-05 00:44:22'),
+(1, 'Pendaftaran Algorithm', 'algorithm.png', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-02 23:53:38'),
 (2, 'Let''s Start Giving', 'algorithm.jpg', '2017-12-06', '2017-12-20', 'Event HIMAKOMSI rutin dilakukan setiap tahunnya', 1, 4, '2017-12-02 20:41:05');
 
 --

@@ -38,39 +38,42 @@
 |
 */
 
-$route['default_controller'] = "login";
+$route['default_controller'] = "uberanda";
 $route['404_override'] = 'error';
 
-/*********** PENDAFTARAN DEFINED ROUTES *******************/
-$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
-$route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
-$route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
+/*********** ADMIN LOGIN DEFINED ROUTES *******************/
+$route['admin'] = 'login';
 
-/*********** MAHASISWA DEFINED ROUTES *******************/
+/*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
+$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+$route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
+$route['ditolak/(:num)/(:num)'] = 'pendaftaran/ditolak/$1/$2';
+
+/*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
 
-/*********** EVENT DEFINED ROUTES *******************/
+/*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
 $route['addNewEvent'] = "event/addNew";
 $route['addNewEventNow'] = "event/addNewEvent";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
 $route['editEvent'] = "event/editEvent";
 
-/*********** SIE DEFINED ROUTES *******************/
+/*********** ADMIN SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
 $route['addNewSie'] = "sie/addNew";
 $route['addNewSieNow'] = "sie/addNewSie";
 $route['editOldSie/(:num)'] = "sie/editOld/$1";
 $route['editSie'] = "sie/editSie";
 
-/*********** MAPPING EVENT DEFINED ROUTES *******************/
+/*********** ADMIN MAPPING EVENT DEFINED ROUTES *******************/
 $route['mappingListing'] = 'mapping/mappingListing';
 $route['addNewMapping'] = "mapping/addNew";
 $route['addNewMappingNow'] = "mapping/addNewMapping";
 $route['editOldMapping/(:num)'] = "mapping/editOld/$1";
 $route['editMapping'] = "mapping/editMapping";
 
-/*********** THREAD DEFINED ROUTES *******************/
+/*********** ADMIN THREAD DEFINED ROUTES *******************/
 $route['threadListing'] = 'thread/threadListing';
 $route['addNewThread'] = "thread/addNew";
 $route['addNewThreadNow'] = "thread/addNewThread";
@@ -78,10 +81,19 @@ $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
-$route['beranda'] = 'beranda';
-$route['form_regist'] = 'form_regist';
+$route['beranda'] = 'uberanda';
+$route['viewDetail/(:num)'] = 'uregist/addNew/$1';
+$route['pushForm'] = 'uregist/addNewRegist';
+$route['form_regist'] = 'uform_regist';
 
-/*********** USER DEFINED ROUTES *******************/
+/*********** REGIST DEFINED ROUTES *******************/
+// $route['addNewRegist'] = "uregist/addNew";
+// $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
+
+/*********** USER SUPER ADMIN DEFINED ROUTES *******************/
+
+//btw.. ini adalah routes buat super admin, yakni buat kita.. 
+// disinilah kita bisa membuatkan user/panitia event organizer.
 
 $route['loginMe'] = 'login/loginMe';
 $route['dashboard'] = 'user';
@@ -94,17 +106,17 @@ $route['addNewUser'] = "user/addNewUser";
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";
 $route['editUser'] = "user/editUser";
-$route['deleteUser'] = "user/deleteUser";
-$route['loadChangePass'] = "user/loadChangePass";
-$route['changePassword'] = "user/changePassword";
-$route['pageNotFound'] = "user/pageNotFound";
-$route['checkEmailExists'] = "user/checkEmailExists";
+// $route['deleteUser'] = "user/deleteUser";
+// $route['loadChangePass'] = "user/loadChangePass";
+// $route['changePassword'] = "user/changePassword";
+// $route['pageNotFound'] = "user/pageNotFound";
+// $route['checkEmailExists'] = "user/checkEmailExists";
 
-$route['forgotPassword'] = "login/forgotPassword";
-$route['resetPasswordUser'] = "login/resetPasswordUser";
-$route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
-$route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
-$route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
+// $route['forgotPassword'] = "login/forgotPassword";
+// $route['resetPasswordUser'] = "login/resetPasswordUser";
+// $route['resetPasswordConfirmUser'] = "login/resetPasswordConfirmUser";
+// $route['resetPasswordConfirmUser/(:any)'] = "login/resetPasswordConfirmUser/$1";
+// $route['resetPasswordConfirmUser/(:any)/(:any)'] = "login/resetPasswordConfirmUser/$1/$2";
 $route['createPasswordUser'] = "login/createPasswordUser";
 
 /* End of file routes.php */

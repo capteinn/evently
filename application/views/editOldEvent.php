@@ -19,8 +19,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Event Management
-        <small>Add / Edit Event</small>
+        <i class="fa fa-users"></i> Manajemen Event
+        <small>Tambah / Ubah Event </small>
       </h1>
     </section>
     
@@ -60,7 +60,7 @@
     
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
+                            <input type="button" class="btn btn-default" onClick="resetz()" value="Reset" />
                         </div>
                     </form>
                 </div>
@@ -99,3 +99,8 @@
 </div>
 
 <script src="<?php echo base_url(); ?>assets/js/editUser.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function resetz(){
+        document.getElementById("deskripsi").value="";
+    }
+</script>
