@@ -12,10 +12,11 @@
 
   <div class="container">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+      <center><h3>FORM PENDAFTARAN</h3></center>
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Contact Us Today!</legend>
+        <legend style="margin-left: 20%;">Identitas</legend>
 
           <!-- Text input-->
 
@@ -207,7 +208,7 @@
 </div>
 
 <!-- Success message -->
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
 
 <!-- Button -->
 <div class="form-group">
