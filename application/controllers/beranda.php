@@ -1,6 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . '/libraries/BaseController.php';
+//require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : Beranda (BerandaController)
@@ -19,7 +19,7 @@ class Beranda extends CI_Controller
         parent::__construct();
         $this->load->model('beranda_model');  
     }
-    
+     
     /**
      * This function used to load the first screen of the user
      */

@@ -9,10 +9,13 @@ class Beranda_model extends CI_Model
      */
     function listThread()
     {
-        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama');
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama, me.id_mapping_event, e.id_event');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
+        $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
+        $this->db->join('sie as s', 'me.id_sie = s.id_sie');
         $this->db->limit(6);
+        $this->db->group_by('t.id_thread');
         $query = $this->db->get();
         $result = $query->result();        
         return $result;

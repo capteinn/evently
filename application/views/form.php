@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+			<form class="well form-horizontal" action="<?php echo base_url() ?>addNewRegistNow" method="post"  id="contact_form">
 				<fieldset>
 					<!-- Form Name -->
 					<legend>Lengkapi Identitas Anda</legend>
@@ -62,7 +62,7 @@
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="phone" placeholder="0838-9555-1212" class="form-control" type="text">
+								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
 							</div>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="nim" class="form-control"  type="text">
+								<input name="kelas" class="form-control"  type="text">
 							</div>
 						</div>
 					</div>
@@ -130,26 +130,19 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label">Pilih Sie</label>
 						<div class="col-md-4">
+						<?php
+                            if(!empty($sie))
+                                {
+                                    foreach ($sie as $si)
+                                        {?>
 							<div class="checkbox">
 								<label>
-									<input name="sie" type="checkbox"> Sie Konsumsi
-								</label>
+                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama ?>
+                            	</label>
 							</div>
-							<div class="checkbox">
-								<label>
-									<input name="sie" type="checkbox"> Sie PDD
-								</label>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input name="sie" type="checkbox"> Sie Acara
-								</label>
-							</div>
-							<div class="checkbox">
-								<label>
-									<input name="sie" type="checkbox"> Sie Osak Asik
-								</label>
-							</div>
+                        <?php
+                                		}
+                                }?>
 						</div>
 					</div>					
 

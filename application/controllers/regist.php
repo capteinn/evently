@@ -1,6 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . '/libraries/BaseController.php';
+//require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : User (UserController)
@@ -29,16 +29,16 @@ class Regist extends CI_Controller
     /**
      * This function is used to load the add new regist form
      */
-    function addNew()
+    function addNew($idMape)
     {       
         // $userId = $this->vendorId;
   //       $this->global['pageTitle'] = 'TEDI : Add New Data';
         // $data['regist'] = $this->regist_model->addNewReg($userId);
-        $data['event'] = $this->mape_model->eventInfo(4);
-        $data['sie'] = $this->mape_model->mapeventInfo(4);
+        $data['event'] = $this->mape_model->eventInfo($idMape);
+        $data['sie'] = $this->mape_model->mapeventInfo($idMape);
 
         //$this->loadViews("addNewMapping", $this->global, $data, NULL);
-        $this->load->view("addNewRegist", $data, NULL);
+        $this->load->view("form", $data, NULL);
     }
 
     function addNewRegist()

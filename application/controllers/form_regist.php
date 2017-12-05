@@ -24,6 +24,11 @@ class Form_Regist extends CI_Controller
 
     }
 
+    public function daftar($idMape){
+        $this->load->view('form');
+
+    }
+
     
 }
 
