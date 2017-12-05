@@ -43,7 +43,7 @@ $route['404_override'] = 'error';
 
 /*********** PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
-$route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
+$route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
 /*********** MAHASISWA DEFINED ROUTES *******************/
