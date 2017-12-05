@@ -48,15 +48,13 @@ class Pendaftaran extends BaseController
 	/**
      * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
      */
-    function diterima($id_pendaftaran)
+    function diterima($id_pendaftaran, $id_sie)
     {           
-		$status = array('status'=>'diterima');
-		
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->diterima($id_pendaftaran, $status);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->diterima($id_pendaftaran, $id_sie);
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
-        $this->pendaftaranListings();
+        $this->pendaftaranListing("semua");
     }
 	
 	/**
@@ -64,13 +62,11 @@ class Pendaftaran extends BaseController
      */
     function ditolak($id_pendaftaran)
     {           
-		$status = array('status'=>'ditolak');
-		
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran, $status);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran);
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
-        $this->pendaftaranListings();
+        $this->pendaftaranListing("semua");
     }
 
     function pageNotFound()

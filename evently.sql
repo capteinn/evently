@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Des 2017 pada 04.29
+-- Generation Time: 05 Des 2017 pada 03.56
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -17,8 +17,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `evently`
+-- Database: `evently-dev`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detail_pendaftaran`
+--
+
+CREATE TABLE IF NOT EXISTS `detail_pendaftaran` (
+`id_detail_pendaftaran` int(11) NOT NULL,
+  `id_pendaftaran` int(11) NOT NULL,
+  `id_mapping_event` int(11) NOT NULL,
+  `status` enum('proses','diterima','ditolak','') NOT NULL,
+  `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `detail_pendaftaran`
+--
+
+INSERT INTO `detail_pendaftaran` (`id_detail_pendaftaran`, `id_pendaftaran`, `id_mapping_event`, `status`, `createdDtm`) VALUES
+(1, 1, 1, 'proses', '2017-12-05 00:29:22'),
+(2, 1, 4, 'proses', '2017-12-05 00:29:18'),
+(3, 2, 2, 'proses', '2017-12-04 16:44:32');
 
 -- --------------------------------------------------------
 
@@ -80,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `mapping_event` (
   `deskripsi` varchar(255) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `mapping_event`
@@ -89,7 +112,8 @@ CREATE TABLE IF NOT EXISTS `mapping_event` (
 INSERT INTO `mapping_event` (`id_mapping_event`, `id_event`, `id_sie`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
 (1, 1, 1, 'Ahli dalam mengatur makanan dan minuman', 4, '2017-12-02 23:26:36'),
 (2, 2, 2, 'Makan dan minum adalah keseharian kamu', 5, '2017-12-02 23:27:40'),
-(3, 3, 1, 'Suka makan sehingga bisa mengatur makanan dan minuman', 4, '2017-12-02 23:26:52');
+(3, 3, 1, 'Suka makan sehingga bisa mengatur makanan dan minuman', 4, '2017-12-04 16:41:21'),
+(4, 1, 3, 'Mengurus segala jenis keamanan pada saat event algorithm berlangsung', 4, '2017-12-04 16:42:57');
 
 -- --------------------------------------------------------
 
@@ -102,8 +126,6 @@ CREATE TABLE IF NOT EXISTS `pendaftaran` (
   `nim` char(10) NOT NULL,
   `cv` varchar(300) NOT NULL,
   `krs` varchar(300) NOT NULL,
-  `status` enum('proses','diterima','ditolak') NOT NULL,
-  `id_mapping_event` int(10) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -111,9 +133,9 @@ CREATE TABLE IF NOT EXISTS `pendaftaran` (
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `status`, `id_mapping_event`, `createdDtm`) VALUES
-(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', 'proses', 1, '2017-12-01 17:23:05'),
-(2, '09456', 'lele.pdf', 'lele.pdf', 'proses', 2, '2017-12-01 18:28:41');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `createdDtm`) VALUES
+(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', '2017-12-01 17:23:05'),
+(2, '09456', 'lele.pdf', 'lele.pdf', '2017-12-01 18:28:41');
 
 -- --------------------------------------------------------
 
@@ -284,12 +306,18 @@ CREATE TABLE IF NOT EXISTS `thread` (
 --
 
 INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`, `deskripsi`, `id_event`, `createdBy`, `createdDtm`) VALUES
-(1, 'Pendaftaran Algorithm', 'algorithm.png', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-02 23:53:38'),
+(1, 'Pendaftaran Algorithm', 'algorithm1.jpg', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-05 00:44:22'),
 (2, 'Let''s Start Giving', 'algorithm.jpg', '2017-12-06', '2017-12-20', 'Event HIMAKOMSI rutin dilakukan setiap tahunnya', 1, 4, '2017-12-02 20:41:05');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `detail_pendaftaran`
+--
+ALTER TABLE `detail_pendaftaran`
+ ADD PRIMARY KEY (`id_detail_pendaftaran`);
 
 --
 -- Indexes for table `event`
@@ -362,6 +390,11 @@ ALTER TABLE `thread`
 --
 
 --
+-- AUTO_INCREMENT for table `detail_pendaftaran`
+--
+ALTER TABLE `detail_pendaftaran`
+MODIFY `id_detail_pendaftaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
@@ -370,7 +403,7 @@ MODIFY `id_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `mapping_event`
 --
 ALTER TABLE `mapping_event`
-MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `pendaftaran`
 --

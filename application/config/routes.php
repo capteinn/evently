@@ -43,7 +43,7 @@ $route['404_override'] = 'error';
 
 /*********** PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
-$route['diterima/(:num)'] = 'pendaftaran/diterima/$1';
+$route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
 $route['ditolak/(:num)'] = 'pendaftaran/ditolak/$1';
 
 /*********** MAHASISWA DEFINED ROUTES *******************/
@@ -76,6 +76,10 @@ $route['addNewThread'] = "thread/addNew";
 $route['addNewThreadNow'] = "thread/addNewThread";
 $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
+
+/*********** BERANDA DEFINED ROUTES *******************/
+$route['beranda'] = 'beranda';
+$route['form_regist'] = 'form_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
 $route['addNewRegist'] = "regist/addNew";
