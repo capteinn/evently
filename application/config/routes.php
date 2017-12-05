@@ -54,8 +54,8 @@ $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
-$route['addNewEvent'] = "event/addNew";
-$route['addNewEventNow'] = "event/addNewEvent";
+$route['addNewEvent/(:num)'] = "event/addNew/$1";
+$route['addNewEventNow/(:num)'] = "event/addNewEvent/$1";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
 $route['editEvent'] = "event/editEvent";
 
@@ -82,13 +82,13 @@ $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'uberanda';
-$route['viewDetail/(:num)'] = 'uregist/addNew/$1';
-$route['viewDetail/(:num)'] = 'uregist/addNewRegist/$1';
+$route['viewDetail/(:num)'] = 'uregist/addNew';
+$route['viewDetailNow/(:num)'] = 'uregist/addNewRegist/$1';
 $route['form_regist'] = 'uform_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
-// $route['addNewRegist'] = "uregist/addNew";
-// $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
+$route['addNewRegist/(:num)'] = "uregist/addNew";
+$route['addNewRegistNow/(:num)'] = "uregist/addNewRegist/$1";
 
 /*********** USER DEFINED ROUTES *******************/
 
