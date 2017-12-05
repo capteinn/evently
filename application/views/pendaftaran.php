@@ -12,23 +12,37 @@
 				<div class="box">
 					<div class="box-header">
 						<h3 class="box-title">Daftar Pendaftaran</h3>
+						<br />
+						<br />
+						<div class="row">
+							<div class="col-md-2">
+								<p>Filter List : </p>
+							</div>
+							<div class="col-md-2">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
+									<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>
+									<br>
+								</form>
+							</div>
+							<div class="col-md-3">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/proses" method="post">
+									<input id="proses" type="radio" name="filterStatus" onclick="javascript:submit()" value="proses" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'proses') echo ' checked="checked"';?> /><label for="datedesc">Proses</label>
+									<br>
+								</form>
+							</div>
+							<div class="col-md-2">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/diterima" method="post">
+									<input id="diterima" type="radio" name="filterStatus" onclick="javascript:submit()" value="diterima" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'diterima') echo ' checked="checked"';?> /><label for="datedesc">Diterima</label>
+									<br>
+								</form>
+							</div>
+							<div class="col-md-3">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/ditolak" method="post">
+									<input id="ditolak" type="radio" name="filterStatus" onclick="javascript:submit()" value="ditolak" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'ditolak') echo ' checked="checked"';?> /><label for="datedesc">Ditolak</label>
+								</form>
 
-						<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
-							<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>
-							<br>
-						</form>
-						<form action="<?php echo base_url(); ?>pendaftaranListing/proses" method="post">
-							<input id="proses" type="radio" name="filterStatus" onclick="javascript:submit()" value="proses" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'proses') echo ' checked="checked"';?> /><label for="datedesc">Proses</label>
-							<br>
-						</form>
-						<form action="<?php echo base_url(); ?>pendaftaranListing/diterima" method="post">
-							<input id="diterima" type="radio" name="filterStatus" onclick="javascript:submit()" value="diterima" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'diterima') echo ' checked="checked"';?> /><label for="datedesc">Diterima</label>
-							<br>
-						</form>
-						<form action="<?php echo base_url(); ?>pendaftaranListing/ditolak" method="post">
-							<input id="ditolak" type="radio" name="filterStatus" onclick="javascript:submit()" value="ditolak" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'ditolak') echo ' checked="checked"';?> /><label for="datedesc">Ditolak</label>
-						</form>
-
+							</div>
+						</div>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
