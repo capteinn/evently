@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "login";
+$route['default_controller'] = "beranda";
+$route['admin'] = "login"; // admin panel
 $route['404_override'] = 'error';
 
 /*********** PENDAFTARAN DEFINED ROUTES *******************/

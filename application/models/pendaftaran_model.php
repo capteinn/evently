@@ -29,6 +29,17 @@ class Pendaftaran_model extends CI_Model
         return $result;
     }
 	
+	function status_pendaftaran($id_pendaftaran) {
+		$this->db->select('dp.status');
+		$this->db->from('detail_pendaftaran as dp');
+		$this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
+		$this->db->where('dp.id_pendaftaran', $id_pendaftaran);
+		
+		$result = $this->db->get();
+		
+		return $result->result();
+	}
+	
 	/**
      * This function is used to get the user listing count by criteria
      * @param string $userId : mengambil session user/panitia yang login saat ini
