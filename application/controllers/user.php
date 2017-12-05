@@ -1,6 +1,5 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : User (UserController)
@@ -9,7 +8,7 @@ require APPPATH . '/libraries/BaseController.php';
  * @version : 1.1
  * @since : 15 November 2016
  */
-class User extends BaseController
+class Uuser extends CI_Controller
 {
     /**
      * This is default constructor of the class

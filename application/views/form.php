@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="well form-horizontal" action="<?php echo base_url() ?>addNewRegistNow" method="post"  id="contact_form">
+			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetail" method="post"  id="contact_form">
 				<fieldset>
 					<!-- Form Name -->
 					<legend>Lengkapi Identitas Anda</legend>

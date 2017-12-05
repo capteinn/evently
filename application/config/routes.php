@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "beranda";
+$route['default_controller'] = "uberanda";
 $route['404_override'] = 'error';
 
 /*********** ADMIN LOGIN DEFINED ROUTES *******************/
@@ -81,13 +81,14 @@ $route['editOldThread/(:num)'] = "thread/editOld/$1";
 $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
-$route['beranda'] = 'beranda';
-$route['viewDetail/(:num)'] = 'regist/addNew/$1';
-$route['form_regist'] = 'form_regist';
+$route['beranda'] = 'uberanda';
+$route['viewDetail/(:num)'] = 'uregist/addNew/$1';
+$route['viewDetail/(:num)'] = 'uregist/addNewRegist/$1';
+$route['form_regist'] = 'uform_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
-$route['addNewRegist'] = "regist/addNew";
-$route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
+// $route['addNewRegist'] = "uregist/addNew";
+// $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
 
 /*********** USER DEFINED ROUTES *******************/
 
