@@ -10,202 +10,161 @@
 <body>
 
 
-  <div class="container">
+  <div class="container" style="width: 70%; margin-top: 3%;">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
       <center><h3>FORM PENDAFTARAN</h3></center>
       <fieldset>
 
         <!-- Form Name -->
-        <legend style="margin-left: 20%;">Identitas</legend>
+        <h3 style="margin-left: 20%;">Identitas</h3>
 
           <!-- Text input-->
 
-          <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+          <div class="form-group" style="margin-top: 3%;">
+            <label class="col-md-4 control-label">NIM</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <input  name="nim" placeholder="NIM" class="form-control"  type="text">
+              </div>
+              <span>NIU. Contoh : 380xxx</span>
+            </div>
+          </div>
 
 <!-- Text input-->
 
-<div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+  <div class="form-group">
+    <label class="col-md-4 control-label" >Nama</label>
+      <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+          <input name="nama_lengkap" placeholder="Nama lengkap" class="form-control"  type="text">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- Text input-->
+<!-- Select input-->
        <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+         <label class="col-md-4 control-label">Prodi</label>
+         <div class="col-md-4 inputGroupContainer">
+           <div class="input-group">
+             <select name="prodi" class="form-control selectpicker" >
+               <option value=" " >Pilih Prodi</option>
+               <option>Komsi</option>
+               <option>DTE</option>
+               <option>Metins</option>
+               <option>Elins</option>
+               <option>DTJ</option>
+             </select>
+           </div>
+         </div>
+       </div>
 
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Address</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control" type="text">
-    </div>
-  </div>
-</div>
+      <!-- Select input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">Angkatan</label>
+                <div class="col-md-4 inputGroupContainer">
+                  <div class="input-group">
+                    <select name="angkatan" class="form-control selectpicker" >
+                      <option value=" " >Pilih angkatan</option>
+                      <option>2015</option>
+                      <option>2016</option>
+                      <option>2017</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
 <!-- Text input-->
 
-<div class="form-group">
-  <label class="col-md-4 control-label">City</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="city" class="form-control"  type="text">
+      <div class="form-group">
+          <label class="col-md-4 control-label">Kelas</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <input name="kelas" placeholder="Kelas" class="form-control"  type="text">
+                </div>
+            </div>
+      </div>
+
+<!-- Select input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Jenis Kelamin</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <select name="jenkel" class="form-control selectpicker" >
+                <option value=" ">Jenis Kelamin</option>
+                <option>Laki - laki</option>
+                <option>Perempuan</option>
+              </select>
+            </div>
+          </div>
+     </div>
+
+<!-- Input file-->
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" >CV</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group input-file" name="Fichier1">
+			         <span class="input-group-btn">
+        		       <button name="input_pdf" class="btn btn-default btn-choose" type="button">Choose</button>
+    		        </span>
+    		          <input type="text" class="form-control" placeholder='Choose a file...' />
+    		            <span class="input-group-btn">
+       			            <button class="btn btn-warning btn-reset" type="button">Reset</button>
+    		            </span>
+		      </div>
+	      </div>
     </div>
-  </div>
-</div>
+<!-- Input file-->
 
-<!-- Select Basic -->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">State</label>
-    <div class="col-md-4 selectContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" >
-      <option value=" " >Please select your state</option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option >Arizona</option>
-      <option >Arkansas</option>
-      <option >California</option>
-      <option >Colorado</option>
-      <option >Connecticut</option>
-      <option >Delaware</option>
-      <option >District of Columbia</option>
-      <option> Florida</option>
-      <option >Georgia</option>
-      <option >Hawaii</option>
-      <option >daho</option>
-      <option >Illinois</option>
-      <option >Indiana</option>
-      <option >Iowa</option>
-      <option> Kansas</option>
-      <option >Kentucky</option>
-      <option >Louisiana</option>
-      <option>Maine</option>
-      <option >Maryland</option>
-      <option> Mass</option>
-      <option >Michigan</option>
-      <option >Minnesota</option>
-      <option>Mississippi</option>
-      <option>Missouri</option>
-      <option>Montana</option>
-      <option>Nebraska</option>
-      <option>Nevada</option>
-      <option>New Hampshire</option>
-      <option>New Jersey</option>
-      <option>New Mexico</option>
-      <option>New York</option>
-      <option>North Carolina</option>
-      <option>North Dakota</option>
-      <option>Ohio</option>
-      <option>Oklahoma</option>
-      <option>Oregon</option>
-      <option>Pennsylvania</option>
-      <option>Rhode Island</option>
-      <option>South Carolina</option>
-      <option>South Dakota</option>
-      <option>Tennessee</option>
-      <option>Texas</option>
-      <option> Uttah</option>
-      <option>Vermont</option>
-      <option>Virginia</option>
-      <option >Washington</option>
-      <option >West Virginia</option>
-      <option>Wisconsin</option>
-      <option >Wyoming</option>
-    </select>
-  </div>
-</div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+    <div class="form-group" style="margin-bottom: 3%;">
+      <label class="col-md-4 control-label" >KRS</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group input-file" name="Fichier1">
+    			     <span class="input-group-btn">
+            		   <button name="input_pdf" class="btn btn-default btn-choose" type="button">Choose</button>
+        		   </span>
+        		      <input type="text" class="form-control" placeholder='Choose a file...' />
+        		        <span class="input-group-btn">
+           			            <button class="btn btn-warning btn-reset" type="button">Reset</button>
+        		        </span>
+    		    </div>
+    	    </div>
     </div>
-</div>
-</div>
+    <span style="background-color: #fff;"><hr style="display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;"></span>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label">Website or domain name</label>
-   <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input name="website" placeholder="Website or domain name" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- radio checks -->
- <div class="form-group">
-                        <label class="col-md-4 control-label">Do you have hosting?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
+    <h3 style="margin-left: 20%;">Pilihan 1</h3>
+    <!-- Select input-->
+            <div class="form-group" style="margin-top: 3%;">
+              <label class="col-md-4 control-label">Sie</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <select name="sie" class="form-control selectpicker" >
+                    <option value=" " >Pilih sie</option>
+                    <option>Acara</option>
+                    <option>DDD</option>
+                    <option>Humas</option>
+                    <option>Transport</option>
+                    <option>Konsumsi</option>
+                  </select>
+                </div>
+              </div>
+            </div>
 <!-- Text area -->
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          <textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
-  </div>
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label">Alasan</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+              <textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+            </div>
+          </div>
+      </div>
 
 <!-- Success message -->
 <!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
@@ -214,7 +173,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" >Daftar<span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" >Pilihan 2<span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
 
@@ -232,6 +192,37 @@
 <script type="text/javascript" src="https:////cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js">
 </script>
 <script type="text/javascript">
+
+function bs_input_file() {
+	$(".input-file").before(
+		function() {
+			if ( ! $(this).prev().hasClass('input-ghost') ) {
+				var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+				element.attr("name",$(this).attr("name"));
+				element.change(function(){
+					element.next(element).find('input').val((element.val()).split('\\').pop());
+				});
+				$(this).find("button.btn-choose").click(function(){
+					element.click();
+				});
+				$(this).find("button.btn-reset").click(function(){
+					element.val(null);
+					$(this).parents(".input-file").find('input').val('');
+				});
+				$(this).find('input').css("cursor","pointer");
+				$(this).find('input').mousedown(function() {
+					$(this).parents('.input-file').prev().click();
+					return false;
+				});
+				return element;
+			}
+		}
+	);
+}
+$(function() {
+  bs_input_file();
+});
+
 $(document).ready(function() {
 $('#contact_form').bootstrapValidator({
     // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
@@ -241,99 +232,96 @@ $('#contact_form').bootstrapValidator({
         validating: 'glyphicon glyphicon-refresh'
     },
     fields: {
-        first_name: {
+        nim: {
             validators: {
+                    integer: {
+                    message: 'Inputan harus angka',
+                    thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+                    decimalSeparator: '.' //ini ga boleh ada titik
+                },
                     stringLength: {
-                    min: 2,
-                },
+                      min: 6,
+                      max: 6,
+                      message: 'NIU hanya terdiri dari 6 angka'
+                    },
                     notEmpty: {
-                    message: 'Please supply your first name'
+                    message: 'NIM tidak boleh kosong'
                 }
             }
         },
-         last_name: {
+         nama_lengkap: {
             validators: {
-                 stringLength: {
-                    min: 2,
-                },
+              stringLength: {
+                min: 4,
+                max: 50,
+                message: 'Minimal 4 karakter, Maksimal 50 karakter'
+              },
                 notEmpty: {
-                    message: 'Please supply your last name'
+                    message: 'Nama tidak boleh kosong'
                 }
             }
         },
-        email: {
+        prodi: {
             validators: {
                 notEmpty: {
-                    message: 'Please supply your email address'
-                },
-                emailAddress: {
-                    message: 'Please supply a valid email address'
+                    message: 'Pilih prodi yang sesuai'
                 }
             }
         },
-        phone: {
-            validators: {
-                notEmpty: {
-                    message: 'Please supply your phone number'
-                },
-                phone: {
-                    country: 'US',
-                    message: 'Please supply a vaild phone number with area code'
-                }
+        angkatan: {
+          validators: {
+            notEmpty: {
+              message: 'Pilih angkatan yang sesuai'
             }
+          }
         },
-        address: {
-            validators: {
-                 stringLength: {
-                    min: 8,
-                },
-                notEmpty: {
-                    message: 'Please supply your street address'
-                }
+        kelas: {
+          validators: {
+            notEmpty: {
+              message: 'Kelas tidak boleh kosong'
             }
+          }
         },
-        city: {
-            validators: {
-                 stringLength: {
-                    min: 4,
-                },
-                notEmpty: {
-                    message: 'Please supply your city'
-                }
+        jenkel: {
+          validators: {
+            notEmpty: {
+              message: 'Pilih jenis kelamin'
             }
+          }
         },
-        state: {
-            validators: {
-                notEmpty: {
-                    message: 'Please select your state'
-                }
+        sie: {
+          validators: {
+            notEmpty: {
+              message: 'Pilih sie terlebih dahulu'
             }
+          }
         },
-        zip: {
-            validators: {
-                notEmpty: {
-                    message: 'Please supply your zip code'
-                },
-                zipCode: {
-                    country: 'US',
-                    message: 'Please supply a vaild zip code'
-                }
+        input_pdf: {
+          validators: {
+            notEmpty: {
+              message: 'Input file terlebih dahulu (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
             }
+          }
         },
         comment: {
             validators: {
                   stringLength: {
                     min: 10,
                     max: 200,
-                    message:'Please enter at least 10 characters and no more than 200'
+                    message:'Minimal 10 karakter dan maksimal 200 karakter'
                 },
                 notEmpty: {
-                    message: 'Please supply a description of your project'
+                    message: 'Alasan tidak dapat kosong'
                 }
                 }
             }
         }
     })
+
     .on('success.form.bv', function(e) {
         $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
             $('#contact_form').data('bootstrapValidator').resetForm();
@@ -352,6 +340,7 @@ $('#contact_form').bootstrapValidator({
             console.log(result);
         }, 'json');
     });
+
 });
 
 
