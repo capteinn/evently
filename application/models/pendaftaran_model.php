@@ -8,26 +8,54 @@ class Pendaftaran_model extends CI_Model
      * @return array $result : This is result
      */
     function listPendaftaran($userId, $ztatuz)
-    {
-        
-        if($ztatuz == "semua"){
-            $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status, e.nama as nama_event, s.nama as nama_sie');
-            $this->db->from('pendaftaran as p');
-            $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-            $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
-            $this->db->join('event as e', 'me.id_event = e.id_event');
-            $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-            $this->db->where('me.createdBy', $userId);
-        }else{
-            $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status, e.nama as nama_event, s.nama as nama_sie');
-            $this->db->from('pendaftaran as p');
-            $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-            $this->db->join('mapping_event as me', 'p.id_mapping_event = me.id_mapping_event');
-            $this->db->join('event as e', 'me.id_event = e.id_event');
-            $this->db->join('sie as s', 'me.id_sie = s.id_sie');
-            $this->db->where('me.createdBy', $userId);
-            $this->db->where('p.status', $ztatuz);
+    {           
+		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, dp.id_detail_pendaftaran, dp.status, e.nama as nama_event, s.id_sie, s.nama as nama_sie');
+        $this->db->from('detail_pendaftaran as dp');
+        $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
+        $this->db->join('mahasiswa as m', 'p.nim = m.nim');
+        $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
+        $this->db->join('event as e', 'me.id_event=e.id_event');
+        $this->db->join('sie as s', 'me.id_sie=s.id_sie');
+        $this->db->where('me.createdBy', $userId);
+		$this->db->group_by('p.id_pendaftaran');
+		
+		if($ztatuz != "semua"){
+            $this->db->where('dp.status', $ztatuz);
         }
+		
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+	
+	function status_pendaftaran($id_pendaftaran) {
+		$this->db->select('dp.status');
+		$this->db->from('detail_pendaftaran as dp');
+		$this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
+		$this->db->where('dp.id_pendaftaran', $id_pendaftaran);
+		
+		$result = $this->db->get();
+		
+		return $result->result();
+	}
+	
+	/**
+     * This function is used to get the user listing count by criteria
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function detailPendaftaran($id_pendaftaran)
+    {           
+		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, dp.id_detail_pendaftaran, dp.status, e.nama as nama_event, s.id_sie, s.nama as nama_sie');
+        $this->db->from('detail_pendaftaran as dp');
+        $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
+        $this->db->join('mahasiswa as m', 'p.nim = m.nim');
+        $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
+        $this->db->join('event as e', 'me.id_event=e.id_event');
+        $this->db->join('sie as s', 'me.id_sie=s.id_sie');
+        $this->db->where('dp.id_pendaftaran', $id_pendaftaran);
+		
         $query = $this->db->get();
         
         $result = $query->result();        
@@ -40,12 +68,15 @@ class Pendaftaran_model extends CI_Model
      * @param string $status : merubah status menjadi diterima 
      * @return array $result : This is result
      */
-    function diterima($id_pendaftaran, $status)
-    {
-        $this->db->where('id_pendaftaran', $id_pendaftaran);
-        $this->db->update('pendaftaran', $status);
+    function diterima($id_pendaftaran, $id_sie)
+    {	
+		$sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
+				SET dp.status = 'diterima'
+				WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
         
-        return TRUE;
+		$this->db->query($sql);
+        
+		return TRUE;
     } 
 	
 	/**
@@ -54,12 +85,20 @@ class Pendaftaran_model extends CI_Model
      * @param string $status : merubah status menjadi ditolak
 	 * @return array $result : This is result
      */
-    function ditolak($id_pendaftaran, $status)
+    function ditolak($id_pendaftaran, $id_sie)
     {
-        $this->db->where('id_pendaftaran', $id_pendaftaran);
-        $this->db->update('pendaftaran', $status);
-        
-        return TRUE;
+		$sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
+				SET dp.status = 'ditolak'
+				WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
+		// $this->db->set('dp.status', 'ditolak');
+		// $this->db->where('dp.id_mapping_event', 'me.id_mapping_event');
+		// $this->db->where('dp.id_pendaftaran', $id_pendaftaran);
+		// $this->db->where('me.id_sie', $id_sie);
+		// $this->db->update('detail_pendaftaran as dp, mapping_event as me');
+		
+		$this->db->query($sql);
+		
+		return TRUE;
     }
 }
 

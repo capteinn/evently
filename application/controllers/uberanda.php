@@ -1,5 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+
 /**
  * Class : Beranda (BerandaController)
  * Beranda Class to control all user related operations.
@@ -7,7 +8,7 @@
  * @version : 1.1
  * @since : 12 Desember 2017
  */
-class Beranda extends CI_Controller
+class Uberanda extends CI_Controller
 {
     /**
      * This is default constructor of the class

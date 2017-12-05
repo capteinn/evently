@@ -27,8 +27,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Thread Management
-        <small>Add / Edit Thread</small>
+        <i class="fa fa-users"></i> Manajemen Thread
+        <small>Tambah / Ubah Thread</small>
       </h1>
     </section>
     
@@ -124,7 +124,7 @@
     
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
+                            <input type="button" class="btn btn-default" onClick="resetz()" value="Reset" />
                         </div>
                     </form>
                 </div>
@@ -179,3 +179,9 @@
 	})
 </script>
 <script src="<?php echo base_url(); ?>assets/js/addUser.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function resetz(){
+        document.getElementById("judul").value="";
+        document.getElementById("deskripsi").value="";
+    }
+</script>
