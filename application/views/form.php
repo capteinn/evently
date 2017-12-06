@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="well form-horizontal" action="<?php echo base_url() ?>pushForm" method="post"  id="contact_form">
+
+			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post"  id="contact_form">
+
 				<fieldset>
 					<!-- Form Name -->
 					<legend>Lengkapi Identitas Anda</legend>
@@ -66,27 +68,23 @@
 						</div>
 					</div>
 					
-					
 					<!-- Text input-->
-
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Prodi</label>
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<select name="prodi" class="form-control selectpicker">
-									<option value="">-- Pilih Prodi Anda --</option>
-									<option value="1">KOMSI</option>
-									<option value="2">METINS</option>
-									<option value="3">DTE</option>
-									<option value="4">DTJ</option>
-									<option value="5">ELINS</option>
-								</select>
+								<select class="form-control required" id="prodi" name="prodi">
+                                            <option value="0">Pilih Prodi</option>
+                                                <option value="1">KOMSI</option>
+                                                <option value="2">METINS</option>
+                                                <option value="3">DTE</option>
+                                                <option value="4">DTJ</option>
+                                                <option value="5">ELINS</option>
+                                        </select>
 							</div>
 						</div>
 					</div>
-					
-					<!-- Text input-->
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Angkatan</label>
@@ -139,7 +137,14 @@
 						<label class="col-md-4 control-label" >Event</label>
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
-								<a style="background: none; border: none; box-shadow: none; text-decoration: none;" class="form-control" ><b>ALGORITHM</b></a>
+							<?php
+                                if(!empty($event)){
+                                    	foreach ($event as $ev){?>
+								<p class="form-control" ><b><?php echo $ev->nama ?></b></p>
+							<?php
+                                        }
+                                }
+                            ?>
 							</div>
 						</div>
 					</div>	
@@ -195,6 +200,10 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
 	<script type="text/javascript">
+		$(':checkbox').change(function(){
+			var len = $(':checkbox:checked').length;
+			$(':checkbox').not(':checked').prop('disabled',len >= 2)
+		});
 		$(document).ready(function() {
 		$('#contact_form').bootstrapValidator({
 			// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later

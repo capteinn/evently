@@ -151,7 +151,7 @@
               <p class="card-text">Event ID : <?php echo $record->id_event; ?></p>
               <p class="card-text">Thread ID : <?php echo $record->id_thread; ?></p>
             </div>
-			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_mapping_event; ?>" type="button" class="btn btn-info">DETAIL</a>
+			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>
           </div>
         </div>
 		<?php
