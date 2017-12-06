@@ -48,6 +48,7 @@ class Pendaftaran_Detail_model extends CI_Model
 		return $statusnya;
 	}
 	
+	
 	function ubah_status($id_pendaftaran, $status) {
 		
 		$this->db->set('status', $status);
@@ -58,21 +59,15 @@ class Pendaftaran_Detail_model extends CI_Model
 	
 	/**
      * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
-     * @param string $id_pendaftaran : mengambil spesifik id_pendaftaran 
+     * @param string $id_pendaftaran : mengambil spesifik id_detail_pendaftaran 
      * @param string $status : merubah status menjadi diterima 
      * @return array $result : This is result
      */
     function diterima($id_detail_pendaftaran)
-    {	
-		// $sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
-				// SET dp.status = 'diterima'
-				// WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
-        
+    {	        
 		$this->db->set('dp.status', 'diterima');
 		$this->db->where('dp.id_detail_pendaftaran', $id_detail_pendaftaran);
 		$this->db->update('detail_pendaftaran as dp JOIN mapping_event as me ON dp.id_mapping_event=me.id_mapping_event');
-		
-		// $this->db->query($sql);
         
 		return TRUE;
     }
@@ -85,16 +80,11 @@ class Pendaftaran_Detail_model extends CI_Model
      */
     function ditolak($id_detail_pendaftaran)
     {
-		// $sql = "UPDATE detail_pendaftaran as dp, mapping_event as me
-				// SET dp.status = 'ditolak'
-				// WHERE dp.id_mapping_event=me.id_mapping_event AND dp.id_pendaftaran=$id_pendaftaran AND me.id_sie=$id_sie";
-		
+
 		$this->db->set('dp.status', 'ditolak');
 		$this->db->where('dp.id_detail_pendaftaran', $id_detail_pendaftaran);
 		$this->db->update('detail_pendaftaran as dp JOIN mapping_event as me ON dp.id_mapping_event=me.id_mapping_event');
-		
-		// $this->db->query($sql);
-		
+
 		return TRUE;
     }
 }
