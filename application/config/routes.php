@@ -46,9 +46,9 @@ $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
-
 $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListing/$1';
 
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/

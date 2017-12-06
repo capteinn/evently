@@ -39,38 +39,10 @@ class Pendaftaran extends BaseController
         $userId = $this->vendorId;
             
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz);
-        
-		// $status_pendaftaran = $this->pendaftaran_model->status_pendaftaran();
-		
-		// $data['statusnya'] = $statusnya;
 		
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
-    } 
-	
-	/**
-     * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
-     */
-    function diterima($id_pendaftaran, $id_sie)
-    {           
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->diterima($id_pendaftaran, $id_sie);
-            
-        $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
-            
-        $this->pendaftaranListing("semua");
-    }
-	
-	/**
-     * Fungsi ini berguna untuk mengubah status pendaftar menjadi ditolak
-     */
-    function ditolak($id_pendaftaran, $id_sie)
-    {           
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran, $id_sie);
-            
-        $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
-            
-        $this->pendaftaranListing("semua");
     }
 
     function pageNotFound()

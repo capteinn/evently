@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Des 2017 pada 03.56
+-- Generation Time: 06 Des 2017 pada 09.07
 -- Versi Server: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -32,16 +32,18 @@ CREATE TABLE IF NOT EXISTS `detail_pendaftaran` (
   `id_mapping_event` int(11) NOT NULL,
   `status` enum('proses','diterima','ditolak','') NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `detail_pendaftaran`
 --
 
 INSERT INTO `detail_pendaftaran` (`id_detail_pendaftaran`, `id_pendaftaran`, `id_mapping_event`, `status`, `createdDtm`) VALUES
-(1, 1, 1, 'proses', '2017-12-05 00:29:22'),
-(2, 1, 4, 'proses', '2017-12-05 00:29:18'),
-(3, 2, 2, 'proses', '2017-12-04 16:44:32');
+(1, 1, 1, 'proses', '2017-12-06 07:54:32'),
+(2, 1, 4, 'diterima', '2017-12-06 08:00:48'),
+(3, 2, 2, 'proses', '2017-12-04 16:44:32'),
+(4, 3, 1, 'ditolak', '2017-12-06 08:01:12'),
+(5, 3, 4, 'ditolak', '2017-12-06 08:01:22');
 
 -- --------------------------------------------------------
 
@@ -88,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
 
 INSERT INTO `mahasiswa` (`nim`, `kelas`, `nama`, `no_telp`, `angkatan`, `jenkel`, `id_prodi`) VALUES
 ('09434', 'A', 'Abdur', '082132899582', 2015, 'L', 1),
+('09436', 'A', 'Hilmawan', '082132899582', 2015, 'L', 1),
 ('09456', 'B', 'Lele', '082132899582', 2016, 'L', 2);
 
 -- --------------------------------------------------------
@@ -126,16 +129,18 @@ CREATE TABLE IF NOT EXISTS `pendaftaran` (
   `nim` char(10) NOT NULL,
   `cv` varchar(300) NOT NULL,
   `krs` varchar(300) NOT NULL,
+  `status` enum('proses','diterima','ditolak') NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `createdDtm`) VALUES
-(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', '2017-12-01 17:23:05'),
-(2, '09456', 'lele.pdf', 'lele.pdf', '2017-12-01 18:28:41');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `status`, `createdDtm`) VALUES
+(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', 'diterima', '2017-12-06 08:00:48'),
+(2, '09456', 'lele.pdf', 'lele.pdf', 'proses', '2017-12-01 18:28:41'),
+(3, '09436', 'CVku.pdf', 'KRSku.pdf', 'ditolak', '2017-12-06 08:01:22');
 
 -- --------------------------------------------------------
 
@@ -393,7 +398,7 @@ ALTER TABLE `thread`
 -- AUTO_INCREMENT for table `detail_pendaftaran`
 --
 ALTER TABLE `detail_pendaftaran`
-MODIFY `id_detail_pendaftaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_detail_pendaftaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `event`
 --
@@ -408,7 +413,7 @@ MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-MODIFY `id_pendaftaran` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_pendaftaran` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `prodi`
 --

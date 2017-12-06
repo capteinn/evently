@@ -83,28 +83,6 @@
 									
 									//------------ STATUS PENDAFTARAN -----------------//
 									
-									//----- mengambil status pendaftaran -----
-									
-									// $status_pendaftaran = $this->pendaftaran_model->status_pendaftaran($record->id_pendaftaran);
-									
-									//----- cek user mendaftar 1 / 2 sie -----
-									
-									// if (!empty($status_pendaftaran[1])) {
-										// if($status_pendaftaran[0]->status=='proses' && $status_pendaftaran[1]->status=='proses' || $status_pendaftaran[0]->status=='ditolak' && $status_pendaftaran[1]->status=='proses' || $status_pendaftaran[0]->status=='proses' && $status_pendaftaran[1]->status=='ditolak') {
-											// $statusnya = "proses";
-										// } else if ($status_pendaftaran[0]->status=='ditolak' && $status_pendaftaran[1]->status=='ditolak') {
-											// $statusnya = "ditolak";
-										// }else{
-											// $statusnya = "diterima";
-										// }
-									// }else{
-										// $statusnya = $sp[0]->status;
-									// }
-									
-									// echo $statusnya;
-
-									//----- cek statusnya dan dioutputkan ----
-									
 									if($record->status == "diterima"){
 										echo "<span class='label label-success'>Diterima</span>";
 									}else if($record->status == "ditolak"){

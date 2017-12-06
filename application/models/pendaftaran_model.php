@@ -8,17 +8,7 @@ class Pendaftaran_model extends CI_Model
      * @return array $result : This is result
      */
     function listPendaftaran($userId, $ztatuz)
-    {           
-		// $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, dp.id_detail_pendaftaran, dp.status, e.nama as nama_event, s.id_sie, s.nama as nama_sie');
-        // $this->db->from('detail_pendaftaran as dp');
-        // $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
-        // $this->db->join('mahasiswa as m', 'p.nim = m.nim');
-        // $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
-        // $this->db->join('event as e', 'me.id_event=e.id_event');
-        // $this->db->join('sie as s', 'me.id_sie=s.id_sie');
-        // $this->db->where('me.createdBy', $userId);
-		// $this->db->group_by('p.id_pendaftaran');
-		
+    {	
 		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, p.cv, p.krs, p.status');
         $this->db->from('pendaftaran as p');
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');

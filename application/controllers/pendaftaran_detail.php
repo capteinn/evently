@@ -55,15 +55,6 @@ class Pendaftaran_Detail extends BaseController
     function diterima($id_detail_pendaftaran, $id_pendaftaran)
     {           
         $result = $this->pendaftaran_detail_model->diterima($id_detail_pendaftaran);
-
-		// if($result > 0)
-        // {
-            // $this->session->set_flashdata('success', 'New Mapping updated successfully');
-        // }
-        // else
-        // {
-            // $this->session->set_flashdata('error', 'Mapping updation failed');
-        // }
 		
         $this->pendaftaranDetailListing($id_pendaftaran);
     }
@@ -73,16 +64,7 @@ class Pendaftaran_Detail extends BaseController
      */
     function ditolak($id_detail_pendaftaran, $id_pendaftaran)
     {           
-        $result = $this->pendaftaran_detail_model->ditolak($id_detail_pendaftaran);
-            
-		// if($result > 0)
-        // {
-            // $this->session->set_flashdata('success', 'New Mapping updated successfully');
-        // }
-        // else
-        // {
-            // $this->session->set_flashdata('error', 'Mapping updation failed');
-        // }	
+        $result = $this->pendaftaran_detail_model->ditolak($id_detail_pendaftaran);	
 		
         $this->pendaftaranDetailListing($id_pendaftaran);
     }
