@@ -26,7 +26,7 @@
               <div class="input-group">
                 <input  name="nim" placeholder="NIM" class="form-control"  type="text">
               </div>
-              <span>NIU. Contoh : 380xxx</span>
+              <span>Contoh : 08xxx</span>
             </div>
           </div>
 
@@ -103,14 +103,8 @@
     <div class="form-group">
       <label class="col-md-4 control-label" >CV</label>
         <div class="col-md-4 inputGroupContainer">
-          <div class="input-group input-file" name="Fichier1">
-			         <span class="input-group-btn">
-        		       <button name="input_pdf" class="btn btn-default btn-choose" type="button">Choose</button>
-    		        </span>
-    		          <input type="text" class="form-control" placeholder='Choose a file...' />
-    		            <span class="input-group-btn">
-       			            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-    		            </span>
+          <div class="input-group">
+			         <input type="file" name="input_pdf">
 		      </div>
 	      </div>
     </div>
@@ -119,14 +113,8 @@
     <div class="form-group" style="margin-bottom: 3%;">
       <label class="col-md-4 control-label" >KRS</label>
         <div class="col-md-4 inputGroupContainer">
-          <div class="input-group input-file" name="Fichier1">
-    			     <span class="input-group-btn">
-            		   <button name="input_pdf" class="btn btn-default btn-choose" type="button">Choose</button>
-        		   </span>
-        		      <input type="text" class="form-control" placeholder='Choose a file...' />
-        		        <span class="input-group-btn">
-           			            <button class="btn btn-warning btn-reset" type="button">Reset</button>
-        		        </span>
+          <div class="input-group">
+    			    <input type="file" name="input_krs">
     		    </div>
     	    </div>
     </div>
@@ -193,35 +181,6 @@
 </script>
 <script type="text/javascript">
 
-function bs_input_file() {
-	$(".input-file").before(
-		function() {
-			if ( ! $(this).prev().hasClass('input-ghost') ) {
-				var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
-				element.attr("name",$(this).attr("name"));
-				element.change(function(){
-					element.next(element).find('input').val((element.val()).split('\\').pop());
-				});
-				$(this).find("button.btn-choose").click(function(){
-					element.click();
-				});
-				$(this).find("button.btn-reset").click(function(){
-					element.val(null);
-					$(this).parents(".input-file").find('input').val('');
-				});
-				$(this).find('input').css("cursor","pointer");
-				$(this).find('input').mousedown(function() {
-					$(this).parents('.input-file').prev().click();
-					return false;
-				});
-				return element;
-			}
-		}
-	);
-}
-$(function() {
-  bs_input_file();
-});
 
 $(document).ready(function() {
 $('#contact_form').bootstrapValidator({
@@ -240,9 +199,9 @@ $('#contact_form').bootstrapValidator({
                     decimalSeparator: '.' //ini ga boleh ada titik
                 },
                     stringLength: {
-                      min: 6,
-                      max: 6,
-                      message: 'NIU hanya terdiri dari 6 angka'
+                      min: 5,
+                      max: 5,
+                      message: 'NIM hanya terdiri dari 5 angka'
                     },
                     notEmpty: {
                     message: 'NIM tidak boleh kosong'
@@ -297,6 +256,17 @@ $('#contact_form').bootstrapValidator({
           }
         },
         input_pdf: {
+          validators: {
+            notEmpty: {
+              message: 'Input file terlebih dahulu (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
+            }
+          }
+        },
+        input_krs: {
           validators: {
             notEmpty: {
               message: 'Input file terlebih dahulu (.pdf)'
