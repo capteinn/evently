@@ -1,5 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : User (UserController)
@@ -8,7 +9,7 @@
  * @version : 1.1
  * @since : 15 November 2016
  */
-class Uuser extends CI_Controller
+class User extends BaseController
 {
     /**
      * This is default constructor of the class
@@ -25,7 +26,7 @@ class Uuser extends CI_Controller
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'CodeInsect : Dashboard';
+        $this->global['pageTitle'] = 'TEDI : Dashboard';
         
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
@@ -54,7 +55,7 @@ class Uuser extends CI_Controller
             
             $data['userRecords'] = $this->user_model->userListing($searchText, $returns["page"], $returns["segment"]);
             
-            $this->global['pageTitle'] = 'CodeInsect : User Listing';
+            $this->global['pageTitle'] = 'TEDI : User Listing';
             
             $this->loadViews("users", $this->global, $data, NULL);
         }
@@ -74,7 +75,7 @@ class Uuser extends CI_Controller
             $this->load->model('user_model');
             $data['roles'] = $this->user_model->getUserRoles();
             
-            $this->global['pageTitle'] = 'CodeInsect : Add New User';
+            $this->global['pageTitle'] = 'TEDI : Add New User';
 
             $this->loadViews("addNew", $this->global, $data, NULL);
         }
@@ -100,7 +101,7 @@ class Uuser extends CI_Controller
 
     function pageNotFound()
     {
-        $this->global['pageTitle'] = 'CodeInsect : 404 - Page Not Found';
+        $this->global['pageTitle'] = 'TEDI : 404 - Page Not Found';
         
         $this->loadViews("404", $this->global, NULL, NULL);
     }

@@ -57,7 +57,7 @@ class Mape_model extends CI_Model
      */
     function eventInfo($mapeInfo)
     {
-        $this->db->select('me.id_event, e.nama, e.deskripsi');
+        $this->db->select('me.id_event, e.nama, me.deskripsi');
         $this->db->from('event as e');
         $this->db->join('mapping_event as me','e.id_event=me.id_event');
         $this->db->where('me.id_mapping_event', $mapeInfo);
@@ -74,7 +74,7 @@ class Mape_model extends CI_Model
      */
     function mapeventInfo($mapeInfo)
     {
-        $this->db->select('me.id_mapping_event, me.id_sie, s.nama');
+        $this->db->select('me.id_mapping_event, me.id_sie, s.nama, s.deskripsi');
         $this->db->from('mapping_event as me');
         $this->db->join('event as e','me.id_event=e.id_event');
         $this->db->join('sie as s','s.id_sie=me.id_sie');
