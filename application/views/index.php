@@ -24,7 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
       <div class="container">
-<<<<<<< HEAD
+
         <!-- <a class="navbar-brand" href="beranda">Evently</a> -->
         <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
           <!-- <span class="navbar-toggler-icon"></span> -->
@@ -35,12 +35,8 @@
           <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
         </div>
 
-=======
-       <!--  <a class="navbar-brand" href=" <?php (); ?>beranda">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
->>>>>>> ea20a9130832078e27cffed0740489d7424fcfab
+
+    
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -66,25 +62,28 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('http://placehold.it/1950x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p>
-            </div>
+          <div class="carousel-item active">
+            <img src="assets/poster/vocomfest.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>First Slide</h3> -->
+              <!-- <p>This is a description for the first slide.</p> -->
+            <!-- </div> -->
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
+          <div class="carousel-item" >
+            <img src="assets/poster/child.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>Second Slide</h3> -->
+              <!-- <p>This is a description for the second slide.</p> -->
+            <!-- </div> -->
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
+          <div class="carousel-item">
+            <img src="assets/poster/algorithm.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>Third Slide</h3> -->
+              <!-- <p>This is a description for the third slide.</p> -->
+            <!-- </div> -->
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
