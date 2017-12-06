@@ -1,6 +1,5 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . '/libraries/BaseController.php';
 
 /**
  * Class : User (UserController)
@@ -9,7 +8,7 @@ require APPPATH . '/libraries/BaseController.php';
  * @version : 1.1
  * @since : 15 November 2016
  */
-class Pendaftaran extends BaseController
+class Upendaftaran extends CI_Controller
 {
     /**
      * This is default constructor of the class
@@ -39,11 +38,7 @@ class Pendaftaran extends BaseController
         $userId = $this->vendorId;
             
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz);
-        
-		// $status_pendaftaran = $this->pendaftaran_model->status_pendaftaran();
-		
-		// $data['statusnya'] = $statusnya;
-		
+            
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
@@ -62,11 +57,11 @@ class Pendaftaran extends BaseController
     }
 	
 	/**
-     * Fungsi ini berguna untuk mengubah status pendaftar menjadi ditolak
+     * Fungsi ini berguna untuk mengubah status pendaftar menjadi diterima
      */
-    function ditolak($id_pendaftaran, $id_sie)
+    function ditolak($id_pendaftaran)
     {           
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran, $id_sie);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->ditolak($id_pendaftaran);
             
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             

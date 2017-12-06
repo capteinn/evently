@@ -11,10 +11,10 @@
     <title>Modern Business - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/bootstrap/css/modern-business.css" rel="stylesheet">
 
   </head>
 
@@ -23,54 +23,20 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="<?php echo base_url(); ?>beranda">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="">Event</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
+              <a class="nav-link" href="">Tentang</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Other Pages
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
-                <a class="dropdown-item" href="404.html">404</a>
-                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-              </div>
+              <a class="nav-link" href="">Kontak</a>
             </li>
           </ul>
         </div>
@@ -118,12 +84,12 @@
       </div>
     </header>
 
-    <!-- Page Content -->
     <div class="container">
+    <!-- Page Content 
 
       <h1 class="my-4">Welcome to Modern Business</h1>
 
-      <!-- Marketing Icons Section -->
+      <!-- Marketing Icons Section
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
@@ -158,83 +124,43 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
       <!-- /.row -->
 
-      <!-- Portfolio Section -->
-      <h2>Portfolio Heading</h2>
-
+		<!-- Portfolio Section -->
+		<br>
+		<center><h2>Evently</h2></center>
+		<br>
       <div class="row">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+		<?php
+			if(!empty($threadRecords))
+			{
+				foreach($threadRecords as $record)
+				{
+		?>
+		<div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project One</a>
+                <a href="#"><?php echo $record->nama; ?></a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+              <p class="card-text"><i>"<?php echo $record->judul; ?>"</i></p>
+              <p class="card-text"><?php echo $record->deskripsi; ?></p>
+              <p class="card-text">Mapping Event ID : <?php echo $record->id_mapping_event; ?></p>
+              <p class="card-text">Event ID : <?php echo $record->id_event; ?></p>
+              <p class="card-text">Thread ID : <?php echo $record->id_thread; ?></p>
             </div>
+			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Four</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Five</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Six</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+		<?php
+				}
+			}
+		?>
       <!-- /.row -->
 
-      <!-- Features Section -->
+      <!-- Features Section
       <div class="row">
         <div class="col-lg-6">
           <h2>Modern Business Features</h2>
@@ -253,12 +179,12 @@
         <div class="col-lg-6">
           <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
         </div>
-      </div>
+      </div>-->
       <!-- /.row -->
 
-      <hr>
 
-      <!-- Call to Action Section -->
+      <!-- Call to Action Section 
+      <hr>
       <div class="row mb-4">
         <div class="col-md-8">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
@@ -266,23 +192,22 @@
         <div class="col-md-4">
           <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
         </div>
-      </div>
+      </div>-->
 
     </div>
+	</div>
     <!-- /.container -->
 
+  </body>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
+        <p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
+
       <!-- /.container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/jQueryUI/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js">
+  </script>
 </html>

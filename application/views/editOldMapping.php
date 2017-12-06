@@ -23,8 +23,8 @@ if(!empty($mappingInfo))
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> Mapping Event Management
-        <small>Add / Edit Mapping Event</small>
+        <i class="fa fa-users"></i> Manajemen Mapping Event
+        <small>Tambah / Ubah Mapping Event</small>
       </h1>
     </section>
     
@@ -98,7 +98,7 @@ if(!empty($mappingInfo))
     
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
+                            <input type="button" class="btn btn-default" onClick="resetz()" value="Reset" />
                         </div>
                     </form>
                 </div>
@@ -137,3 +137,8 @@ if(!empty($mappingInfo))
 </div>
 
 <script src="<?php echo base_url(); ?>assets/js/editUser.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function resetz(){
+        document.getElementById("deskripsi").value="";
+    }
+</script>
