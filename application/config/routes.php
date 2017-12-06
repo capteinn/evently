@@ -46,16 +46,18 @@ $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
-$route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
-$route['ditolak/(:num)/(:num)'] = 'pendaftaran/ditolak/$1/$2';
+$route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
+$route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
+
+$route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListing/$1';
 
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
-$route['addNewEvent/(:num)'] = "event/addNew/$1";
-$route['addNewEventNow/(:num)'] = "event/addNewEvent/$1";
+$route['addNewEvent'] = "event/addNew";
+$route['addNewEventNow'] = "event/addNewEvent";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
 $route['editEvent'] = "event/editEvent";
 

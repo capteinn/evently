@@ -39,7 +39,11 @@ class Pendaftaran extends BaseController
         $userId = $this->vendorId;
             
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz);
-            
+        
+		// $status_pendaftaran = $this->pendaftaran_model->status_pendaftaran();
+		
+		// $data['statusnya'] = $statusnya;
+		
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
