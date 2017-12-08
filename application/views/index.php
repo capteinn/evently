@@ -18,8 +18,6 @@
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-      <script src="script.js"></script>
-       />
 
   </head>
 
@@ -46,7 +44,6 @@
           <li class='active'><a href='#'>Event</a></li>
           <li><a href='#'>Tentang</a></li>
           <li><a href='#'>Contact</a></li>
-          <li><a href='#'>Admin</a></li>
       </ul>
     </div>
     </nav>
@@ -163,7 +160,9 @@
               <p class="card-text">Event ID : <?php echo $record->id_event; ?></p>
               <p class="card-text">Thread ID : <?php echo $record->id_thread; ?></p>
             </div>
-			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>
+				<!-- amankan sek sebelum migrasi :v -->
+			    <!--<a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>-->
+			    <a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" type="button" class="btn btn-info">DETAIL</a>
           </div>
         </div>
 		<?php
