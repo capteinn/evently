@@ -81,7 +81,7 @@ class upload extends CI_Controller {
             $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
         }
-
+        //sementara
        redirect('/beranda');
 
     }
