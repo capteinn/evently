@@ -10,14 +10,13 @@
 
 		<!-- Bootstrap core CSS -->
 		 <!-- Bootstrap core CSS -->
-    	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    	<link href="assets/css/modern-business.css" rel="stylesheet">
-		<link rel="shortcut icon" href="assets/images/lambangevent.ico" />
+    	<link href="<?php echo base_url(); ?>assets/css/modern-business.css" rel="stylesheet">
+		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/lambangevent.ico" />
 
-		<link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
-   		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
    		<script src="script.js"></script>
 	</head>
 
@@ -33,7 +32,7 @@
         
         <!-- LOGO -->
         <div class="logo" style="width: 250px"> 
-          <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
+          <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
         </div>
 
        <!--  <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -55,7 +54,6 @@
    				<li class='active'><a href='#'>Event</a></li>
    				<li><a href='#'>Tentang</a></li>
 			    <li><a href='#'>Contact</a></li>
-   				<li><a href='#'>Admin</a></li>
 			</ul>
 		</div>
 
@@ -69,9 +67,9 @@
 		<div class="container">
 
 			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">Algorithm
+			<h1 class="mt-4 mb-3"><?php echo $nama; ?>
 			<small>|
-			  <a>Let's start Giving</a>
+			  <a><?php echo $judul; ?></a>
 			</small>
 			</h1>
 
@@ -88,33 +86,19 @@
 				<div class="col-lg-8">
 
 					<!-- Preview Image -->
-					<img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+					<!--<img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">-->
+					<img class="img-fluid rounded" src="<?php echo base_url(); ?>assets/poster/<?php echo $poster; ?>" alt="">
 
 					<hr>
 
 					<!-- Date/Time -->
-					<p>Pendaftaran tanggal 7 Desember 2017 - 12 Desember 2017</p>
+					<p>Pendaftaran tanggal <?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y'); ?> - <?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y'); ?></p>
 
 					<hr>
 
 					<!-- Post Content -->
-					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-					<blockquote class="blockquote">
-						<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-						<footer class="blockquote-footer">Someone famous in
-						<cite title="Source Title">Source Title</cite>
-					</footer>
-					</blockquote>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
 					
+					<p><?php echo $deskripsi; ?>.</p>
 					<hr>
 					<br>
 				</div>
@@ -125,7 +109,7 @@
 					<div class="card mb-4">
 						<h5 class="card-header">Daftar Sekarang!</h5>
 						<div class="card-body">
-							<a style="width: 100%;" class="btn btn-info" type="button">DAFTAR SEKARANG!</a>
+							<a style="width: 100%;" href="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>" class="btn btn-info" type="button">DAFTAR SEKARANG!</a>
 						</div>
 					</div>
 
@@ -135,10 +119,10 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col-md-6">
-									<p>Dari<br><font size="20px;"><b>7</b></font> <br>Desember 2017 </p>
+									<p>Dari<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('F Y'); ?> </p>
 								</div>	
 								<div class="col-md-6" >
-									<p>Sampai<br><font size="20px;"><b>12</b></font> <br>Desember 2017 </p>
+									<p>Sampai<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('F Y'); ?> </p>
 								</div>
 							</div>
 						</div>
@@ -151,25 +135,18 @@
 							<div class="row">
 								<div class="col-lg-6">
 									<ul class="list-unstyled mb-0">
+										<?php
+											if(!empty($sie))
+											{
+												foreach ($sie as $si)
+                                        {?>
 										<li>
-											<a href="#">Sie Acara</a>
+											<a><font color="#007bff"><?php echo $si->nama; ?></font></a>
 										</li>
-										<li>
-											<a href="#">Sie PDD</a>
-										</li>
-										<li>
-											<a href="#">Sie Keamanan</a>
-										</li>
-									</ul>
-								</div>
-								<div class="col-lg-6">
-									<ul class="list-unstyled mb-0">
-										<li>
-											<a href="#">Sie Humas</a>
-										</li>
-										<li>
-											<a href="#">Sie Konsumsi</a>
-										</li>
+										<?php 
+												}
+											}
+										?>
 									</ul>
 								</div>
 							</div>
