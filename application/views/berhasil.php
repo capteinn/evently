@@ -16,6 +16,8 @@
     <!-- Custom styles for this template -->
     	<link href="<?php echo base_url(); ?>assets/css/modern-business.css" rel="stylesheet">
 		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/lambangevent.ico" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome-animation.min.css" />
 
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
 	</head>
@@ -53,21 +55,18 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Beranda</a>
+          <a href="<?php echo base_url();?>">Beranda</a>
         </li>
         <li class="breadcrumb-item active">Berhasil</li>
       </ol>
 
       <div class="jumbotron">
-        <h1><i class="fa fa-check"></i></h1>
-        <h2>Pendaftaran Berhasil!</h2>
-        <p>Selamat Anda telah berhasil melakukan pendaftaran sebagai panitia event.</p>
 		<br>
+        <center><font color="#28a745"><i class="fa fa-check-circle faa-vertical animated fa-4x"></i></font>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+        <h2 class="py-2">Pendaftaran Berhasil!</h2>
+        <p class="py-1" >Selamat Anda telah berhasil melakukan pendaftaran sebagai <b>panitia event</b>.</p>
+		<a class="btn btn-success" href="<?php echo base_url(); ?>" ><font color="white"><i class="fa fa-home"> Beranda</i></font></a></center>
 
       </div>
       <!-- /.jumbotron -->
