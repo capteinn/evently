@@ -28,11 +28,12 @@ class upload extends CI_Controller {
         $kelas = $this->input->post('kelas');
         $jenkel = $this->input->post('jenkel');
         $sie = $this->input->post('sie');
+        $alasan = $this->input->post('alasan');
 
         // setting konfigurasi upload
         $namaFile = "berkasEvently".time(); 
         $config['upload_path'] = './assets/mahasiswa/';
-        $config['allowed_types'] = 'gif|jpg|png|pdf';
+        $config['allowed_types'] = 'pdf';
         $config['file_name'] = $namaFile;
         // load library upload
         $this->load->library('upload', $config);
@@ -46,7 +47,7 @@ class upload extends CI_Controller {
         // menyimpan hasil upload
         $result = array('cv'=>$result1,'krs'=>$result2);
 
-        $regInfo = array('nim'=>$nim,'cv'=>$result['cv']['file_name'].'.pdf','krs'=>$result['krs']['file_name'].'.pdf', 'createdDtm'=>date('Y-m-d H:i:s'));
+        $regInfo = array('nim'=>$nim,'cv'=>$result['cv']['file_name'],'krs'=>$result['krs']['file_name'], 'alasan'=>$alasan,'createdDtm'=>date('Y-m-d H:i:s'));
         $this->regist_model->addNewReg($regInfo);
 
         $getIdRegist = $this->regist_model->getRegist();
