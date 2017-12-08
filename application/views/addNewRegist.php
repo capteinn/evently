@@ -19,26 +19,23 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
-                    <form role="form" id="addRegist" action="<?php echo base_url() ?>addNewRegistNow" method="post" role="form">
+                    <form role="form" id="addRegist" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post" role="form">
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">                                
                                     <div class="form-group">
                                         <label for="role">Nama Event</label>
-                                        <select class="form-control required" id="event" name="event">
-                                            <option value="0">Pilih Event</option>
                                             <?php
                                             if(!empty($event))
                                             {
                                                 foreach ($event as $ev)
                                                 {
                                                     ?>
-                                                    <option value="<?php echo $ev->id_event ?>"><?php echo $ev->nama ?></option>
+                                                    <a value="<?php echo $ev->id_event ?>"><?php echo $ev->nama ?></a>
                                                     <?php
                                                 }
                                             }
                                             ?>
-                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +131,7 @@
                                                 foreach ($sie as $si)
                                                 {
                                                     ?>
-                                                <input type="checkbox" class="form-control required" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>"><?php echo $si->nama ?>
+                                                <input type="checkbox" class="form-control required" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>"><?php echo $si->nama."=>".$si->id_sie ?>
                                                 <?php
                                                 }
                                             }

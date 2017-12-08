@@ -46,8 +46,10 @@ $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
-$route['diterima/(:num)/(:num)'] = 'pendaftaran/diterima/$1/$2';
-$route['ditolak/(:num)/(:num)'] = 'pendaftaran/ditolak/$1/$2';
+
+$route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
+$route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
+$route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListing/$1';
 
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
@@ -82,13 +84,13 @@ $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'uberanda';
-$route['viewDetail/(:num)'] = 'uregist/addNew/$1';
-$route['pushForm'] = 'uregist/addNewRegist';
+$route['viewDetail/(:num)'] = 'uregist/addNew';
+$route['viewDetailNow/(:num)'] = 'uregist/addNewRegist/$1';
 $route['form_regist'] = 'uform_regist';
 
 /*********** REGIST DEFINED ROUTES *******************/
-// $route['addNewRegist'] = "uregist/addNew";
-// $route['addNewRegistNow/(:num)'] = "regist/addNewRegist/$1";
+$route['addNewRegist/(:num)'] = "uregist/addNew";
+$route['addNewRegistNow/(:num)'] = "uregist/addNewRegist/$1";
 
 /*********** USER SUPER ADMIN DEFINED ROUTES *******************/
 

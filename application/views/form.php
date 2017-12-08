@@ -1,317 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>Form Registration Evently</title>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
+	</head>
+	<body>
+		<div class="container">
 
-<head>
-  <title>Form Registration Evently</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https:////maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https:////cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
-</head>
-<body>
+			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post"  id="contact_form">
 
-  <div class="container" style="width: 70%; margin-top: 3%;">
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <center><h3>FORM PENDAFTARAN</h3></center>
-      <fieldset>
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Lengkapi Identitas Anda</legend>
 
-        <!-- Form Name -->
-        <h3 style="margin-left: 20%;">Identitas</h3>
+					  <!-- Text input-->
 
-          <!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Nama</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input  name="nama" placeholder="Nama Lengkap" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
 
-          <div class="form-group" style="margin-top: 3%;">
-            <label class="col-md-4 control-label">NIM</label>
-            <div class="col-md-4 inputGroupContainer">
-              <div class="input-group">
-                <input  name="nim" placeholder="NIM" class="form-control"  type="text">
-              </div>
-              <span>Contoh : 08xxx</span>
-            </div>
-          </div>
+					<!-- Text input-->
 
-<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" >NIM</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label" >Nama</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <input name="nama_lengkap" placeholder="Nama lengkap" class="form-control"  type="text">
-        </div>
-      </div>
-    </div>
+					<!-- radio checks -->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Jenis Kelamin</label>
+						<div class="col-md-4">
+							<div class="radio">
+								<label>
+								<input type="radio" name="jenkel" value="L" checked /> Laki-Laki
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+								<input type="radio" name="jenkel" value="P" /> Perempuan
+								</label>
+							</div>
+						</div>
+					</div>
 
-<!-- Select input-->
-       <div class="form-group">
-         <label class="col-md-4 control-label">Prodi</label>
-         <div class="col-md-4 inputGroupContainer">
-           <div class="input-group">
-             <select name="prodi" class="form-control selectpicker" >
-               <option value=" " >Pilih Prodi</option>
-               <option>Komsi</option>
-               <option>DTE</option>
-               <option>Metins</option>
-               <option>Elins</option>
-               <option>DTJ</option>
-             </select>
-           </div>
-         </div>
-       </div>
+					<!-- Text input-->
 
-      <!-- Select input-->
-              <div class="form-group">
-                <label class="col-md-4 control-label">Angkatan</label>
-                <div class="col-md-4 inputGroupContainer">
-                  <div class="input-group">
-                    <select name="angkatan" class="form-control selectpicker" >
-                      <option value=" " >Pilih angkatan</option>
-                      <option>2015</option>
-                      <option>2016</option>
-                      <option>2017</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Nomor Telpon #</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
 
-<!-- Text input-->
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" >Prodi</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<select class="form-control required" id="prodi" name="prodi">
+                                            <option value="0">Pilih Prodi</option>
+                                                <option value="1">KOMSI</option>
+                                                <option value="2">METINS</option>
+                                                <option value="3">DTE</option>
+                                                <option value="4">DTJ</option>
+                                                <option value="5">ELINS</option>
+                                        </select>
+							</div>
+						</div>
+					</div>
 
-      <div class="form-group">
-          <label class="col-md-4 control-label">Kelas</label>
-            <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                  <input name="kelas" placeholder="Kelas" class="form-control"  type="text">
-                </div>
-            </div>
-      </div>
+					<div class="form-group">
+						<label class="col-md-4 control-label" >Angkatan</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
 
-<!-- Select input-->
-      <div class="form-group">
-        <label class="col-md-4 control-label">Jenis Kelamin</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="input-group">
-              <select name="jenkel" class="form-control selectpicker" >
-                <option value=" ">Jenis Kelamin</option>
-                <option>Laki - laki</option>
-                <option>Perempuan</option>
-              </select>
-            </div>
-          </div>
-     </div>
+					<!-- Text input-->
 
-<!-- Input file-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" >Kelas</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="kelas" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
 
-    <div class="form-group">
-      <label class="col-md-4 control-label" >CV</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-			         <input type="file" name="input_pdf">
-		      </div>
-	      </div>
-    </div>
-<!-- Input file-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" >CV</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="cv" class="form-control"  type="file">
+							</div>
+						</div>
+					</div>
 
-    <div class="form-group" style="margin-bottom: 3%;">
-      <label class="col-md-4 control-label" >KRS</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-    			    <input type="file" name="input_krs">
-    		    </div>
-    	    </div>
-    </div>
-    <span style="background-color: #fff;"><hr style="display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;"></span>
+					<div class="form-group">
+						<label class="col-md-4 control-label" >KRS</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="krs" placeholder="Ekstensi PDF" class="form-control"  type="file">
+							</div>
+						</div>
+					</div>
 
-    <h3 style="margin-left: 20%;">Pilihan 1</h3>
-    <!-- Select input-->
-            <div class="form-group" style="margin-top: 3%;">
-              <label class="col-md-4 control-label">Sie</label>
-              <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                  <select name="sie" class="form-control selectpicker" >
-                    <option value=" " >Pilih sie</option>
-                    <option>Acara</option>
-                    <option>DDD</option>
-                    <option>Humas</option>
-                    <option>Transport</option>
-                    <option>Konsumsi</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-<!-- Text area -->
+					<!-- Text input-->
+					<legend>Pilih Sie Anda!</legend>
 
-    <div class="form-group">
-      <label class="col-md-4 control-label">Alasan</label>
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-              <textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
-            </div>
-          </div>
-      </div>
+					<!-- Text input-->
 
-<!-- Success message -->
-<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" >Event</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+							<?php
+                                if(!empty($event)){
+                                    	foreach ($event as $ev){?>
+								<p class="form-control" ><b><?php echo $ev->nama ?></b></p>
+							<?php
+                                        }
+                                }
+                            ?>
+							</div>
+						</div>
+					</div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Daftar<span class="glyphicon glyphicon-send"></span></button>
-    <button type="submit" class="btn btn-warning" >Pilihan 2<span class="glyphicon glyphicon-send"></span></button>
-  </div>
-</div>
+					<!-- Select Radio Button -->
 
-</fieldset>
-</form>
-</div>
-    </div><!-- /.container -->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Pilih Sie</label>
+						<div class="col-md-4">
+						<?php
+                            if(!empty($sie))
+                                {
+                                    foreach ($sie as $si)
+                                        {?>
+							<div class="checkbox">
+								<label>
+                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama ?>
+                            	</label>
+							</div>
+                        <?php
+                                		}
+                                }?>
+						</div>
+					</div>
 
-</body>
+					<!-- Text area -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-</script>
-<script type="text/javascript" src="https:////maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
-</script>
-<script type="text/javascript" src="https:////cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js">
-</script>
-<script type="text/javascript">
+					<div class="form-group">
+						<label class="col-md-4 control-label">Alasan</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+								<textarea class="form-control" name="alasan" placeholder="Project Description"></textarea>
+							</div>
+						</div>
+					</div>
+					<br>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label"></label>
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-success" >DAFTAR SEKARANG <span class="glyphicon glyphicon-send"></span></button>
+						</div>
+					</div>
 
+				</fieldset>
+			</form>
+		</div>
 
-$(document).ready(function() {
-$('#contact_form').bootstrapValidator({
-    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-    feedbackIcons: {
-        valid: 'glyphicon glyphicon-ok',
-        invalid: 'glyphicon glyphicon-remove',
-        validating: 'glyphicon glyphicon-refresh'
-    },
-    fields: {
-        nim: {
-            validators: {
-                    integer: {
-                    message: 'Inputan harus angka',
-                    thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
-                    decimalSeparator: '.' //ini ga boleh ada titik
-                },
-                    stringLength: {
-                      min: 5,
-                      max: 5,
-                      message: 'NIM hanya terdiri dari 5 angka'
-                    },
-                    notEmpty: {
-                    message: 'NIM tidak boleh kosong'
-                }
-            }
-        },
-         nama_lengkap: {
-            validators: {
-              stringLength: {
-                min: 4,
-                max: 50,
-                message: 'Minimal 4 karakter, Maksimal 50 karakter'
-              },
-                notEmpty: {
-                    message: 'Nama tidak boleh kosong'
-                }
-            }
-        },
-        prodi: {
-            validators: {
-                notEmpty: {
-                    message: 'Pilih prodi yang sesuai'
-                }
-            }
-        },
-        angkatan: {
-          validators: {
-            notEmpty: {
-              message: 'Pilih angkatan yang sesuai'
-            }
-          }
-        },
-        kelas: {
-          validators: {
-            notEmpty: {
-              message: 'Kelas tidak boleh kosong'
-            }
-          }
-        },
-        jenkel: {
-          validators: {
-            notEmpty: {
-              message: 'Pilih jenis kelamin'
-            }
-          }
-        },
-        sie: {
-          validators: {
-            notEmpty: {
-              message: 'Pilih sie terlebih dahulu'
-            }
-          }
-        },
-        input_pdf: {
-          validators: {
-            notEmpty: {
-              message: 'Input file terlebih dahulu (.pdf)'
-            },
-            file: {
-              extension: 'pdf',
-              message: 'Input file harus pdf'
-            }
-          }
-        },
-        input_krs: {
-          validators: {
-            notEmpty: {
-              message: 'Input file terlebih dahulu (.pdf)'
-            },
-            file: {
-              extension: 'pdf',
-              message: 'Input file harus pdf'
-            }
-          }
-        },
-        comment: {
-            validators: {
-                  stringLength: {
-                    min: 10,
-                    max: 200,
-                    message:'Minimal 10 karakter dan maksimal 200 karakter'
-                },
-                notEmpty: {
-                    message: 'Alasan tidak dapat kosong'
-                }
-                }
-            }
-        }
-    })
+	</body>
 
-    .on('success.form.bv', function(e) {
-        $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-            $('#contact_form').data('bootstrapValidator').resetForm();
-
-        // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
-        var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
-        var bv = $form.data('bootstrapValidator');
-
-        // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            console.log(result);
-        }, 'json');
-    });
-
-});
-
-
-</script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
+	<script type="text/javascript">
+		$(':checkbox').change(function(){
+			var len = $(':checkbox:checked').length;
+			$(':checkbox').not(':checked').prop('disabled',len >= 2)
+		});
+		$(document).ready(function() {
+		$('#contact_form').bootstrapValidator({
+			// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+			feedbackIcons: {
+				valid: 'glyphicon glyphicon-ok',
+				invalid: 'glyphicon glyphicon-remove',
+				validating: 'glyphicon glyphicon-refresh'
+			},
+			fields: {
+				nama: {
+					validators: {
+							stringLength: {
+							min: 3,
+						},
+							notEmpty: {
+							message: 'Mohon isi nama lengkap Anda'
+						}
+					}
+				},
+				nim: {
+					validators: {
+						 stringLength: {
+							min: 5,
+						},
+						notEmpty: {
+							message: 'Mohon isi NIM Fakultas Anda'
+						}
+					}
+				},
+				angkatan: {
+					validators: {
+						stringLength: {
+							min: 4,
+						},
+						notEmpty: {
+							message: 'Mohon isi angkatan Anda (contoh : 2015)'
+						}
+					}
+				},
+				prodi: {
+					validators: {
+						notEmpty: {
+							message: 'Mohon isi Prodi Anda'
+						}
+					}
+				},
+				phone: {
+					validators: {
+						stringLength: {
+							min: 12,
+						},
+						notEmpty: {
+							message: 'Mohon isi nomor telepon Anda'
+						}
+					}
+				},
+				kelas: {
+					validators: {
+						stringLength: {
+							min: 1,
+						},
+						notEmpty: {
+							message: 'Mohon isi kelas Anda'
+						}
+					}
+				},
+				cv: {
+					validators: {
+						notEmpty: {
+							message: 'Mohon lampirkan CV Anda'
+						}
+					}
+				},
+				krs: {
+					validators: {
+						notEmpty: {
+							message: 'Mohon lampirkan KRS Anda'
+						}
+					}
+				},
+				sie: {
+					validators: {
+						notEmpty: {
+							message: 'Mohon pilih Sie'
+						}
+					}
+				},
+				alasan: {
+					validators: {
+						  stringLength: {
+							min: 10,
+							max: 500,
+							message:'Please enter at least 10 characters and no more than 200'
+						},
+						notEmpty: {
+							message: 'Mohon isikan alasan Anda'
+						}
+						}
+					}
+				}
+			});
+		});
+	</script>
 </html>

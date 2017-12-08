@@ -33,18 +33,18 @@ class Uregist extends CI_Controller
         // $userId = $this->vendorId;
 		// $this->global['pageTitle'] = 'TEDI : Add New Data';
         // $data['regist'] = $this->regist_model->addNewReg($userId);
-        $idMape = $this->uri->segment('2');
-        $data['event'] = $this->mape_model->eventInfo($idMape);
-        $data['sie'] = $this->mape_model->mapeventInfo($idMape);
+        $idEvent = $this->uri->segment('2');
+        $data['event'] = $this->mape_model->eventInfo($idEvent);
+        $data['sie'] = $this->mape_model->mapeventInfo($idEvent);
 
         $this->load->view("form", $data, NULL);
     }
 
     function addNewRegist()
     {
+        $idEvent = $this->uri->segment('2');
         $this->load->library('form_validation');
             
-        $this->form_validation->set_rules('event','Event','trim|required');
         $this->form_validation->set_rules('nim','Nim','trim|required|max_length[128]|xss_clean');
         $this->form_validation->set_rules('nama','Nama','trim|required|max_length[128]|xss_clean');
         $this->form_validation->set_rules('telepon','Telepon','trim|required|max_length[128]|xss_clean');
@@ -96,14 +96,11 @@ class Uregist extends CI_Controller
                 $idRegist = $record->id_pendaftaran;
             }
 			
-			// --------- get id_event -----------------
-			
-            $getIdEvent = $this->event_model->listEvent(4);
-            
-			foreach ($getIdEvent as $record2) {
-                $idEvent = $record2->id_event;
-            }
-			
+            // $getIdEvent = $this->event_model->listEvent(4);
+            // foreach ($getIdEvent as $record2) {
+            //     $idEvent = $record2->id_event;
+            // }
+
 			// ----------- push data ke tabel MAHASISWA -----------//
             
             $mhsInfo = array('nim' =>$nim,'kelas' =>$kelas,'nama' =>$nama,'no_telp' =>$telepon,'angkatan' =>$angkatan,'jenkel' =>$jenkel,'id_prodi' =>$prodi);
@@ -113,35 +110,34 @@ class Uregist extends CI_Controller
             
 			$ziez = implode(",",$sie);
             $getIdMape = $this->mape_model->getMape($idEvent,$ziez[0]);
-            
-			foreach ($getIdMape as $record3) {
-                $idMape1 = $record3->id_sie;
-            }
-            
-			if($ziez[2] != null){
-                $getIdMape = $this->mape_model->getMape($idEvent,$ziez[2]);
+
                 foreach ($getIdMape as $record3) {
-                    $idMape2 = $record3->id_sie;
+                    $idMape = $record3->id_mapping_event;
+            }
+            if($ziez[2] != null){
+                $getIdMape2 = $this->mape_model->getMape($idEvent,$ziez[2]);
+                foreach ($getIdMape2 as $record3) {
+                    $idMape2 = $record3->id_mapping_event;
                 }
-                $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape1,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
+                $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $dpInfo2 = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape2,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
                 $this->detailpendaftaran_model->addNewDp($dpInfo2);
-            } else {
-                $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape1,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
+            }else{
+                $dpInfo = array('id_pendaftaran' =>$idRegist,'id_mapping_event' =>$idMape,'status' =>"proses",'createdDtm'=>date('Y-m-d H:i:s'));
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
             }
 
             if($result > 0)
             {
-                $this->session->set_flashdata('success', $idRegist." ".$idMape1." ".$idMape2);
+                $this->session->set_flashdata('success', "ID Regist=".$idRegist." |ID mape2=".$idMape2." |ID mape=".$idMape." |ziez=".$ziez);
             }
             else
             {
                 $this->session->set_flashdata('error', 'Sie creation failed');
             }
                 
-            redirect('addNewRegist');
+            redirect('viewDetail/'.$idEvent);
         }
     }
 }
