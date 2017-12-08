@@ -86,6 +86,7 @@ $route['editThread'] = "thread/editThread";
 $route['beranda'] = 'uberanda';
 $route['contact'] = 'uberanda/contact';
 $route['about'] = 'uberanda/about';
+$route['berhasil'] = 'uberanda/berhasil';
 $route['detail_event/(:num)'] = 'uberanda/detail_event/$1';
 $route['viewDetail/(:num)'] = 'uregist/addNew';
 $route['viewDetailNow/(:num)'] = 'uregist/addNewRegist/$1';
