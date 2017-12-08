@@ -5,9 +5,43 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
+		<!-- Custom styles for this template -->
+    <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/lambangevent.ico">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
+      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <script src="script.js"></script>
+
 	</head>
 	<body>
-		<div class="container">
+		<!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
+      <div class="container">
+
+        <!-- <a class="navbar-brand" href="beranda">Evently</a> -->
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
+          <!-- <span class="navbar-toggler-icon"></span> -->
+        <!-- </button> -->
+
+        <!-- LOGO -->
+        <div class="logo" style="width: 250px">
+          <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
+        </div>
+
+
+
+         <div class="collapse" id='cssmenu'>
+      <ul>
+          <li class='active'><a href='#'>Event</a></li>
+          <li><a href='#'>Tentang</a></li>
+          <li><a href='#'>Contact</a></li>
+          <li><a href='#'>Admin</a></li>
+      </ul>
+    </div>
+    </nav>
+    <br>
+
+		<div class="container" style="width: 80%; margin-top: 3%;">
 
 			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post"  id="contact_form">
 
@@ -75,7 +109,7 @@
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<select class="form-control required" id="prodi" name="prodi">
-                                            <option value="0">Pilih Prodi</option>
+                                            <option value="">Pilih Prodi</option>
                                                 <option value="1">KOMSI</option>
                                                 <option value="2">METINS</option>
                                                 <option value="3">DTE</option>
@@ -195,7 +229,12 @@
 		</div>
 
 	</body>
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+			<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
 
+		<!-- /.container -->
+	</footer>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
@@ -215,32 +254,48 @@
 			fields: {
 				nama: {
 					validators: {
-							stringLength: {
-							min: 3,
+						stringLength: {
+							min: 4,
+							max: 50,
+							message: 'Minimal 4 karakter, Maksimal 50 karakter'
 						},
 							notEmpty: {
-							message: 'Mohon isi nama lengkap Anda'
-						}
+									message: 'Nama tidak boleh kosong'
+							}
 					}
 				},
 				nim: {
 					validators: {
-						 stringLength: {
-							min: 5,
-						},
-						notEmpty: {
-							message: 'Mohon isi NIM Fakultas Anda'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 5,
+										max: 5,
+										message: 'NIM hanya terdiri dari 5 angka'
+									},
+									notEmpty: {
+									message: 'NIM tidak boleh kosong'
+							}
 					}
 				},
 				angkatan: {
 					validators: {
-						stringLength: {
-							min: 4,
-						},
-						notEmpty: {
-							message: 'Mohon isi angkatan Anda (contoh : 2015)'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 4,
+										max: 4,
+										message: 'Wrong'
+									},
+									notEmpty: {
+									message: 'Angkatan tidak boleh kosong'
+							}
 					}
 				},
 				prodi: {
@@ -250,14 +305,21 @@
 						}
 					}
 				},
-				phone: {
+				telepon: {
 					validators: {
-						stringLength: {
-							min: 12,
-						},
-						notEmpty: {
-							message: 'Mohon isi nomor telepon Anda'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 12,
+										max: 12,
+										message: 'Wrong number'
+									},
+									notEmpty: {
+									message: 'Nomer telfon tidak boleh kosong'
+							}
 					}
 				},
 				kelas: {
@@ -272,17 +334,25 @@
 				},
 				cv: {
 					validators: {
-						notEmpty: {
-							message: 'Mohon lampirkan CV Anda'
-						}
-					}
+            notEmpty: {
+              message: 'Mohon lampirkan cv anda (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
+            }
+          }
 				},
 				krs: {
 					validators: {
-						notEmpty: {
-							message: 'Mohon lampirkan KRS Anda'
-						}
-					}
+            notEmpty: {
+              message: 'Mohon lampirkan krs anda (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
+            }
+          }
 				},
 				sie: {
 					validators: {
@@ -296,7 +366,7 @@
 						  stringLength: {
 							min: 10,
 							max: 500,
-							message:'Please enter at least 10 characters and no more than 200'
+							message:'Please enter at least 10 characters and no more than 500 characters'
 						},
 						notEmpty: {
 							message: 'Mohon isikan alasan Anda'
