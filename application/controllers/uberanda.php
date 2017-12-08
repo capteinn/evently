@@ -51,6 +51,14 @@ class Uberanda extends CI_Controller
 		
 		$this->load->view('detail_event', $threadRecords);
 	}
+	
+	function contact() {
+		$this->load->view('contact');
+	}
+	
+	function about() {
+		$this->load->view('about');
+	}
     
 }
 
