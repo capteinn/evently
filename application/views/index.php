@@ -8,14 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Evently</title>
+    <title>Evently | E-Recruitment </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>assets/bootstrap/css/modern-business.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/lambangevent.ico" />
+    <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/lambangevent.ico">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
+      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <script src="script.js"></script>
+       />
 
   </head>
 
@@ -37,21 +41,16 @@
 
 
     
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="">Event</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Tentang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Kontak</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+         <div class="collapse" id='cssmenu'>
+      <ul>
+          <li class='active'><a href='#'>Event</a></li>
+          <li><a href='#'>Tentang</a></li>
+          <li><a href='#'>Contact</a></li>
+          <li><a href='#'>Admin</a></li>
+      </ul>
+    </div>
     </nav>
+    <br>
 
     <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
