@@ -62,9 +62,15 @@
         <h1><i class="fa fa-check"></i></h1>
         <h2>Pendaftaran Berhasil!</h2>
         <p>Selamat Anda telah berhasil melakukan pendaftaran sebagai panitia event.</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
       </div>
       <!-- /.jumbotron -->
-
     </div>
     <!-- /.container -->
 
