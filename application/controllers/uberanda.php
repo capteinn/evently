@@ -27,6 +27,10 @@ class Uberanda extends CI_Controller
 		$data['threadRecords'] = $this->beranda_model->listThread();
         $this->load->view("index.php", $data);
     }
+	
+	function detail_event() {
+		$this->load->view('detail_event');
+	}
     
 }
 

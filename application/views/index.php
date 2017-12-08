@@ -18,8 +18,6 @@
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-      <script src="script.js"></script>
-       />
 
   </head>
 
@@ -46,7 +44,6 @@
           <li class='active'><a href='#'>Event</a></li>
           <li><a href='#'>Tentang</a></li>
           <li><a href='#'>Contact</a></li>
-          <li><a href='#'>Admin</a></li>
       </ul>
     </div>
     </nav>
