@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
   <div class="container" style="width: 70%; margin-top: 3%;">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
       <center><h3>FORM PENDAFTARAN</h3></center>
