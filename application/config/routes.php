@@ -84,6 +84,7 @@ $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'uberanda';
+$route['detail_event/(:num)'] = 'uberanda/detail_event/$1';
 $route['viewDetail/(:num)'] = 'uregist/addNew';
 $route['viewDetailNow/(:num)'] = 'uregist/addNewRegist/$1';
 $route['form_regist'] = 'uform_regist';

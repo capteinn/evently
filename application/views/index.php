@@ -8,40 +8,46 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Evently | E-Recruitment </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>assets/bootstrap/css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/lambangevent.ico">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
+      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url(); ?>beranda">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="">Event</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Tentang</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">Kontak</a>
-            </li>
-          </ul>
+
+        <!-- <a class="navbar-brand" href="beranda">Evently</a> -->
+        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
+          <!-- <span class="navbar-toggler-icon"></span> -->
+        <!-- </button> -->
+
+        <!-- LOGO -->
+        <div class="logo" style="width: 250px"> 
+          <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
         </div>
-      </div>
+
+
+    
+         <div class="collapse" id='cssmenu'>
+      <ul>
+          <li class='active'><a href='#'>Event</a></li>
+          <li><a href='#'>Tentang</a></li>
+          <li><a href='#'>Contact</a></li>
+      </ul>
+    </div>
     </nav>
+    <br>
 
     <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -52,25 +58,28 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p>
-            </div>
+          <div class="carousel-item active">
+            <img src="assets/poster/vocomfest.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>First Slide</h3> -->
+              <!-- <p>This is a description for the first slide.</p> -->
+            <!-- </div> -->
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
+          <div class="carousel-item" >
+            <img src="assets/poster/child.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>Second Slide</h3> -->
+              <!-- <p>This is a description for the second slide.</p> -->
+            <!-- </div> -->
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
+          <div class="carousel-item">
+            <img src="assets/poster/algorithm.jpg">
+            <!-- <div class="carousel-caption d-none d-md-block"> -->
+              <!-- <h3>Third Slide</h3> -->
+              <!-- <p>This is a description for the third slide.</p> -->
+            <!-- </div> -->
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -151,7 +160,9 @@
               <p class="card-text">Event ID : <?php echo $record->id_event; ?></p>
               <p class="card-text">Thread ID : <?php echo $record->id_thread; ?></p>
             </div>
-			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>
+				<!-- amankan sek sebelum migrasi :v -->
+			    <!--<a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>-->
+			    <a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" type="button" class="btn btn-info">DETAIL</a>
           </div>
         </div>
 		<?php

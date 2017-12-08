@@ -27,6 +27,30 @@ class Uberanda extends CI_Controller
 		$data['threadRecords'] = $this->beranda_model->listThread();
         $this->load->view("index.php", $data);
     }
+	
+	function detail_event($id_thread) {
+		$detail_event = $this->beranda_model->threadInfo($id_thread);
+		
+		foreach ($detail_event as $record) {
+			
+			$nama_sie = $this->beranda_model->sieInfo($record->id_event);
+			
+			$threadRecords = array(
+							'id_event'=>$record->id_event,
+							'poster'=>$record->poster,
+							'nama'=>$record->nama,
+                            'judul'=>$record->judul,
+                            'mulai'=>$record->tgl_mulai,
+                            'selesai'=>$record->tgl_selesai,
+                            'deskripsi'=>$record->deskripsi,
+                            'sie'=>$nama_sie
+							);
+			
+		}
+		
+		
+		$this->load->view('detail_event', $threadRecords);
+	}
     
 }
 

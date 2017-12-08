@@ -38,7 +38,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- radio checks -->
 					<div class="form-group">
 						<label class="col-md-4 control-label">Jenis Kelamin</label>
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Text input-->
 
 					<div class="form-group">
@@ -67,7 +67,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Text input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Prodi</label>
@@ -95,7 +95,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Text input-->
 
 					<div class="form-group">
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<label class="col-md-4 control-label" >CV</label>
 						<div class="col-md-4 inputGroupContainer">
@@ -117,7 +117,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<label class="col-md-4 control-label" >KRS</label>
 						<div class="col-md-4 inputGroupContainer">
@@ -130,7 +130,7 @@
 
 					<!-- Text input-->
 					<legend>Pilih Sie Anda!</legend>
-						
+
 					<!-- Text input-->
 
 					<div class="form-group">
@@ -147,8 +147,8 @@
                             ?>
 							</div>
 						</div>
-					</div>	
-						
+					</div>
+
 					<!-- Select Radio Button -->
 
 					<div class="form-group">
@@ -168,7 +168,7 @@
                                 		}
                                 }?>
 						</div>
-					</div>					
+					</div>
 
 					<!-- Text area -->
 
