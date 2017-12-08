@@ -9,7 +9,7 @@
 	<body>
 		<div class="container">
 
-			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post"  id="contact_form">
+			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
 
 				<fieldset>
 					<!-- Form Name -->
@@ -161,7 +161,7 @@
                                         {?>
 							<div class="checkbox">
 								<label>
-                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama ?>
+                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama."=>".$si->id_sie ?>
                             	</label>
 							</div>
                         <?php

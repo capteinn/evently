@@ -140,4 +140,37 @@ class Uregist extends CI_Controller
             redirect('viewDetail/'.$idEvent);
         }
     }
+    function do_upload() {
+            $nim = $this->input->post('nim');
+        // setting konfigurasi upload
+        $namaFile = "berkasEvently".time(); 
+        $config['upload_path'] = './assets/mahasiswa/';
+        $config['allowed_types'] = 'gif|jpg|png|pdf';
+        $config['file_name'] = $namaFile;
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('cv');
+        $result1 = $this->upload->data();
+        // upload gambar 2
+        $this->upload->do_upload('krs');
+        $result2 = $this->upload->data();
+        // upload gambar 1
+        // menyimpan hasil upload
+        $result = array('cv'=>$result1,'krs'=>$result2);
+
+        $regInfo = array('nim'=>$nim,'cv'=>$result['cv']['file_name'].'.pdf','krs'=>$result['krs']['file_name'].'.pdf', 'createdDtm'=>date('Y-m-d H:i:s'));
+        $this->regist_model->addNewReg($regInfo);
+
+        // // menampilkan hasil upload
+        // echo "<pre>";
+        // print_r($result);
+        // echo "</pre>";
+        // // cara akses file name dari gambar 1
+        echo  $result['cv']['file_name']."<br>";
+        // cara akses file name dari gambar 1
+        echo  $result['krs']['file_name']."<br>";
+        // cara akses file name dari gambar 1
+        // echo  $result['lele'];
+    }
 }

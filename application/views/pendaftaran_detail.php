@@ -23,24 +23,24 @@
 							<div class="col-md-1">
 								<h4>Nama</h4>
 							</div>
-							<div class="col-md-2">
-								<h4>: <?php echo $pendaftaranDetailRecords[0]->nama_mahasiswa; ?></h4>
+							<div class="col-md-4">
+								<h4>: &nbsp;<?php echo $pendaftaranDetailRecords[0]->nama_mahasiswa; ?></h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-1">
 								<h4>NIM</h4>
 							</div>
-							<div class="col-md-2">
-								<h4>: <?php echo $pendaftaranDetailRecords[0]->nim; ?></h4>
+							<div class="col-md-4">
+								<h4>: &nbsp;<?php echo $pendaftaranDetailRecords[0]->nim; ?></h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-1">
 								<h4>Event</h4>
 							</div>
-							<div class="col-md-2">
-								<h4>: <?php echo $pendaftaranDetailRecords[0]->nama_event; ?></h4>
+							<div class="col-md-4">
+								<h4>: &nbsp;<?php echo $pendaftaranDetailRecords[0]->nama_event; ?></h4>
 							</div>
 						</div>
                     </div><!-- /.box-header -->                    
