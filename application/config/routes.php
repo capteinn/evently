@@ -37,7 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['upload/(:num)'] = "upload/do_upload/$1";
 $route['default_controller'] = "uberanda";
 $route['404_override'] = 'error';
 
