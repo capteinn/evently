@@ -51,9 +51,9 @@
 
         <div class="collapse" id='cssmenu'>
 			<ul>
-   				<li class='active'><a href='#'>Event</a></li>
-   				<li><a href='#'>Tentang</a></li>
-			    <li><a href='#'>Contact</a></li>
+   				<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+   				<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+			    <li><a href='<?php echo base_url();?>contact'>Contact</a></li>
 			</ul>
 		</div>
 
@@ -75,7 +75,7 @@
 
 			<ol class="breadcrumb">
 			<li class="breadcrumb-item">
-				<a href="index.html">Beranda</a>
+				<a href="<?php echo base_url();?>">Beranda</a>
 			</li>
 			<li class="breadcrumb-item active">Detail Event</li>
 			</ol>
@@ -160,7 +160,7 @@
 		<!-- /.container -->
 
 		<!-- Footer -->
-		<footer class="py-5 bg-dark">
+		<footer class="py-3 bg-dark">
 			<div class="container">
 				<p class="m-0 text-center text-white">Copyright &copy; Proyek SI 2017</p>
 			</div>
