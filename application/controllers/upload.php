@@ -83,7 +83,7 @@ class upload extends CI_Controller {
                 $this->detailpendaftaran_model->addNewDp($dpInfo);
         }
         //sementara
-       redirect('/beranda');
+       redirect('/berhasil');
 
     }
 

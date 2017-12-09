@@ -80,9 +80,9 @@
 						<br>
 					</div>
 					
-					<!-- Sidebar Widgets Column -->
+					<!-- Sidebar Widgets Column 
 					<div class="col-md-4">
-						<!-- Search Widget -->
+						
 						<div class="card mb-4">
 							<h5 class="card-header">Daftar Sekarang!</h5>
 							<div class="card-body">
@@ -93,7 +93,7 @@
 							</div>
 						</div>
 
-						<!-- Side Widget -->
+						
 						<div class="card my-4">
 							<h5 class="card-header">Tanggal Registrasi</h5>
 							<div class="card-body">
@@ -103,7 +103,48 @@
 									</div>	
 									<div class="col-md-6" >
 										<p>Sampai<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('F Y'); ?> </p>
-									</div>
+									</div>-->
+
+				<!-- Sidebar Widgets Column -->
+				<div class="col-md-4">
+					<!-- Side Widget -->
+					<div class="card my-4">
+						<h5 class="card-header">Tanggal Registrasi</h5>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6">
+									<p>Dari<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('F Y'); ?> </p>
+								</div>	
+								<div class="col-md-6" >
+									<p>Sampai<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('F Y'); ?> </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Search Widget -->
+					<div class="card mb-4">
+						<h5 class="card-header">Daftar Sekarang!</h5>
+						<div class="card-body">
+							<center>
+							<?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "Pendaftaran Dibuka";}else{echo "Pendaftaran Ditutup";}?>
+							</center>
+								<br>
+							<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
+								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "disabled=true";}?> >
+							</form>
+						</div>
+					</div>
+					<?php $wMulai = date ("Y-m-d", strtotime ($selesai ."+1 days")); $wSelesai = date ("Y-m-d", strtotime ($selesai ."+2 days")); ?>
+					<!-- Side Widget -->
+					<div class="card my-4">
+						<h5 class="card-header">Tanggal Wawancara</h5>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6">
+									<p>Dari<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $wMulai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $wMulai)->format('F Y'); ?> </p>
+								</div>	
+								<div class="col-md-6" >
+									<p>Sampai<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $wSelesai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $wSelesai)->format('F Y'); ?> </p>
 								</div>
 							</div>
 						</div>
