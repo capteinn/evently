@@ -68,7 +68,6 @@ class Thread extends BaseController
             
         $this->form_validation->set_rules('event','Event','trim|required|numeric');
         $this->form_validation->set_rules('judul','Judul','trim|required|max_length[128]|xss_clean');
-        $this->form_validation->set_rules('poster','Poster','required');
         $this->form_validation->set_rules('tgl_mulai','Tanggal Mulai','trim|required');
         $this->form_validation->set_rules('tgl_selesai','Tanggal Selesai','trim|required');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
@@ -79,33 +78,33 @@ class Thread extends BaseController
         }
         else
         {
-			$namaFile = "gambarEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
+			// $namaFile = "gambarEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
             $config['upload_path'] = './assets/poster/';
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size'] = 100;
+			$config['max_size'] = 1000;
 			$config['max_width'] = 1024;
 			$config['max_height'] = 768;
-			$config['file_name'] = $namaFile; //nama yang terupload nantinya
+			// $config['file_name'] = $namaFile; //nama yang terupload nantinya
 
 			$this->load->library('upload', $config);
 			//masih error boss, belum bisa upload gambar ke directory assets/poster
 			
             $event = $this->input->post('event');
             $judul = $this->input->post('judul');
-            $poster = $this->input->post('poster');
 			$tgl_mulai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_mulai'))->format('Y-m-d');
 			$tgl_selesai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_selesai'))->format('Y-m-d');
             $deskripsi = $this->input->post('deskripsi');
-               
-            $threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$poster, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
-            
-            $result = $this->thread_model->addNewThread($threadInfo);
             
 			if ( ! $this->upload->do_upload('poster')){
 				$error = array('error' => $this->upload->display_errors());
+				echo $error['error'];
 			}else{
-				$terupload = array('upload_data' => $this->upload->data());
+				// $terupload = array('upload_data' => $this->upload->data());
+				$terupload = $this->upload->data();
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$terupload['file_name'], 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
 			}
+			
+            $result = $this->thread_model->addNewThread($threadInfo);
 			
             if($result > 0)
             {

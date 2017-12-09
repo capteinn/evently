@@ -19,7 +19,7 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
-                    <form role="form" id="addThread" action="<?php echo base_url() ?>addNewThreadNow" method="post" role="form">
+                    <form role="form" id="addThread" action="<?php echo base_url() ?>addNewThreadNow" method="post" enctype="multipart/form-data" >
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -52,7 +52,7 @@
                                 <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="fname">Poster Thread</label>
-                                        <input type="file" class="form-control required" id="poster" name="poster" maxlength="128">
+                                        <input type="file" class="form-control required" id="poster" name="poster" >
                                     </div>
                                 </div>   
                             </div>

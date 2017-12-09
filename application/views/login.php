@@ -18,7 +18,7 @@
 	<body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>Evently</b><br>Administrator</a>
+        <a href="#"><b>Evently</b><br>Event Manager</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg"></p>
