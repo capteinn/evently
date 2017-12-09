@@ -14,32 +14,6 @@
 
 	</head>
 	<body>
-		<!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
-      <div class="container">
-
-        <!-- <a class="navbar-brand" href="beranda">Evently</a> -->
-        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
-          <!-- <span class="navbar-toggler-icon"></span> -->
-        <!-- </button> -->
-
-        <!-- LOGO -->
-        <div class="logo" style="width: 250px">
-          <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
-        </div>
-
-
-
-         <div class="collapse" id='cssmenu'>
-      <ul>
-          <li class='active'><a href='#'>Event</a></li>
-          <li><a href='#'>Tentang</a></li>
-          <li><a href='#'>Contact</a></li>
-          <li><a href='#'>Admin</a></li>
-      </ul>
-    </div>
-    </nav>
-    <br>
 
 		<div class="container" style="width: 80%; margin-top: 3%;">
 
@@ -229,12 +203,7 @@
 		</div>
 
 	</body>
-	<!-- Footer -->
-	<footer class="py-5 bg-dark">
-			<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
 
-		<!-- /.container -->
-	</footer>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
