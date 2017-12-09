@@ -111,7 +111,7 @@
 						<div class="card-body">
 							<?php if (date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "<p>Pendaftaran belum dibuka / sudah ditutup</p>";}?>
 							<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
-								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "disabled=true";}?>>
+								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "disabled=true";}?> >
 							</form>
 						</div>
 					</div>
