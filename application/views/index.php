@@ -18,6 +18,12 @@
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <style type="text/css">
+        /*disamping*/
+        /*#wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}*/
+        /*dibawah*/
+        #wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}
+      </style>
 
   </head>
 
@@ -96,7 +102,9 @@
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#"><?php echo $record->nama; ?></a>
+                <span id="wktBeranda"><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y')." - ".DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
               </h4>
+              
               <p class="card-text"><i>"<?php echo $record->judul; ?>"</i></p>
               <p class="card-text"><?php echo $record->deskripsi; ?></p>
 
