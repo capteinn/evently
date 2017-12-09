@@ -23,7 +23,8 @@
         #wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}
         /*dibawah*/
         /*#wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}*/
-      </style>
+		
+	  </style>
 
   </head>
 
@@ -99,14 +100,15 @@
 		<div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#"><?php echo $record->nama; ?></a>
-                <span id="wktBeranda"><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y')." - ".DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
-              </h4>
-              
-              <p class="card-text"><i>"<?php echo $record->judul; ?>"</i></p>
-              <p class="card-text"><?php echo $record->deskripsi; ?></p>
+            <div class="card-footer text-muted">
+              <p style="float: right; padding: 0; margin: 0; font-size: 12px;" ><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y')." - ".DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></p>
+            </div>
+			<div class="card-body">
+				<h4 class="card-title">
+					<font color="#007bff"><?php echo $record->nama; ?></font>
+				</h4>
+				<p ><i>"<?php echo $record->judul; ?>"</i></p>
+				<p ><?php echo $record->deskripsi; ?></p>
 
             </div>
 			    <a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" type="button" class="btn btn-info">DETAIL</a>
