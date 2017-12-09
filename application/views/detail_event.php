@@ -102,14 +102,17 @@
 					<hr>
 					<br>
 				</div>
-
+				
 				<!-- Sidebar Widgets Column -->
 				<div class="col-md-4">
 					<!-- Search Widget -->
 					<div class="card mb-4">
 						<h5 class="card-header">Daftar Sekarang!</h5>
 						<div class="card-body">
-							<a style="width: 100%;" href="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>" class="btn btn-info" type="button">DAFTAR SEKARANG!</a>
+							<?php if (date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "<p>Pendaftaran belum dibuka / sudah ditutup</p>";}?>
+							<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
+								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "disabled=true";}?> >
+							</form>
 						</div>
 					</div>
 

@@ -47,7 +47,7 @@ class Uberanda extends CI_Controller
 							);
 			
 		}
-		
+		 
 		
 		$this->load->view('detail_event', $threadRecords);
 	}
