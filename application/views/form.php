@@ -14,7 +14,25 @@
 
 	</head>
 	<body>
+		<nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
+		 <div class="container">
 
+			 <!-- LOGO -->
+			 <div class="logo" style="width: 250px">
+				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
+			 </div>
+
+			 <div class="collapse" id='cssmenu'>
+	<ul>
+			<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+			<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+			<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+	</ul>
+ </div>
+
+
+		 </div>
+	 </nav>
 		<div class="container" style="width: 80%; margin-top: 3%;">
 
 			<form class="well form-horizontal" action="<?php echo base_url() ?>viewDetailNow/<?php echo $this->uri->segment('2') ?>" method="post"  id="contact_form">
