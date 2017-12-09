@@ -18,8 +18,12 @@
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-      <script src="script.js"></script>
-       />
+      <style type="text/css">
+        /*disamping*/
+        /*#wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}*/
+        /*dibawah*/
+        #wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}
+      </style>
 
   </head>
 
@@ -29,14 +33,9 @@
     <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
       <div class="container">
 
-        <!-- <a class="navbar-brand" href="beranda">Evently</a> -->
-        <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
-          <!-- <span class="navbar-toggler-icon"></span> -->
-        <!-- </button> -->
-
         <!-- LOGO -->
         <div class="logo" style="width: 250px"> 
-          <a href="index.php" title="Evently"><img src="assets/images/evently.png" alt="Evently" /></a>
+          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently" /></a>
         </div>
 
 
@@ -44,9 +43,8 @@
          <div class="collapse" id='cssmenu'>
       <ul>
           <li class='active'><a href='#'>Event</a></li>
-          <li><a href='#'>Tentang</a></li>
-          <li><a href='#'>Contact</a></li>
-          <li><a href='#'>Admin</a></li>
+          <li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
+          <li><a href="<?php echo base_url(); ?>contact">Kontak</a></li>
       </ul>
     </div>
     </nav>
@@ -62,27 +60,15 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active">
-            <img src="assets/poster/vocomfest.jpg">
-            <!-- <div class="carousel-caption d-none d-md-block"> -->
-              <!-- <h3>First Slide</h3> -->
-              <!-- <p>This is a description for the first slide.</p> -->
-            <!-- </div> -->
+            <img src="<?php echo base_url();?>assets/poster/vocomfest.jpg">
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item" >
-            <img src="assets/poster/child.jpg">
-            <!-- <div class="carousel-caption d-none d-md-block"> -->
-              <!-- <h3>Second Slide</h3> -->
-              <!-- <p>This is a description for the second slide.</p> -->
-            <!-- </div> -->
+            <img src="<?php echo base_url();?>assets/poster/child.jpg">
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
           <div class="carousel-item">
-            <img src="assets/poster/algorithm.jpg">
-            <!-- <div class="carousel-caption d-none d-md-block"> -->
-              <!-- <h3>Third Slide</h3> -->
-              <!-- <p>This is a description for the third slide.</p> -->
-            <!-- </div> -->
+            <img src="<?php echo base_url();?>assets/poster/algorithm.jpg">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -98,46 +84,6 @@
 
     <div class="container">
     <!-- Page Content 
-
-      <h1 class="my-4">Welcome to Modern Business</h1>
-
-      <!-- Marketing Icons Section
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>-->
-      <!-- /.row -->
 
 		<!-- Portfolio Section -->
 		<br>
@@ -156,14 +102,14 @@
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#"><?php echo $record->nama; ?></a>
+                <span id="wktBeranda"><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y')." - ".DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
               </h4>
+              
               <p class="card-text"><i>"<?php echo $record->judul; ?>"</i></p>
               <p class="card-text"><?php echo $record->deskripsi; ?></p>
-              <p class="card-text">Mapping Event ID : <?php echo $record->id_mapping_event; ?></p>
-              <p class="card-text">Event ID : <?php echo $record->id_event; ?></p>
-              <p class="card-text">Thread ID : <?php echo $record->id_thread; ?></p>
+
             </div>
-			     <a href="<?php echo base_url(); ?>viewDetail/<?php echo $record->id_event; ?>" type="button" class="btn btn-info">DETAIL</a>
+			    <a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" type="button" class="btn btn-info">DETAIL</a>
           </div>
         </div>
 		<?php
@@ -172,47 +118,13 @@
 		?>
       <!-- /.row -->
 
-      <!-- Features Section
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>Modern Business Features</h2>
-          <p>The Modern Business template by Start Bootstrap includes:</p>
-          <ul>
-            <li>
-              <strong>Bootstrap v4</strong>
-            </li>
-            <li>jQuery</li>
-            <li>Font Awesome</li>
-            <li>Working contact form with validation</li>
-            <li>Unstyled page elements for easy customization</li>
-          </ul>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-        </div>
-        <div class="col-lg-6">
-          <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-        </div>
-      </div>-->
-      <!-- /.row -->
-
-
-      <!-- Call to Action Section 
-      <hr>
-      <div class="row mb-4">
-        <div class="col-md-8">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-        </div>
-        <div class="col-md-4">
-          <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-        </div>
-      </div>-->
-
     </div>
 	</div>
     <!-- /.container -->
 
   </body>
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-3 bg-dark">
         <p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
 
       <!-- /.container -->

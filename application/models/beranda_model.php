@@ -9,14 +9,13 @@ class Beranda_model extends CI_Model
      */
     function listThread()
     {
-        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama, me.id_mapping_event, e.id_event');
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama, me.id_mapping_event, e.id_event, s.nama as nama_sie');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
         $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
         $this->db->join('sie as s', 'me.id_sie = s.id_sie');
 		$this->db->group_by('t.id_thread');
         $this->db->limit(6);
-        $this->db->group_by('t.id_thread');
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
@@ -45,10 +44,12 @@ class Beranda_model extends CI_Model
      */
     function threadInfo($id_thread)
     {
-        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.id_event');
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama, me.id_mapping_event, e.id_event, s.nama as nama_sie');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
-        $this->db->where('t.id_thread', $id_thread);
+        $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
+        $this->db->join('sie as s', 'me.id_sie = s.id_sie');
+		$this->db->where('id_thread', $id_thread);
         $query = $this->db->get();
         
         return $query->result();
@@ -59,28 +60,17 @@ class Beranda_model extends CI_Model
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function eventInfo($userId)
+    function sieInfo($id_event)
     {
-        $this->db->select('id_event, nama, deskripsi');
-        $this->db->from('event');
-        $this->db->where('createdBy', $userId);
+        $this->db->select('s.nama');
+        $this->db->from('mapping_event as me', 'me.id_event = e.id_event');
+        $this->db->join('event as e', 'me.id_event = e.id_event');
+        $this->db->join('sie as s', 'me.id_sie = s.id_sie');
+		$this->db->where('e.id_event', $id_event);
         $query = $this->db->get();
         
         $result = $query->result();        
         return $result;
-    }
-	
-	/**
-     * This function is used to update the thread information
-     * @param array $threadInfo : This is thread updated information
-     * @param number $id_thread : This is thread id
-     */
-    function editThread($threadInfo, $id_thread)
-    {
-        $this->db->where('id_thread', $id_thread);
-        $this->db->update('thread', $threadInfo);
-        
-        return TRUE;
     }
 	
 }

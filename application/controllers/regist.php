@@ -15,7 +15,7 @@ class Regist extends CI_Controller
      * This is default constructor of the class
      */
     public function __construct()
-    {
+    { 
         parent::__construct();
         $this->load->model('regist_model'); 
         $this->load->model('mape_model'); 
@@ -61,7 +61,7 @@ class Regist extends CI_Controller
             $this->addNew();
         }
         else
-        {
+        { 
             $nim = $this->input->post('nim');
             $nama = $this->input->post('nama');
             $telepon = $this->input->post('telepon');
@@ -69,19 +69,22 @@ class Regist extends CI_Controller
             $angkatan = $this->input->post('angkatan');
             $kelas = $this->input->post('kelas');
             $jenkel = $this->input->post('jenkel');
-            $cv = $this->input->post('cv');
-            $krs = $this->input->post('krs');
             $sie = $this->input->post('sie');
 
-            $namaFile = "dokumenEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
-            $config['upload_path'] = './assets/mahasiswa/';
-            $config['allowed_types'] = 'pdf';
-            $config['max_size'] = 1000;
+            $namaFile = "gambarEvently".time(); //nama file diberi nama langsung dan diikuti fungsi time
+            $config['upload_path'] = './assets/poster/';
+            $config['allowed_types'] = 'gif|jpg|png|pdf';
+            $config['max_size'] = 100;
+            $config['max_width'] = 1024;
+            $config['max_height'] = 768;
             $config['file_name'] = $namaFile; //nama yang terupload nantinya
 
             $this->load->library('upload', $config);
+            //masih error boss, belum bisa upload gambar ke directory assets/poster
             
-           
+
+            $cv = $this->input->post('cv');
+            $krs = $this->input->post('krs');
 
             $regInfo = array('nim'=>$nim,'cv'=>$cv,'krs'=>$krs, 'createdDtm'=>date('Y-m-d H:i:s'));
             $result = $this->regist_model->addNewReg($regInfo);

@@ -37,7 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['upload/(:num)'] = "upload/do_upload/$1";
 $route['default_controller'] = "uberanda";
 $route['404_override'] = 'error';
 
@@ -84,6 +84,10 @@ $route['editThread'] = "thread/editThread";
 
 /*********** BERANDA DEFINED ROUTES *******************/
 $route['beranda'] = 'uberanda';
+$route['contact'] = 'uberanda/contact';
+$route['about'] = 'uberanda/about';
+$route['berhasil'] = 'uberanda/berhasil';
+$route['detail_event/(:num)'] = 'uberanda/detail_event/$1';
 $route['viewDetail/(:num)'] = 'uregist/addNew';
 $route['viewDetailNow/(:num)'] = 'uregist/addNewRegist/$1';
 $route['form_regist'] = 'uform_regist';
