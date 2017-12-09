@@ -57,6 +57,6 @@
 		<!-- ./container -->
     </body>
 	<footer>
-		<small>&copy; 2013 Proyek SI	 Network. All rights reserved.</small>
+		<small>&copy; 2017 Proyek SI Network. All rights reserved.</small>
 	</footer>
 </html>
