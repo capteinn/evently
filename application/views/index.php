@@ -20,9 +20,9 @@
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
       <style type="text/css">
         /*disamping*/
-        /*#wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}*/
+        #wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}
         /*dibawah*/
-        #wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}
+        /*#wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}*/
       </style>
 
   </head>
