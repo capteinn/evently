@@ -15,7 +15,8 @@ class Beranda_model extends CI_Model
         $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
         $this->db->join('sie as s', 'me.id_sie = s.id_sie');
 		$this->db->group_by('t.id_thread');
-        $this->db->limit(6);
+        $this->db->order_by('t.id_thread', 'desc');
+		$this->db->limit(9);
         $query = $this->db->get();
         $result = $query->result();        
         return $result;
