@@ -33,7 +33,7 @@
 					<ul>
 						<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
 						<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-						<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+						<li><a href='<?php echo base_url();?>contact'>Kontak</a></li>
 					</ul>
 				</div>
 			</div>
