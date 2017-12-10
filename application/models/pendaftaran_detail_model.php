@@ -9,7 +9,7 @@ class Pendaftaran_Detail_model extends CI_Model
      */
     function listPendaftaranDetail($id_pendaftaran)
     {           
-		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, dp.id_detail_pendaftaran, dp.status, e.nama as nama_event, s.id_sie, s.nama as nama_sie');
+		$this->db->select('p.id_pendaftaran, p.alasan, m.nim, m.nama as nama_mahasiswa, dp.id_detail_pendaftaran, dp.status, e.nama as nama_event, s.id_sie, s.nama as nama_sie');
         $this->db->from('detail_pendaftaran as dp');
         $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');

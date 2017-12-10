@@ -43,6 +43,14 @@
 								<h4>: &nbsp;<?php echo $pendaftaranDetailRecords[0]->nama_event; ?></h4>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<h4>Alasan</h4>
+							</div>
+							<div class="col-md-11">
+								<h4>: &nbsp;<?php echo $pendaftaranDetailRecords[0]->alasan; ?></h4>
+							</div>
+						</div>
                     </div><!-- /.box-header -->                    
 					
 					<!-- form start -->

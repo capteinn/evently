@@ -28,6 +28,9 @@
   border-bottom: 3px solid  #e6b800;
   font-family: Raleway, sans-serif;
   line-height: 1;
+  float: right;
+  padding-top: 10px;
+  z-index: 99999999;
 }
 #cssmenu ul {
   background: #ffffff;
