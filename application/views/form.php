@@ -6,20 +6,45 @@
 		<link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
-		<!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/lambangevent.ico">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
-      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-      <script src="script.js"></script>
 
+		<!-- Custom styles for this template -->
+		<link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+		<link rel="shortcut icon" href="assets/images/lambangevent.ico">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
+		<style>
+			body {margin: 0; padding: 0;}
+
+			.navbar {padding-top: 5px;}
+
+			.navbarnya {display: inline-block;}
+
+			.well {width:700px;margin:auto}
+
+		</style>
 	</head>
+		<nav class="navbar fixed-top navbar-expand-lg">
+			<div class="container">
+
+				<!-- LOGO -->
+				<div class="navbarnya" >
+				  <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
+				</div>
+
+				<div id='cssmenu'>
+					<ul>
+						<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+						<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+						<li><a href='<?php echo base_url();?>contact'>Kontak</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 	<body>
 		<nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
 		 <div class="container">
 
 			 <!-- LOGO -->
-			 <div class="logo" style="width: 250px">
+			 <div class="logo" style="width: 70%">
 				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
 			 </div>
 
@@ -34,7 +59,7 @@
 
 		 </div>
 	 </nav>
-		<div class="container" style="margin-top: 3%;">
+		<div class="container" style="margin-top: 7%;">
 
 			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
 
@@ -46,7 +71,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Nama</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input  name="nama" placeholder="Nama Lengkap" class="form-control"  type="text">
@@ -58,7 +83,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >NIM</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control"  type="text">
@@ -69,7 +94,7 @@
 					<!-- radio checks -->
 					<div class="form-group">
 						<label class="col-md-4 control-label">Jenis Kelamin</label>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="radio">
 								<label>
 								<input type="radio" name="jenkel" value="L" checked /> Laki-Laki
@@ -87,7 +112,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Nomor Telpon #</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
@@ -98,7 +123,7 @@
 					<!-- Text input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Prodi</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<select class="form-control required" id="prodi" name="prodi">
@@ -115,7 +140,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Angkatan</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control"  type="text">
@@ -127,7 +152,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Kelas</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="kelas" class="form-control"  type="text">
@@ -137,7 +162,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >CV</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="cv" class="form-control"  type="file">
@@ -147,7 +172,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >KRS</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="krs" placeholder="Ekstensi PDF" class="form-control"  type="file">
@@ -162,7 +187,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Event</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 							<?php
                                 if(!empty($event)){
@@ -180,7 +205,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Pilih Sie</label>
-						<div class="col-md-4">
+						<div class="col-md-6">
 						<?php
                             if(!empty($sie))
                                 {
@@ -201,7 +226,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Alasan</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 								<textarea class="form-control" name="alasan" placeholder="Project Description"></textarea>
@@ -223,11 +248,12 @@
 
 	</body>
 	<!-- Footer -->
-	<footer class="py-5 bg-dark">
-			<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
+    <footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:150%;" >
+        <p class="text-center" >Copyright &copy; Evently 2017</p>
 
-		<!-- /.container -->
-	</footer>
+      <!-- /.container -->
+    </footer>
+  <!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
