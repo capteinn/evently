@@ -22,23 +22,7 @@
 
 		</style>
 	</head>
-		<nav class="navbar fixed-top navbar-expand-lg">
-			<div class="container">
 
-				<!-- LOGO -->
-				<div class="navbarnya" >
-				  <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
-				</div>
-
-				<div id='cssmenu'>
-					<ul>
-						<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
-						<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-						<li><a href='<?php echo base_url();?>contact'>Kontak</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
 	<body>
 		<nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
 		 <div class="container">
