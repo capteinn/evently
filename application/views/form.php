@@ -3,6 +3,7 @@
 	<head>
 		<title>Form Registration Evently</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+		<link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 		<!-- Custom styles for this template -->
@@ -33,7 +34,7 @@
 
 		 </div>
 	 </nav>
-		<div class="container" style="width: 80%; margin-top: 3%;">
+		<div class="container" style="margin-top: 3%;">
 
 			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
 
@@ -221,7 +222,12 @@
 		</div>
 
 	</body>
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+			<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
 
+		<!-- /.container -->
+	</footer>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
