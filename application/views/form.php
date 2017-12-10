@@ -3,7 +3,7 @@
 	<head>
 		<title>Form Registration Evently</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
-		<link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 
@@ -18,17 +18,18 @@
 
 			.navbarnya {display: inline-block;}
 
-			.well {width:700px;margin:auto}
+			.well {width:700px;margin:auto;}
+			#cssmenu{float: right;}
 
 		</style>
 	</head>
 
 	<body>
-		<nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
+		<nav class="navbar navbar-expand-lg">
 		 <div class="container">
 
 			 <!-- LOGO -->
-			 <div class="logo" style="width: 70%">
+			 <div class="navbarnya" style="margin-left: 4%;">
 				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
 			 </div>
 
@@ -43,7 +44,7 @@
 
 		 </div>
 	 </nav>
-		<div class="container" style="margin-top: 7%;">
+		<div class="container" style="">
 
 			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
 
@@ -232,7 +233,7 @@
 
 	</body>
 	<!-- Footer -->
-    <footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:150%;" >
+    <footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:120%;" >
         <p class="text-center" >Copyright &copy; Evently 2017</p>
 
       <!-- /.container -->
