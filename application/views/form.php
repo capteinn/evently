@@ -3,7 +3,6 @@
 	<head>
 		<title>Form Registration Evently</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
-		<link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 
@@ -19,42 +18,28 @@
 			.navbarnya {display: inline-block;}
 
 			.well {width:700px;margin:auto}
+			
+			#cssmenu {float:right}
 
 		</style>
 	</head>
-		<nav class="navbar fixed-top navbar-expand-lg">
-			<div class="container">
 
-				<!-- LOGO -->
-				<div class="navbarnya" >
-				  <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
-				</div>
-
-				<div id='cssmenu'>
-					<ul>
-						<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
-						<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-						<li><a href='<?php echo base_url();?>contact'>Kontak</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
 	<body>
 		<nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
 		 <div class="container">
 
 			 <!-- LOGO -->
-			 <div class="logo" style="width: 70%">
+			 <div class="navbarnya" style="width: 70%">
 				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
 			 </div>
 
 			 <div class="collapse" id='cssmenu'>
-	<ul>
-			<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
-			<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-			<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
-	</ul>
- </div>
+			<ul>
+					<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+					<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+					<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+			</ul>
+		 </div>
 
 
 		 </div>
