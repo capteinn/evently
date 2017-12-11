@@ -34,11 +34,13 @@ class Pendaftaran extends BaseController
     /**
      * This function is used to load the user list by criteria
      */
-    function pendaftaranListing($ztatuz)
+    function pendaftaranListing($ztatuz, $event='')
     {   
         $userId = $this->vendorId;
             
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
+        
+		$data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
 		
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
             

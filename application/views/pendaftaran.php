@@ -15,10 +15,28 @@
 						<br />
 						<br />
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-4">
 							</div>
 							<div class="col-md-1">
 								<p>Filter List : </p>
+							</div>
+							<div class="col-md-2">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
+									<!--<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>-->
+									<select id="filterEvent" name="filterEvent" onChange="window.location.href=this.value" >
+										<option value="">Pilih Event</option>
+										<?php
+											if(!empty($eventRecords)){
+												foreach($eventRecords as $record){
+													
+										?>
+										<option value="<?php echo base_url(); ?>pendaftaranListing/semua/<?php echo $record->nama; ?>" ><?php echo $record->nama; ?></option>
+										<?php
+												}
+											}
+										?>
+									</select>
+								</form>
 							</div>
 							<div class="col-md-1">
 								<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
