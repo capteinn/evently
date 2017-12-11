@@ -3,7 +3,6 @@
 	<head>
 		<title>Form Registration Evently</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
-
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 
@@ -29,17 +28,18 @@
 		 <div class="container">
 
 			 <!-- LOGO -->
+
 			 <div class="navbarnya" style="margin-left: 4%;">
 				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
 			 </div>
 
 			 <div class="collapse" id='cssmenu'>
-	<ul>
-			<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
-			<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-			<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
-	</ul>
- </div>
+			<ul>
+					<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+					<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+					<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+			</ul>
+		 </div>
 
 
 		 </div>
