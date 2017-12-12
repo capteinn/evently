@@ -5,9 +5,46 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
+
+		<!-- Custom styles for this template -->
+		<link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+		<link rel="shortcut icon" href="assets/images/lambangevent.ico">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
+		<style>
+			body {margin: 0; padding: 0;}
+
+			.navbar {padding-top: 5px;}
+
+			.navbarnya {display: inline-block;}
+
+			.well {width:700px;margin:auto;}
+			#cssmenu{float: right;}
+
+		</style>
 	</head>
+
 	<body>
-		<div class="container">
+		<nav class="navbar navbar-expand-lg">
+		 <div class="container">
+
+			 <!-- LOGO -->
+
+			 <div class="navbarnya" style="margin-left: 4%;">
+				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
+			 </div>
+
+			 <div class="collapse" id='cssmenu'>
+			<ul>
+					<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+					<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+					<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+			</ul>
+		 </div>
+
+
+		 </div>
+	 </nav>
+		<div class="container" style="">
 
 			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
 
@@ -19,7 +56,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Nama</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input  name="nama" placeholder="Nama Lengkap" class="form-control"  type="text">
@@ -31,7 +68,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >NIM</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control"  type="text">
@@ -42,7 +79,7 @@
 					<!-- radio checks -->
 					<div class="form-group">
 						<label class="col-md-4 control-label">Jenis Kelamin</label>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="radio">
 								<label>
 								<input type="radio" name="jenkel" value="L" checked /> Laki-Laki
@@ -60,7 +97,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Nomor Telpon #</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
@@ -71,11 +108,11 @@
 					<!-- Text input-->
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Prodi</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<select class="form-control required" id="prodi" name="prodi">
-                                            <option value="0">Pilih Prodi</option>
+                                            <option value="">Pilih Prodi</option>
                                                 <option value="1">KOMSI</option>
                                                 <option value="2">METINS</option>
                                                 <option value="3">DTE</option>
@@ -88,7 +125,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Angkatan</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control"  type="text">
@@ -100,7 +137,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Kelas</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="kelas" class="form-control"  type="text">
@@ -110,7 +147,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >CV</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="cv" class="form-control"  type="file">
@@ -120,7 +157,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >KRS</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								<input name="krs" placeholder="Ekstensi PDF" class="form-control"  type="file">
@@ -135,7 +172,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label" >Event</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 							<?php
                                 if(!empty($event)){
@@ -153,7 +190,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Pilih Sie</label>
-						<div class="col-md-4">
+						<div class="col-md-6">
 						<?php
                             if(!empty($sie))
                                 {
@@ -174,7 +211,7 @@
 
 					<div class="form-group">
 						<label class="col-md-4 control-label">Alasan</label>
-						<div class="col-md-4 inputGroupContainer">
+						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 								<textarea class="form-control" name="alasan" placeholder="Project Description"></textarea>
@@ -195,7 +232,13 @@
 		</div>
 
 	</body>
+	<!-- Footer -->
+    <footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:120%;" >
+        <p class="text-center" >Copyright &copy; Evently 2017</p>
 
+      <!-- /.container -->
+    </footer>
+  <!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
@@ -215,32 +258,48 @@
 			fields: {
 				nama: {
 					validators: {
-							stringLength: {
-							min: 3,
+						stringLength: {
+							min: 4,
+							max: 50,
+							message: 'Minimal 4 karakter, Maksimal 50 karakter'
 						},
 							notEmpty: {
-							message: 'Mohon isi nama lengkap Anda'
-						}
+									message: 'Nama tidak boleh kosong'
+							}
 					}
 				},
 				nim: {
 					validators: {
-						 stringLength: {
-							min: 5,
-						},
-						notEmpty: {
-							message: 'Mohon isi NIM Fakultas Anda'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 5,
+										max: 5,
+										message: 'NIM hanya terdiri dari 5 angka'
+									},
+									notEmpty: {
+									message: 'NIM tidak boleh kosong'
+							}
 					}
 				},
 				angkatan: {
 					validators: {
-						stringLength: {
-							min: 4,
-						},
-						notEmpty: {
-							message: 'Mohon isi angkatan Anda (contoh : 2015)'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 4,
+										max: 4,
+										message: 'Wrong'
+									},
+									notEmpty: {
+									message: 'Angkatan tidak boleh kosong'
+							}
 					}
 				},
 				prodi: {
@@ -250,14 +309,21 @@
 						}
 					}
 				},
-				phone: {
+				telepon: {
 					validators: {
-						stringLength: {
-							min: 12,
-						},
-						notEmpty: {
-							message: 'Mohon isi nomor telepon Anda'
-						}
+									integer: {
+									message: 'Inputan harus angka',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+									stringLength: {
+										min: 12,
+										max: 12,
+										message: 'Wrong number'
+									},
+									notEmpty: {
+									message: 'Nomer telfon tidak boleh kosong'
+							}
 					}
 				},
 				kelas: {
@@ -272,17 +338,25 @@
 				},
 				cv: {
 					validators: {
-						notEmpty: {
-							message: 'Mohon lampirkan CV Anda'
-						}
-					}
+            notEmpty: {
+              message: 'Mohon lampirkan cv anda (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
+            }
+          }
 				},
 				krs: {
 					validators: {
-						notEmpty: {
-							message: 'Mohon lampirkan KRS Anda'
-						}
-					}
+            notEmpty: {
+              message: 'Mohon lampirkan krs anda (.pdf)'
+            },
+            file: {
+              extension: 'pdf',
+              message: 'Input file harus pdf'
+            }
+          }
 				},
 				sie: {
 					validators: {
@@ -296,7 +370,7 @@
 						  stringLength: {
 							min: 10,
 							max: 500,
-							message:'Please enter at least 10 characters and no more than 200'
+							message:'Please enter at least 10 characters and no more than 500 characters'
 						},
 						notEmpty: {
 							message: 'Mohon isikan alasan Anda'
