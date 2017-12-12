@@ -291,7 +291,7 @@
 				},
 				angkatan: {
 					validators: {
-									double: {
+									integer: {
 									message: 'Inputan harus angka',
 									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 									decimalSeparator: '.' //ini ga boleh ada titik
@@ -315,7 +315,7 @@
 				},
 				telepon: {
 					validators: {
-									integer: {
+									number: {
 									message: 'Inputan harus angka',
 									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 									decimalSeparator: '.' //ini ga boleh ada titik
