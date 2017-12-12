@@ -258,6 +258,10 @@
 			fields: {
 				nama: {
 					validators: {
+						regexp: {
+              regexp: /^[a-z\s]+$/i,
+              message: 'Nama lengkap hanya berisi huruf dan spasi'
+            },
 						stringLength: {
 							min: 4,
 							max: 50,
@@ -311,7 +315,7 @@
 				},
 				telepon: {
 					validators: {
-									integer: {
+									number: {
 									message: 'Inputan harus angka',
 									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 									decimalSeparator: '.' //ini ga boleh ada titik
