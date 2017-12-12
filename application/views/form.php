@@ -316,7 +316,7 @@
 				telepon: {
 					validators: {
 									number: {
-									message: 'Inputan harus angka',
+									message: 'Nomor kurang tepat',
 									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 									decimalSeparator: '.' //ini ga boleh ada titik
 							},
