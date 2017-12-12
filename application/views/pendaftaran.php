@@ -30,7 +30,7 @@
 												foreach($eventRecords as $record){
 													
 										?>
-										<option value="<?php echo base_url(); ?>pendaftaranListing/semua/<?php echo $record->nama; ?>" ><?php echo $record->nama; ?></option>
+										<option value="<?php echo base_url(); ?>pendaftaranListing/semua/<?php echo $record->nama; ?>" <?php if($record->nama == $this->uri->segment(3)) {echo "selected=selected";} ?>><?php echo $record->nama; ?></option>
 										<?php
 												}
 											}
