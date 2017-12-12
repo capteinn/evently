@@ -161,7 +161,7 @@
                                         {?>
 							<div class="checkbox">
 								<label>
-                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama."=>".$si->id_sie ?>
+                                    <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama; ?>
                             	</label>
 							</div>
                         <?php
