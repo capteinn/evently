@@ -107,7 +107,7 @@ class upload extends CI_Controller {
             $this->regist_model->addNewReg($regInfo);
 
             $getIdRegist = $this->regist_model->getRegist();
-                
+                 
             foreach ($getIdRegist as $record) {
                 $idRegist = $record->id_pendaftaran;
             }
