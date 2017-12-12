@@ -274,7 +274,7 @@
 				},
 				nim: {
 					validators: {
-									integer: {
+									number: {
 									message: 'Inputan harus angka',
 									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 									decimalSeparator: '.' //ini ga boleh ada titik
