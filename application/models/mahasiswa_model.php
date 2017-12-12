@@ -24,7 +24,13 @@ class Mahasiswa_model extends CI_Model
         $result = $query->result();        
         return $result;
     }
-
+    function cekMhs($nim){
+        $this->db->select('*');
+        $this->db->from('mahasiswa');
+        $this->db->where('nim',$nim);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     /**
      * This function is used to add new register to system
      * @return number $insert_id : This is last inserted id
