@@ -26,9 +26,13 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'TEDI : Dashboard';
+        $userId = $this->vendorId;
+		$this->load->model('pendaftaran_model');
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->countPendaftar($userId);
+		
+		$this->global['pageTitle'] = 'TEDI : Dashboard';
         
-        $this->loadViews("dashboard", $this->global, NULL , NULL);
+        $this->loadViews("dashboard", $this->global, $data , NULL);
     }
     
     /**

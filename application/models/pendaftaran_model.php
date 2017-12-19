@@ -43,6 +43,27 @@ class Pendaftaran_model extends CI_Model
 		return $query->result();
 	}
 	
+	/**
+     * This function is used to get the Count Pendaftar count by criteria
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function countPendaftar($userId)
+    {	 
+		$this->db->select('count(p.id_pendaftaran) as jumlahPendaftar, e.nama as event');
+        $this->db->from('pendaftaran as p');
+        $this->db->join('detail_pendaftaran as dp', 'dp.id_pendaftaran = p.id_pendaftaran');
+        $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
+        $this->db->join('event as e', 'me.id_event=e.id_event');
+        $this->db->where('me.createdBy', $userId);
+		$this->db->group_by('e.id_event');
+		
+        $query = $this->db->get();
+        
+        $result = $query->result();        
+        return $result;
+    }
+	
 	
 }
 
