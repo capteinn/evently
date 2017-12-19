@@ -96,6 +96,10 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
+            <?php
+            if($role != ROLE_ADMIN || $role == ROLE_MANAGER)
+            {
+            ?>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>pendaftaranListing/semua" >
                 <i class="fa fa-pencil"></i>
@@ -108,10 +112,6 @@
                 <span>Mahasiswa</span>
               </a>
             </li>
-            <?php
-            if($role == ROLE_ADMIN || $role == ROLE_MANAGER)
-            {
-            ?>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>eventListing" >
                 <i class="fa fa-thumb-tack"></i>
@@ -124,7 +124,7 @@
                 <span>Sie</span>
               </a>
             </li>
-      <li class="treeview">
+			<li class="treeview">
               <a href="<?php echo base_url(); ?>mappingListing" >
                 <i class="fa fa-book"></i>
                 <span>Mapping Event</span>
@@ -145,12 +145,6 @@
               <a href="<?php echo base_url(); ?>userListing">
                 <i class="fa fa-users"></i>
                 <span>Pengguna</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="#" >
-                <i class="fa fa-files-o"></i>
-                <span>Reports</span>
               </a>
             </li>
             <?php
