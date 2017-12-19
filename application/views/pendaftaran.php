@@ -72,8 +72,7 @@
 								<th>Nama</th>
 								<th>Prodi</th>
 								<th>Event</th>
-								<th>CV</th>
-								<th>KRS</th>
+								<th>BERKAS</th>
 								<th>Status</th>
 								<th class="text-center">Detail</th>
 								<th></th>
@@ -94,9 +93,8 @@
 								<td><?php echo $record->event ?></td>
 								<td>
 									<a href="<?php echo base_url();?>assets/mahasiswa/<?php echo $record->cv ?>" target="_blank" style="max-width: 5px;">
-									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a> 
-								</td>
-								<td>
+									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>
+
 									<a href="<?php echo base_url();?>assets/mahasiswa/<?php echo $record->krs ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>
 								</td>
