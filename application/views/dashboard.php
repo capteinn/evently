@@ -10,7 +10,7 @@
     <section class="content">
 		<div class="row">
 			<!-- ./col -->
-			<?php
+			<?php 
 				if ($role != ROLE_ADMIN)
 				{
 					if(!empty($pendaftaranRecords)){
@@ -33,6 +33,46 @@
 				  </div>
 					  <span class="progress-description">
 						<?php echo $persentase; ?>% menuju maximum <?php echo $max_pendaftar; ?> Pendaftar
+					  </span>
+				</div>
+				<!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+			<?php 
+						}
+					}
+				}
+			?>
+		</div>
+		<div class="row">
+			<!-- ./col -->
+			<?php 
+				if ($role != ROLE_ADMIN)
+				{
+						foreach ($eventRecords as $record){
+							//max pendaftar
+							$timezone = date('d');
+							$selesai = date('d',strtotime($record->selesai));
+							$hmin = $selesai - $timezone;
+							if (0<=$hmin && $hmin<=2) {
+
+			?>
+			<!-- /.col -->
+			<div class="col-md-4 col-sm-6 col-xs-12">
+			  <div class="info-box bg-red">
+				<span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+
+				<div class="info-box-content">
+				  <span class="info-box-text">Event <?php echo $record->event; ?></span>
+				  <span class="info-box-text"><?php echo $record->mulai." sampai ".$record->selesai; ?></span>
+				  <span class="info-box-text">wawancara :<?php echo "<b> H-".$hmin."</b>"; ?></span>
+
+				  <div class="progress">
+					<div class="progress-bar" style=""></div>
+				  </div>
+					  <span class="progress-description">
+						 Pendaftar
 					  </span>
 				</div>
 				<!-- /.info-box-content -->

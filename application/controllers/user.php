@@ -25,10 +25,11 @@ class User extends BaseController
      * This function used to load the first screen of the user
      */
     public function index()
-    {
+    { 
         $userId = $this->vendorId;
 		$this->load->model('pendaftaran_model');
         $data['pendaftaranRecords'] = $this->pendaftaran_model->countPendaftar($userId);
+        $data['eventRecords'] = $this->pendaftaran_model->countHmin($userId);
 		
 		$this->global['pageTitle'] = 'TEDI : Dashboard';
         
