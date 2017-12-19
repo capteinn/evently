@@ -100,7 +100,7 @@
 						<div class="col-md-6 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
+								<input name="telepon" placeholder="083895551212" class="form-control" type="text">
 							</div>
 						</div>
 					</div>
@@ -311,14 +311,9 @@
 				},
 				telepon: {
 					validators: {
-									integer: {
-									message: 'Inputan harus angka',
-									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
-									decimalSeparator: '.' //ini ga boleh ada titik
-							},
 									stringLength: {
-										min: 12,
-										max: 12,
+										min: 10,
+										max: 13,
 										message: 'Wrong number'
 									},
 									notEmpty: {
