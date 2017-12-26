@@ -23,7 +23,7 @@
         #wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}
         /*dibawah*/
         /*#wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}*/
-		
+
 	  </style>
 
   </head>
@@ -35,12 +35,12 @@
       <div class="container">
 
         <!-- LOGO -->
-        <div class="logo" style="width: 250px"> 
+        <div class="logo" style="width: 250px">
           <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently" /></a>
         </div>
 
 
-    
+
          <div class="collapse" id='cssmenu'>
       <ul>
           <li class='active'><a href='#'>Event</a></li>
@@ -84,7 +84,7 @@
     </header>
 
     <div class="container">
-    <!-- Page Content 
+    <!-- Page Content
 
 		<!-- Portfolio Section -->
 		<br>

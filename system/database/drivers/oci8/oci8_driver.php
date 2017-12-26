@@ -76,6 +76,7 @@ class CI_DB_oci8_driver extends CI_DB {
 	 * @access  private called by the base class
 	 * @return  resource
 	 */
+	 // var $_protect_identifiers = FALSE;
 	public function db_connect()
 	{
 		return @oci_connect($this->username, $this->password, $this->hostname, $this->char_set);

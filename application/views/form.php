@@ -315,6 +315,14 @@
 				},
 				telepon: {
 					validators: {
+<<<<<<< HEAD
+=======
+									number: {
+									message: 'Nomor kurang tepat',
+									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+									decimalSeparator: '.' //ini ga boleh ada titik
+							},
+>>>>>>> 8651246e8ba7e4545eca89ffb20b1469a88007f1
 									stringLength: {
 										min: 10,
 										max: 13,
