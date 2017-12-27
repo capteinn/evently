@@ -31,12 +31,12 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
+    <nav class="navbar fixed-top bg-dark navbar-expand-lg bg-dark fixed-top">
       <div class="container">
 
         <!-- LOGO -->
         <div class="logo" style="width: 250px"> 
-          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently" /></a>
+          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/eventlly.png" alt="Evently" /></a>
         </div>
 
 
