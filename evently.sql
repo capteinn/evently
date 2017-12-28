@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2017 at 08:10 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: 28 Des 2017 pada 17.32
+-- Versi Server: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `evently-dev`
@@ -23,60 +23,68 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_pendaftaran`
+-- Struktur dari tabel `detail_pendaftaran`
 --
 
-CREATE TABLE `detail_pendaftaran` (
-  `id_detail_pendaftaran` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `detail_pendaftaran` (
+`id_detail_pendaftaran` int(11) NOT NULL,
   `id_pendaftaran` int(11) NOT NULL,
   `id_mapping_event` int(11) NOT NULL,
   `status` enum('proses','diterima','ditolak','') NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_pendaftaran`
+-- Dumping data untuk tabel `detail_pendaftaran`
 --
 
 INSERT INTO `detail_pendaftaran` (`id_detail_pendaftaran`, `id_pendaftaran`, `id_mapping_event`, `status`, `createdDtm`) VALUES
-(1, 1, 1, 'proses', '2017-12-06 07:54:32'),
+(1, 1, 1, 'ditolak', '2017-12-13 08:54:13'),
 (2, 1, 4, 'diterima', '2017-12-06 08:00:48'),
 (3, 2, 2, 'proses', '2017-12-04 16:44:32'),
 (4, 3, 1, 'ditolak', '2017-12-06 08:01:12'),
 (5, 3, 4, 'ditolak', '2017-12-06 08:01:22'),
-(20, 20, 1, 'proses', '2017-12-08 13:08:11'),
-(21, 20, 4, 'proses', '2017-12-08 13:08:11');
+(6, 4, 1, 'proses', '2017-12-08 05:08:37'),
+(7, 4, 4, 'proses', '2017-12-08 05:08:37'),
+(8, 6, 1, 'proses', '2017-12-09 23:07:14'),
+(9, 6, 4, 'proses', '2017-12-09 23:07:14'),
+(10, 7, 6, 'proses', '2017-12-13 02:29:03'),
+(11, 7, 5, 'proses', '2017-12-13 02:29:03'),
+(12, 8, 1, 'diterima', '2017-12-21 03:58:11'),
+(13, 8, 4, 'diterima', '2017-12-21 03:57:29'),
+(14, 10, 1, 'proses', '2017-12-20 21:55:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Struktur dari tabel `event`
 --
 
-CREATE TABLE `event` (
-  `id_event` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `event` (
+`id_event` int(10) NOT NULL,
   `nama` varchar(300) NOT NULL,
   `deskripsi` varchar(500) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `event`
+-- Dumping data untuk tabel `event`
 --
 
 INSERT INTO `event` (`id_event`, `nama`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
 (1, 'Algorithm', 'Event Algorithm KOMSI', 4, '2017-12-02 12:07:55'),
 (2, 'Gebyar', 'Gebyar BCA', 5, '2017-12-01 17:45:11'),
-(3, 'Child', 'Event Child KOMSI', 4, '2017-12-02 12:08:56');
+(3, 'Child', 'Event Child KOMSI', 4, '2017-12-02 12:08:56'),
+(4, 'Vocomfest', 'Event Programming Contest', 4, '2017-12-09 15:56:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
-CREATE TABLE `mahasiswa` (
+CREATE TABLE IF NOT EXISTS `mahasiswa` (
   `nim` char(10) NOT NULL,
   `kelas` varchar(100) NOT NULL,
   `nama` varchar(300) NOT NULL,
@@ -87,79 +95,89 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`nim`, `kelas`, `nama`, `no_telp`, `angkatan`, `jenkel`, `id_prodi`) VALUES
+('08255', 'A', 'luki', '089672039222', 2016, 'L', 1),
+('09433', 'A', 'nisa', '082132899582', 2015, 'L', 1),
 ('09434', 'A', 'Abdur', '082132899582', 2015, 'L', 1),
 ('09436', 'A', 'Hilmawan', '082132899582', 2015, 'L', 1),
 ('09456', 'B', 'Lele', '082132899582', 2016, 'L', 2),
-('22222', 'A', 'white catfish', '081231992632', 2015, 'L', 1);
+('23467', 'C', 'mue lele', '082828282828', 2015, 'L', 1),
+('34343', 'A', 'lele goreng', '082132899582', 2015, 'L', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mapping_event`
+-- Struktur dari tabel `mapping_event`
 --
 
-CREATE TABLE `mapping_event` (
-  `id_mapping_event` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mapping_event` (
+`id_mapping_event` int(10) NOT NULL,
   `id_event` int(10) NOT NULL,
   `id_sie` int(10) NOT NULL,
   `deskripsi` varchar(255) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mapping_event`
+-- Dumping data untuk tabel `mapping_event`
 --
 
 INSERT INTO `mapping_event` (`id_mapping_event`, `id_event`, `id_sie`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
 (1, 1, 1, 'Ahli dalam mengatur makanan dan minuman', 4, '2017-12-02 23:26:36'),
 (2, 2, 2, 'Makan dan minum adalah keseharian kamu', 5, '2017-12-02 23:27:40'),
 (3, 3, 1, 'Suka makan sehingga bisa mengatur makanan dan minuman', 4, '2017-12-04 16:41:21'),
-(4, 1, 3, 'Mengurus segala jenis keamanan pada saat event algorithm berlangsung', 4, '2017-12-04 16:42:57');
+(4, 1, 3, 'Mengurus segala jenis keamanan pada saat event algorithm berlangsung', 4, '2017-12-04 16:42:57'),
+(5, 4, 3, 'Menjaga keamanan saat programming contest berlangsung', 4, '2017-12-09 15:57:02'),
+(6, 4, 1, 'Menjaga perut para contestant tidak lavar', 4, '2017-12-09 15:57:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran`
+-- Struktur dari tabel `pendaftaran`
 --
 
-CREATE TABLE `pendaftaran` (
-  `id_pendaftaran` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pendaftaran` (
+`id_pendaftaran` int(10) NOT NULL,
   `nim` char(10) NOT NULL,
   `cv` varchar(300) NOT NULL,
   `krs` varchar(300) NOT NULL,
+  `alasan` varchar(255) NOT NULL,
   `status` enum('proses','diterima','ditolak') NOT NULL,
-  `alasan` varchar(1000) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendaftaran`
+-- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `status`, `alasan`, `createdDtm`) VALUES
-(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', 'diterima', '', '2017-12-06 08:00:48'),
-(2, '09456', 'lele.pdf', 'lele.pdf', 'proses', '', '2017-12-01 18:28:41'),
-(3, '09436', 'CVku.pdf', 'KRSku.pdf', 'ditolak', '', '2017-12-06 08:01:22'),
-(20, '22222', 'berkasEvently1512760091.pdf', 'berkasEvently15127600911.pdf', 'proses', 'zzzzzzzzzzzzzzzzz', '2017-12-08 13:08:11');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `nim`, `cv`, `krs`, `alasan`, `status`, `createdDtm`) VALUES
+(1, '09434', 'abdurrahman.pdf', 'abdurrahman.pdf', '', 'diterima', '2017-12-06 08:00:48'),
+(2, '09456', 'lele.pdf', 'lele.pdf', '', 'proses', '2017-12-01 18:28:41'),
+(3, '09436', 'CVku.pdf', 'KRSku.pdf', '', 'ditolak', '2017-12-06 08:01:22'),
+(4, '34343', '1-Distributed-Information-Systems.pdf', '2-Middleware.pdf', '', 'proses', '2017-12-08 05:08:37'),
+(6, '09433', 'berkasEvently1512882434.pdf', 'berkasEvently15128824341.pdf', 'aku mau daftar karna aku suka makan dan suka menjaga keamanan (perut ku)', 'proses', '2017-12-09 23:07:14'),
+(7, '08255', 'berkasEvently1513153743.pdf', 'berkasEvently15131537431.pdf', 'karena saya suka', 'proses', '2017-12-13 02:29:03'),
+(8, '09436', 'berkasEvently1513827867.pdf', 'berkasEvently15138278671.pdf', 'suka makan', 'diterima', '2017-12-21 03:57:29'),
+(9, '23467', 'berkasEvently1513828528.pdf', 'berkasEvently15138285281.pdf', 'Muke lele lu', 'proses', '2017-12-20 21:55:28'),
+(10, '23467', 'berkasEvently1513828538.pdf', 'berkasEvently15138285381.pdf', 'Muke lele lu', 'proses', '2017-12-20 21:55:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodi`
+-- Struktur dari tabel `prodi`
 --
 
-CREATE TABLE `prodi` (
-  `id_prodi` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `prodi` (
+`id_prodi` int(10) NOT NULL,
   `nama` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prodi`
+-- Dumping data untuk tabel `prodi`
 --
 
 INSERT INTO `prodi` (`id_prodi`, `nama`) VALUES
@@ -172,19 +190,19 @@ INSERT INTO `prodi` (`id_prodi`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sie`
+-- Struktur dari tabel `sie`
 --
 
-CREATE TABLE `sie` (
-  `id_sie` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sie` (
+`id_sie` int(10) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `deskripsi` varchar(500) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sie`
+-- Dumping data untuk tabel `sie`
 --
 
 INSERT INTO `sie` (`id_sie`, `nama`, `deskripsi`, `createdBy`, `createdDtm`) VALUES
@@ -196,11 +214,11 @@ INSERT INTO `sie` (`id_sie`, `nama`, `deskripsi`, `createdBy`, `createdDtm`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_items`
+-- Struktur dari tabel `tbl_items`
 --
 
-CREATE TABLE `tbl_items` (
-  `itemId` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_items` (
+`itemId` int(11) NOT NULL,
   `itemHeader` varchar(512) NOT NULL COMMENT 'Heading',
   `itemSub` varchar(1021) NOT NULL COMMENT 'sub heading',
   `itemDesc` text COMMENT 'content or description',
@@ -210,10 +228,10 @@ CREATE TABLE `tbl_items` (
   `createdDtm` datetime NOT NULL,
   `updatedDtm` datetime DEFAULT NULL,
   `updatedBy` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_items`
+-- Dumping data untuk tabel `tbl_items`
 --
 
 INSERT INTO `tbl_items` (`itemId`, `itemHeader`, `itemSub`, `itemDesc`, `itemImage`, `isDeleted`, `createdBy`, `createdDtm`, `updatedDtm`, `updatedBy`) VALUES
@@ -223,11 +241,11 @@ INSERT INTO `tbl_items` (`itemId`, `itemHeader`, `itemSub`, `itemDesc`, `itemIma
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_reset_password`
+-- Struktur dari tabel `tbl_reset_password`
 --
 
-CREATE TABLE `tbl_reset_password` (
-  `id` bigint(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_reset_password` (
+`id` bigint(20) NOT NULL,
   `email` varchar(128) NOT NULL,
   `activation_id` varchar(32) NOT NULL,
   `agent` varchar(512) NOT NULL,
@@ -242,16 +260,16 @@ CREATE TABLE `tbl_reset_password` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_roles`
+-- Struktur dari tabel `tbl_roles`
 --
 
-CREATE TABLE `tbl_roles` (
-  `roleId` tinyint(4) NOT NULL COMMENT 'role id',
+CREATE TABLE IF NOT EXISTS `tbl_roles` (
+`roleId` tinyint(4) NOT NULL COMMENT 'role id',
   `role` varchar(50) NOT NULL COMMENT 'role text'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_roles`
+-- Dumping data untuk tabel `tbl_roles`
 --
 
 INSERT INTO `tbl_roles` (`roleId`, `role`) VALUES
@@ -262,11 +280,11 @@ INSERT INTO `tbl_roles` (`roleId`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_users`
+-- Struktur dari tabel `tbl_users`
 --
 
-CREATE TABLE `tbl_users` (
-  `userId` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+`userId` int(11) NOT NULL,
   `email` varchar(128) NOT NULL COMMENT 'login email',
   `password` varchar(128) NOT NULL COMMENT 'hashed login password',
   `name` varchar(128) DEFAULT NULL COMMENT 'full name of user',
@@ -277,10 +295,10 @@ CREATE TABLE `tbl_users` (
   `createdDtm` datetime NOT NULL,
   `updatedBy` int(11) DEFAULT NULL,
   `updatedDtm` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data untuk tabel `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleId`, `isDeleted`, `createdBy`, `createdDtm`, `updatedBy`, `updatedDtm`) VALUES
@@ -296,28 +314,31 @@ INSERT INTO `tbl_users` (`userId`, `email`, `password`, `name`, `mobile`, `roleI
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thread`
+-- Struktur dari tabel `thread`
 --
 
-CREATE TABLE `thread` (
-  `id_thread` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `thread` (
+`id_thread` int(10) NOT NULL,
   `judul` varchar(300) DEFAULT NULL,
   `poster` varchar(50) DEFAULT NULL,
   `tgl_mulai` date DEFAULT NULL,
   `tgl_selesai` date DEFAULT NULL,
   `deskripsi` varchar(1000) DEFAULT NULL,
+  `status` enum('aktif','non-aktif') NOT NULL,
   `id_event` int(10) DEFAULT NULL,
   `createdBy` int(11) NOT NULL,
   `createdDtm` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `thread`
+-- Dumping data untuk tabel `thread`
 --
 
-INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`, `deskripsi`, `id_event`, `createdBy`, `createdDtm`) VALUES
-(1, 'Pendaftaran Algorithm', 'algorithm1.jpg', '2017-12-06', '2017-12-14', 'Yuk Daftar Algorithm kk :D', 1, 4, '2017-12-05 00:44:22'),
-(2, 'Let''s Start Giving', 'algorithm.jpg', '2017-12-06', '2017-12-20', 'Event HIMAKOMSI rutin dilakukan setiap tahunnya', 1, 4, '2017-12-02 20:41:05');
+INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`, `deskripsi`, `status`, `id_event`, `createdBy`, `createdDtm`) VALUES
+(1, 'Pendaftaran Algorithm', 'algorithm1.jpg', '2017-12-06', '2017-12-30', 'Yuk Daftar Algorithm kk :D', 'non-aktif', 1, 4, '2017-12-28 16:23:30'),
+(2, 'Let''s Start Giving', 'algorithm.jpg', '2017-12-06', '2017-12-20', 'Event HIMAKOMSI rutin dilakukan setiap tahunnya yey', 'aktif', 1, 4, '2017-12-28 16:22:55'),
+(3, 'Yuk Daftar Child', 'child_terbaru.jpg', '2017-12-13', '2017-12-16', 'Ini pendaftaran Child yang baru.. so ayoo guys pada ndaftar..', 'aktif', 3, 4, '2017-12-09 21:41:01'),
+(4, 'Vocomfest Pendaftaran', 'vocomfest1.jpg', '2017-12-10', '2017-12-20', 'Kuy daftar Vocomfest dan jadilah jawara programming contest paling bergengsi di Asia', 'aktif', 4, 4, '2017-12-09 16:33:07');
 
 --
 -- Indexes for dumped tables
@@ -327,73 +348,73 @@ INSERT INTO `thread` (`id_thread`, `judul`, `poster`, `tgl_mulai`, `tgl_selesai`
 -- Indexes for table `detail_pendaftaran`
 --
 ALTER TABLE `detail_pendaftaran`
-  ADD PRIMARY KEY (`id_detail_pendaftaran`);
+ ADD PRIMARY KEY (`id_detail_pendaftaran`);
 
 --
 -- Indexes for table `event`
 --
 ALTER TABLE `event`
-  ADD PRIMARY KEY (`id_event`);
+ ADD PRIMARY KEY (`id_event`);
 
 --
 -- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  ADD PRIMARY KEY (`nim`);
+ ADD PRIMARY KEY (`nim`);
 
 --
 -- Indexes for table `mapping_event`
 --
 ALTER TABLE `mapping_event`
-  ADD PRIMARY KEY (`id_mapping_event`);
+ ADD PRIMARY KEY (`id_mapping_event`);
 
 --
 -- Indexes for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  ADD PRIMARY KEY (`id_pendaftaran`);
+ ADD PRIMARY KEY (`id_pendaftaran`);
 
 --
 -- Indexes for table `prodi`
 --
 ALTER TABLE `prodi`
-  ADD PRIMARY KEY (`id_prodi`);
+ ADD PRIMARY KEY (`id_prodi`);
 
 --
 -- Indexes for table `sie`
 --
 ALTER TABLE `sie`
-  ADD PRIMARY KEY (`id_sie`);
+ ADD PRIMARY KEY (`id_sie`);
 
 --
 -- Indexes for table `tbl_items`
 --
 ALTER TABLE `tbl_items`
-  ADD PRIMARY KEY (`itemId`);
+ ADD PRIMARY KEY (`itemId`);
 
 --
 -- Indexes for table `tbl_reset_password`
 --
 ALTER TABLE `tbl_reset_password`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_roles`
 --
 ALTER TABLE `tbl_roles`
-  ADD PRIMARY KEY (`roleId`);
+ ADD PRIMARY KEY (`roleId`);
 
 --
 -- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`userId`);
+ ADD PRIMARY KEY (`userId`);
 
 --
 -- Indexes for table `thread`
 --
 ALTER TABLE `thread`
-  ADD PRIMARY KEY (`id_thread`);
+ ADD PRIMARY KEY (`id_thread`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -403,57 +424,57 @@ ALTER TABLE `thread`
 -- AUTO_INCREMENT for table `detail_pendaftaran`
 --
 ALTER TABLE `detail_pendaftaran`
-  MODIFY `id_detail_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+MODIFY `id_detail_pendaftaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id_event` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `id_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `mapping_event`
 --
 ALTER TABLE `mapping_event`
-  MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `id_mapping_event` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+MODIFY `id_pendaftaran` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id_prodi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id_prodi` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `sie`
 --
 ALTER TABLE `sie`
-  MODIFY `id_sie` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `id_sie` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_items`
 --
 ALTER TABLE `tbl_items`
-  MODIFY `itemId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `itemId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_reset_password`
 --
 ALTER TABLE `tbl_reset_password`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_roles`
 --
 ALTER TABLE `tbl_roles`
-  MODIFY `roleId` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'role id', AUTO_INCREMENT=4;
+MODIFY `roleId` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'role id',AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `thread`
 --
 ALTER TABLE `thread`
-  MODIFY `id_thread` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `id_thread` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
