@@ -7,6 +7,7 @@
 	$tgl_mulai = '';
 	$tgl_selesai = '';
 	$deskripsi = '';
+	$status = '';
 
 	if(!empty($threadInfo))
 	{
@@ -19,6 +20,7 @@
 			$tgl_mulai = DateTime::createFromFormat('Y-m-d', $ti->tgl_mulai)->format('m/d/Y');
 			$tgl_selesai = DateTime::createFromFormat('Y-m-d', $ti->tgl_selesai)->format('m/d/Y');
 			$deskripsi = $ti->deskripsi;
+			$status = $ti->status;
 		}
 	}
 ?>
@@ -75,12 +77,21 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">                                
+                                <div class="col-md-6">                          
                                     <div class="form-group">
                                         <label for="fname">Poster Thread</label>
                                         <input type="file" class="form-control required" id="poster" name="poster" >
                                     </div>
-                                </div>   
+                                </div>
+								<div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="role">Status</label>
+                                        <select class="form-control required" id="event" name="status">
+                                            <option value="aktif" <?php if($status == "aktif") {echo "selected=selected";} ?> >Aktif</option>
+                                            <option value="non-aktif" <?php if($status == "non-aktif") {echo "selected=selected";} ?> >Non-Aktif</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 							<div class="row">
                                 <div class="col-md-6">                                
@@ -118,7 +129,7 @@
                                         <label for="email">Deskripsi Thread</label>
                                         <textarea type="text" class="form-control required" id="deskripsi"  name="deskripsi" rows="5" ><?php echo $deskripsi; ?></textarea>
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </div><!-- /.box-body -->
     

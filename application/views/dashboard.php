@@ -9,6 +9,10 @@
     
     <section class="content">
 		<div class="row">
+            <center><p style="font-size: 30px;" >SELAMAT DATANG ADMIN<br><b><?php echo $name; ?></b></p></center>
+			<br>
+        </div>
+		<div class="row">
 			<!-- ./col -->
 			<?php 
 				if ($role != ROLE_ADMIN)
@@ -45,6 +49,7 @@
 				}
 			?>
 		</div>
+		<hr style="border-width: 1px; border-color: #DDD;">
 		<div class="row">
 			<!-- ./col -->
 			<?php 
@@ -61,19 +66,12 @@
 			<!-- /.col -->
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			  <div class="info-box bg-red">
-				<span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+				<span class="info-box-icon"><?php echo "<b> H-".$hmin."</b>"; ?></span>
 
 				<div class="info-box-content">
 				  <span class="info-box-text">Event <?php echo $record->event; ?></span>
 				  <span class="info-box-text"><?php echo $record->mulai." sampai ".$record->selesai; ?></span>
 				  <span class="info-box-text">wawancara :<?php echo "<b> H-".$hmin."</b>"; ?></span>
-
-				  <div class="progress">
-					<div class="progress-bar" style=""></div>
-				  </div>
-					  <span class="progress-description">
-						 Pendaftar
-					  </span>
 				</div>
 				<!-- /.info-box-content -->
 			  </div>
@@ -85,8 +83,5 @@
 				}
 			?>
 		</div>
-        <div class="row">
-            <center><p style="padding-top: 100px; font-size: 30px;" >SELAMAT DATANG ADMIN<br><b><?php echo $name; ?></b></p></center>
-        </div>
     </section>
 </div>
