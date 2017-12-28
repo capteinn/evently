@@ -245,7 +245,7 @@
 <!-- end of line js buat owl carousel -->
 <!-- DC Horizontal Carousel JS -->
 <script type="text/javascript">
-// owl demo js
+// owl demo2 js
   $(document).ready(function() {
 
     $("#owl-demo2").owlCarousel({
@@ -294,7 +294,7 @@
     });
 
   });
-  // end of owl demo js
+  // end of owl demo2 js
 // owl demo js
   $(document).ready(function() {
 
