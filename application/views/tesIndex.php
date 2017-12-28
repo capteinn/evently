@@ -5,19 +5,20 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
 
     <title>Evently | E-Recruitment </title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
-      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
       <style type="text/css">
         /*disamping*/
         /* #wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;} */
@@ -33,266 +34,169 @@
           padding: 0;
           margin: 0;
         } */
+        /* @media screen and (min-width: @grid-float-breakpoint) {
+          .nav-collapse {
+            .navbar-toggle + & {
+              margin-top: 0;
+            }
+          }
+        } */
+        #btn{
+          background-color: Transparent;
+          background-repeat:no-repeat;
+          border: none;
+          cursor:pointer;
+          overflow: hidden;
+          outline:none;
+        }
+/* Team member css */
+h1.team-h1 {
+  margin: 0;
 
-/* css our team     */
-.anaglyphic {
-	color: #f9689a;
-	text-shadow: -3px -3px 0 #77caff;
+  position: absolute;
+  top: -25px;
+  text-align: center;
+  left: 40%;
+  font-family: georgia;
+  font-style: italic;
+  background-color: white;
+  padding: 0px 20px;
+  color: #222;
 }
-#hexGrid {
-    overflow: hidden;
-    width: 90%;
-    margin: 0 auto;
-    padding:0.866% 0;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
-#hexGrid:after {
-    content: "";
-    display: block;
+
+.cf:after {
     clear: both;
 }
-.hex {
-    position: relative;
-    list-style-type: none;
-    float: left;
-    overflow: hidden;
-    visibility: hidden;
-    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    -webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-        -ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-            transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
-.hex * {
-    position: absolute;
-    visibility: visible;
-    outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+
+.team-container {
+  max-width: 1000px;
+  margin: auto;
+  border-top: 1px #e9e9e9 solid;
+  border-bottom: 1px #e9e9e9 solid;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 3em;
+  position: relative;
 }
-.hexIn {
-    display:block;
+
+.team-member {
+  width: 16%;
+  float: left;
+  text-align: center;
+  margin-right: 5%;
+}
+
+.team-member:last-child {margin-right: 0;}
+
+
+.team-member span,
+.team-member h3 {
+  max-width: 200px;
+  font-family: sans-serif;
+  letter-spacing: -1px;
+}
+
+.team-member h3 {
+  color: #1CA3A3;
+}
+
+.email {
+  color: #EA2678;
+
+}
+
+.team-member span {
+  display: block;
+
+}
+.team-photo {
+  border-radius: 80%;
+  text-align: center;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  transition: 0.1s transform ease-in-out;
+}
+
+
+.team-photo:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+
+/* code for phone layout */
+@media (max-width:850px){
+  .team-member {
+    width:25%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 40px;
+
+  }
+
+}
+
+
+
+@media (max-width:650px){
+  .team-member {
+    float: none;
+    display: block;
+    margin: 50px auto;
     width: 100%;
-    height: 100%;
     text-align: center;
-    color: #fff;
-    overflow: hidden;
-    -webkit-transform: skewY(-30deg) rotate(60deg);
-        -ms-transform: skewY(-30deg) rotate(60deg);
-            transform: skewY(-30deg) rotate(60deg);
-}
+  }
 
-/*** HEX CONTENT **********************************************************************/
-.hex img {
-    left: -100%;
-    right: -100%;
-    width: auto;
-    height: 100%;
-    margin: 0 auto;
+  .team-member h3,
+  .team-member span {
+    margin: 15px auto;
+  }
 }
+/* ENDS Team Member CSS
+===========================*/
 
-.hex h1, .hex p {
-    width: 102%;
-    left:-1%; /* prevent line on the right where background doesn't cover image */
-    padding: 5%;
-    box-sizing:border-box;
-    background-color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
-    -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
-            transition:          transform .2s ease-out, opacity .3s ease-out;
-}
-.hex h1 {
-    bottom: 50%;
-    padding-top:50%;
-    font-size: 1.5em;
-    z-index: 1;
-    -webkit-transform:translateY(-100%) translatez(-1px);
-        -ms-transform:translateY(-100%) translatez(-1px);
-            transform:translateY(-100%) translatez(-1px);
-}
-.hex h1:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 45%;
-    width: 10%;
-    text-align: center;
-    border-bottom: 1px solid #fff;
-}
-.hex p {
-    top: 50%;
-    padding-bottom:50%;
-    -webkit-transform:translateY(100%) translatez(-1px);
-        -ms-transform:translateY(100%) translatez(-1px);
-            transform:translateY(100%) translatez(-1px);
-}
-
-
-/*** HOVER EFFECT  **********************************************************************/
-.hexIn:hover h1, .hexIn:focus h1,
-.hexIn:hover p, .hexIn:focus p{
-    -webkit-transform:translateY(0%) translatez(-1px);
-        -ms-transform:translateY(0%) translatez(-1px);
-            transform:translateY(0%) translatez(-1px);
-}
-
-/*** SPACING AND SIZING *****************************************************************/
-@media (min-width:1201px) { /* <- 5-4  hexagons per row */
-    .hex {
-        width: 19.2%; /* = (100-4) / 5 */
-        padding-bottom: 22.170%; /* =  width / sin(60deg) */
-    }
-    .hex:nth-child(9n+6),
-    .hex:nth-child(9n+7),
-    .hex:nth-child(9n+8),
-    .hex:nth-child(9n+9) {
-        margin-top: -4.676%;
-        margin-bottom: -4.676%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
-    }
-    .hex:nth-child(9n+6):last-child,
-    .hex:nth-child(9n+7):last-child,
-    .hex:nth-child(9n+8):last-child,
-    .hex:nth-child(9n+9):last-child {
-        margin-bottom: 0;
-    }
-    .hex:nth-child(9n+6) {
-        margin-left: 0.5%;
-        clear: left;
-    }
-    .hex:nth-child(9n+10) {
-        clear: left;
-    }
-    .hex:nth-child(9n+2),
-    .hex:nth-child(9n+ 7) {
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .hex:nth-child(9n+3),
-    .hex:nth-child(9n+4),
-    .hex:nth-child(9n+8) {
-        margin-right: 1%;
-    }
-}
-@media (max-width: 1200px) and (min-width:901px) {/* <- 4-3  hexagons per row */
-    .hex {
-        width: 24.25%; /* = (100-3) / 4 */
-        padding-bottom: 28.001%; /* =  width / sin(60deg) */
-    }
-    .hex:nth-child(7n+5),
-    .hex:nth-child(7n+6),
-    .hex:nth-child(7n+7) {
-        margin-top: -6.134%;
-        margin-bottom: -6.134%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
-    }
-    .hex:nth-child(7n+5):last-child,
-    .hex:nth-child(7n+6):last-child,
-    .hex:nth-child(7n+7):last-child {
-        margin-bottom: 0;
-    }
-    .hex:nth-child(7n+2),
-    .hex:nth-child(7n+6) {
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .hex:nth-child(7n+3) {
-        margin-right: 1%;
-    }
-    .hex:nth-child(7n+8) {
-        clear: left;
-    }
-    .hex:nth-child(7n+5) {
-        clear: left;
-        margin-left: 0.5%;
-    }
-}
-@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
-    .hex {
-        width: 32.666%; /* = (100-2) / 3 */
-        padding-bottom: 37.720%; /* =  width / sin(60) */
-    }
-    .hex:nth-child(5n+4),
-    .hex:nth-child(5n+5) {
-        margin-top: -8.564%;
-        margin-bottom: -8.564%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
-    }
-    .hex:nth-child(5n+4):last-child,
-    .hex:nth-child(5n+5):last-child {
-        margin-bottom: 0;
-    }
-    .hex:nth-child(5n+4) {
-        margin-right: 1%;
-        margin-left: 0.5%;
-    }
-    .hex:nth-child(5n+2) {
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .hex:nth-child(5n+6) {
-        clear: left;
-    }
-}
-@media (max-width: 600px) { /* <- 2-1  hexagons per row */
-    .hex {
-        width: 49.5%; /* = (100-1) / 2 */
-        padding-bottom: 57.158%; /* =  width / sin(60) */
-    }
-    .hex:nth-child(3n+3) {
-        margin-top: -13.423%;
-        margin-bottom: -13.423%;
-        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-                transform: translateX(50%) rotate(-60deg) skewY(30deg);
-    }
-    .hex:nth-child(3n+3):last-child {
-        margin-bottom: 0;
-    }
-    .hex:nth-child(3n+3) {
-        margin-left: 0.5%;
-    }
-    .hex:nth-child(3n+2) {
-        margin-left: 1%;
-    }
-    .hex:nth-child(3n+4) {
-        clear: left;
-    }
-}
-@media (max-width: 400px) {
-    #hexGrid {
-        font-size: 13px;
-    }
-}
-/* end of css our team */
 	  </style>
 
   </head>
-
   <body>
-
     <!-- Navigation -->
-    <nav class="page-wrap navbar fixed-top navbar-expand-lg bg-white fixed-top">
-      <div class="container">
+    <nav class="navbar navbar-expand-md bg-white fixed-top">
         <!-- LOGO -->
-        <div class="logo" style="width: 250px">
-          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently" /></a>
+        <a class="navbar-brand" style="margin-left: 3%;" href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently"/></a>
+        <button style="font-size: 25px;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div id="cssmenu" style="position: absolute; right: 0;margin-right: 3%;">
+       <ul class="navbar-nav">
+           <li class="nav-item active"><a class="nav-link" href='#'>Event</a></li>
+           <li class="nav-item"><a class="nav-link" href='<?php echo base_url(); ?>about'>Tentang</a></li>
+           <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>contact">Kontak</a></li>
+       </ul>
+       <!-- end of div collapse -->
+       </div>
         </div>
-         <div class="topnav" id='cssmenu'>
-      <ul>
-          <li class='active'><a href='#'>Event</a></li>
-          <li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
-          <li><a href="<?php echo base_url(); ?>contact">Kontak</a></li>
-      </ul>
-    </div>
+      <!-- end of navbar -->
     </nav>
-    <br>
+      <br>
     <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 1%;">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -334,44 +238,58 @@
 
         <!-- our team -->
         <div class="col-sm-12 col-md-12 col-lg-12" id="backgroundTeam">
-          <center><p class="anaglyphic" style="font-weight: bold; margin: 0; font-size: 50px; font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;">Meet Our Team</p></center>
-          <ul id="hexGrid">
-            <li class="hex">
-                <a class="hexIn" href="#">
-                    <img src="<?php echo base_url()?>assets/pp/fadli.jpg" alt="" />
-                    <h1>Front End</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
-                </a>
-            </li>
-            <li class="hex">
-                <a class="hexIn" href="#">
-                    <img src="<?php echo base_url()?>assets/pp/fadli.jpg" alt="" />
-                    <h1>Front End</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
-                </a>
-            </li>
-            <li class="hex">
-                <a class="hexIn" href="#">
-                    <img src="<?php echo base_url()?>assets/pp/fadli.jpg" alt="" />
-                    <h1>Front End</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
-                </a>
-            </li>
-            <li class="hex">
-                <a class="hexIn" href="#">
-                    <img src="<?php echo base_url()?>assets/pp/fadli.jpg" alt="" />
-                    <h1>Front End</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
-                </a>
-            </li>
-            <li class="hex">
-                <a class="hexIn" href="#">
-                    <img src="<?php echo base_url()?>assets/pp/fadli.jpg" alt="" />
-                    <h1>Front End</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
-                </a>
-            </li>
-          </ul>
+          <!-- this section wraps the team members as a container-->
+
+<section class="cf team-container">
+  <h1 class="team-h1">Our Team</h1>
+
+    <!-- member-->
+    <div class="team-member">
+      <img class="team-photo" src="<?php echo base_url();?>assets/pp/fadli.jpg">
+      <h3>Muhammad Nur Fadli</h3>
+      <span>Front End Developer</span>
+      <a class="email" href="mailto:muhammadnurfadlifadli@gmail.com"><span>email</span></a>
+    </div>
+
+
+    <!-- member-->
+    <div class="team-member">
+    <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+      <h3>Person's Name</h3>
+      <span>This section could be used to show a very short bio description for each member</span>
+       <a class="email" href="mailto:email@something.com"><span >email</span></a>
+    </div>
+
+
+    <!-- member-->
+    <div class="team-member">
+    <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+      <h3>Person's Name</h3>
+      <span>This section could be used to show a very short bio description for each member</span>
+      <a class="email" href="mailto:email@something.com"><span >email</span></a>
+    </div>
+
+
+
+    <!-- member-->
+    <div class="team-member">
+    <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+      <h3>Person's Name</h3>
+      <span>This section could be used to show a very short bio description for each member</span>
+       <a class="email" href="mailto:email@something.com"><span >email</span></a>
+    </div>
+
+
+    <!-- member-->
+    <div class="team-member">
+    <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+      <h3>Person's Name</h3>
+      <span>This section could be used to show a very short bio description for each member</span>
+       <a class="email" href="mailto:email@something.com"><span >email</span></a>
+    </div>
+
+ </section>
+          <!-- ./ div our team -->
         </div>
     </div>
     <!-- /.row -->
