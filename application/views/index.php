@@ -17,6 +17,8 @@
     <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/lambangevent.ico">
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/new.css"> -->
+    <!-- <link rel="stylesheet" href="assets/js/newEvent.js"> -->
       <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
       <style type="text/css">
         /*disamping*/
@@ -31,15 +33,13 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top bg-dark navbar-expand-lg bg-dark fixed-top">
+    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
       <div class="container">
 
         <!-- LOGO -->
         <div class="logo" style="width: 250px"> 
-          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/eventlly.png" alt="Evently" /></a>
+          <!-- <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/even.png" alt="Evently" /></a> -->
         </div>
-
-
     
          <div class="collapse" id='cssmenu'>
       <ul>
@@ -51,7 +51,7 @@
     </nav>
     <br>
 
-    <header>
+   <!--  <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -59,15 +59,15 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
+          
           <div class="carousel-item active">
-            <img src="<?php echo base_url();?>assets/poster/vocomfest.jpg">
+            <img src="<?php echo base_url();?>assets/images/ugm.png">
           </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
+          
           <div class="carousel-item" >
             <img src="<?php echo base_url();?>assets/poster/child.jpg">
           </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
+          
           <div class="carousel-item">
             <img src="<?php echo base_url();?>assets/poster/algorithm.jpg">
           </div>
@@ -81,16 +81,44 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </header>
+    </header> -->
+
+
+
+
+   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="assets/images/ugm.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="assets/images/ugmmm.png" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 
     <div class="container">
     <!-- Page Content 
 
 		<!-- Portfolio Section -->
 		<br>
-		<center><h2>Evently</h2></center>
+		<center><h2>Deadline Event</h2></center>
 		<br>
-      <div class="row">
+      <!-- <div class="row">
 		<?php
 			if(!empty($threadRecords))
 			{
@@ -118,9 +146,12 @@
 				}
 			}
 		?>
-      <!-- /.row -->
+      
 
-    </div>
+    </div -->
+
+   
+
 	</div>
     <!-- /.container -->
 

@@ -28,7 +28,7 @@
 	  
         <!-- LOGO -->
         <div class="logo" style="width: 250px"> 
-			<a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
+			<!-- <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a> -->
         </div>
 
         <div class="collapse" id='cssmenu'>
