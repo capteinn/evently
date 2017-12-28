@@ -9,7 +9,7 @@ class Thread_model extends CI_Model
      */
     function listThread($userId)
     {
-        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama');
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.status, e.nama');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
         $this->db->where('t.createdBy', $userId);
@@ -42,7 +42,7 @@ class Thread_model extends CI_Model
      */
     function threadInfo($id_thread)
     {
-        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.id_event');
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.status, t.id_event');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
         $this->db->where('t.id_thread', $id_thread);

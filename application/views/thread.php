@@ -30,6 +30,7 @@
 								<th>Tanggal Mulai</th>
 								<th>Tanggal Selesai</th>
 								<th>Deskripsi</th>
+								<th>Status</th>
 								<th class="text-center">Aksi</th>
 							</tr>
 							<?php
@@ -47,6 +48,7 @@
 								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></td>
 								<td><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></td>
 								<td><?php echo $record->deskripsi ?></td>
+								<td><?php echo $record->status ?></td>
 								<td class="text-center">
 									<a class="btn btn-sm btn-info" href="<?php echo base_url(); ?>editOldThread/<?php echo $record->id_thread; ?>"><i class="fa fa-pencil"></i></a>
 								</td>

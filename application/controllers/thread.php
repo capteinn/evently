@@ -154,6 +154,7 @@ class Thread extends BaseController
         $this->form_validation->set_rules('tgl_mulai','Tanggal Mulai','trim|required');
         $this->form_validation->set_rules('tgl_selesai','Tanggal Selesai','trim|required');
         $this->form_validation->set_rules('deskripsi','Deskripsi','trim|required|xss_clean');
+        $this->form_validation->set_rules('status','Status','trim|required|xss_clean');
             
         if($this->form_validation->run() == FALSE)
         {
@@ -175,15 +176,16 @@ class Thread extends BaseController
 			$tgl_mulai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_mulai'))->format('Y-m-d');
 			$tgl_selesai = DateTime::createFromFormat('m/d/Y', $this->input->post('tgl_selesai'))->format('Y-m-d');
             $deskripsi = $this->input->post('deskripsi');
+            $status = $this->input->post('status');
             
 			if ( ! $this->upload->do_upload('poster')){
 				$error = array('error' => $this->upload->display_errors());
-				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'status'=>$status);
 				
 			}else{
 				// $terupload = array('upload_data' => $this->upload->data());
 				$terupload = $this->upload->data();
-				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$terupload['file_name'], 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi);
+				$threadInfo = array('id_event'=>$event, 'judul'=>$judul, 'poster'=>$terupload['file_name'], 'tgl_mulai'=>$tgl_mulai, 'tgl_selesai'=>$tgl_selesai, 'deskripsi'=>$deskripsi, 'status'=>$status);
 			}
             
             $result = $this->thread_model->editThread($threadInfo, $id_thread);
