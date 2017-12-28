@@ -57,6 +57,7 @@ class Pendaftaran_model extends CI_Model
         $this->db->join('event as e', 'me.id_event=e.id_event');
         $this->db->join('thread as t', 'e.id_event=t.id_event');
         $this->db->where('me.createdBy', $userId);
+		$this->db->where('t.status', 'aktif');
         $this->db->group_by('t.id_thread');
         
         $query = $this->db->get();
