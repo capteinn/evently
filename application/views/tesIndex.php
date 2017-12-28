@@ -62,64 +62,124 @@
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
       </div>
+      <div class="col-lg-12" style="background: #FECE1A;">
+        <center><h2 style="color: #fff;">Oprec Terbaru!</h2></center>
+        <div id="owl-demo2" style="width: 80%; margin: auto; display: block;">
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar:2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara:2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
+        </div>
+      </div>
       <div class="col-lg-12" style="background: #181A1C;">
-        <center><h2 style="color: #FFF;">Open Rec Terbaru!</h2></center>
+        <center><h2 style="color: #fff;">Oprec Terbaru!</h2></center>
         <div id="owl-demo" style="width: 80%; margin: auto; display: block;">
           <div class="item">
             <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
             <h3 style="color: #FECE1A;">Vocomfest</h3>
             <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
             <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
             <br>
             <br>
             <a href="#" class="action-button shadow animate blue">Join</a>
           </div>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar:2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara:2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
+          </div>
+          <span style="display:inline-block;"></span>
           <div class="item">
             <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
             <h3 style="color: #FECE1A;">Vocomfest</h3>
             <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
             <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
             <br>
             <br>
             <a href="#" class="action-button shadow animate blue">Join</a>
           </div>
-          <!-- <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
           </div>
-          <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
+          <span style="display:inline-block;"></span>
+          <div class="item">
+            <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+            <h3 style="color: #FECE1A;">Vocomfest</h3>
+            <span style="color: #FFF">Tanggal daftar: 2 Januari 2018</span>
+            <br>
+            <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+            <br>
+            <br>
+            <a href="#" class="action-button shadow animate blue">Join</a>
           </div>
-          <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
-          </div>
-          <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
-          </div>
-          <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
-          </div>
-          <div class="item" style="margin-right: 20% !important;">
-            <img class="gambarOWL" src="http://www.placehold.it/300x250" alt="Owl Image">
-            <h3>Player Name</h3>
-            <p>Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            <p><a href="#">View Profile</a></p>
-          </div> -->
-
+          <span style="display:inline-block;"></span>
         </div>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-12" id="backgroundTeam">
@@ -182,8 +242,60 @@
 </script>
 <!-- js buat owl carousel -->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.js"></script>
+<!-- end of line js buat owl carousel -->
 <!-- DC Horizontal Carousel JS -->
 <script type="text/javascript">
+// owl demo js
+  $(document).ready(function() {
+
+    $("#owl-demo2").owlCarousel({
+
+      // Most important owl features
+      items: 5,
+      itemsDesktop: [1199, 3],
+      itemsDesktopSmall: [979, 3],
+      itemsTablet: [768, 2],
+      itemsMobile: [479, 1],
+
+      //Autoplay
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+      stopOnHover: true,
+
+      //Basic Speeds
+      slideSpeed: 200,
+      paginationSpeed: 800,
+      rewindSpeed: 1000,
+
+      // Navigation
+      navigation: false,
+      navigationText: ["prev", "next"],
+      rewindNav: true,
+      scrollPerPage: false,
+
+      //Pagination
+      pagination: false,
+      paginationNumbers: false,
+
+      // CSS Styles
+      baseClass: "owl-carousel",
+      theme: "owl-theme",
+
+      //Auto height
+      autoHeight: false,
+
+      //Mouse Events
+      dragBeforeAnimFinish: true,
+      mouseDrag: true,
+      touchDrag: true,
+
+      //Transitions
+      transitionStyle: false,
+
+    });
+
+  });
+  // end of owl demo js
+// owl demo js
   $(document).ready(function() {
 
     $("#owl-demo").owlCarousel({
@@ -232,6 +344,7 @@
     });
 
   });
+  // end of owl demo js
 </script>
 
 </html>

@@ -134,6 +134,15 @@ display: block;
 width: 100%;
 height: auto;
 }
+#owl-demo2 .item{
+margin: 3px;
+}
+
+#owl-demo2 .item{
+display: block;
+width: 100%;
+height: auto;
+}
 .gambarOWL{
   display: block;
   width: 170%;
@@ -289,3 +298,6 @@ margin: 15px auto;
 	border-bottom: 1px solid;
 }
 /* end of css button join */
+/* css buat tulisan oprec */
+
+/* end of css tulisan oprec */
