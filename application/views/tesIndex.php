@@ -32,7 +32,12 @@
   <nav class="navbar navbar-expand-md bg-white fixed-top">
     <!-- LOGO -->
     <a class="navbar-brand" style="margin-left: 3%;" href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently"/></a>
-    <button style="font-size: 25px;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button style="font-size: 25px background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -51,14 +56,14 @@
   <!-- Navigation -->
 
   <br>
-
   <div class="container-fluid">
     <br>
     <div class="row">
       <!-- apa itu evently -->
       <div style="background:url('http://www.pixeden.com/media/k2/galleries/165/003-subtle-light-pattern-background-texture-vol5.jpg');" class="col-sm-12 col-md-12 col-lg-12">
         <center><label>Apa itu Evently?</label></center>
-        <p>Sebuah website promosi dan requiremnt panitia yang dikhususkan kepada himpuan himpunan mahasiswa yang ada di Department Teknik Elektro dan Infromatika Sekolah Vokasi Universitas Gadjah Mada. Bertujuan untuk memudahkan dan mengefesienkan rule menjadi mahasiswa organisasi.</p>
+        <p>Sebuah website promosi dan requiremnt panitia yang dikhususkan kepada himpuan himpunan mahasiswa yang ada di Department Teknik Elektro dan Infromatika Sekolah Vokasi Universitas Gadjah Mada. Bertujuan untuk memudahkan dan mengefesienkan rule menjadi
+          mahasiswa organisasi.</p>
         <br>
         <p>Mari raih karir organisasi mu dengan Evently.</p>
       </div>
@@ -312,6 +317,7 @@
 
   });
   // end of owl demo2 js
+
   // owl demo js
   $(document).ready(function() {
 
