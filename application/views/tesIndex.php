@@ -28,6 +28,32 @@
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
 </head>
 
+<style type="text/css">
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+  .desc{
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 10%;
+    right: 10%;
+  }
+   .caption {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+  .row{
+     flex: 100%;
+  }
+
+</style>
+
 <body>
   <nav class="navbar navbar-expand-md bg-white fixed-top">
     <!-- LOGO -->
@@ -50,21 +76,26 @@
   </nav>
   <!-- Navigation -->
 
+
   <br>
 
   <div class="container-fluid">
-    <br>
     <div class="row">
       <!-- apa itu evently -->
-      <div style="background:url('http://www.pixeden.com/media/k2/galleries/165/003-subtle-light-pattern-background-texture-vol5.jpg');" class="col-sm-12 col-md-12 col-lg-12">
-        <center><label>Apa itu Evently?</label></center>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
+      <!-- <div class="col-sm-12 col-md-12 col-lg-12"> -->
+        <img src="assets/images/ugm.jpg" alt="ugm" style="width: 100%" onclick="window.location='<?php echo base_url(); ?>about'" gitu?;">
+        <div class="centered"><h1 style="color: #FFF">Apa itu Evently?</h1></div>
+        <div class="desc"><h5 style="color: #FFF">Sebuah untuk website promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5></div>
+        <div class="caption"><h3 style="color: #FFF;">"Mari raih karir organisasimu dengan Evently!"</h3></div>
+    </div>
+  </div>    
+      <!-- </div> -->
       <!-- end of apa itu evently -->
 
       <!-- oprec terdeadline -->
       <div class="col-lg-12" style="background: #FECE1A; font-family: Roboto Condensed;">
+      <br>
+      <br>
         <center>
           <h2 style="color: #fff;">OPREC TERDEADLINE!</h2></center>
         <br>
@@ -88,7 +119,7 @@
             <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
             <br>
             <br>
-            <a href="#" class="action-button shadow animate blue">Join</a>
+                                           <a href="#" class="action-button shadow animate blue">Join</a>
           </div>
           <span style="display:inline-block;"></span>
           <div class="item">

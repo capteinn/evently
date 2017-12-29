@@ -41,13 +41,16 @@
 
 
 
-         <div class="collapse" id='cssmenu'>
-      <ul>
-          <li class='active'><a href='#'>Event</a></li>
-          <li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
-          <li><a href="<?php echo base_url(); ?>contact">Kontak</a></li>
-      </ul>
-    </div>
+        <div class="collapse" id='cssmenu'>
+            <ul class="topnav">
+                <li class='active'><a href='#'>Event</a></li>
+                <li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
+                <li><a href="<?php echo base_url(); ?>contact">Kontak</a></li>
+                <li class="icon">
+                  <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <br>
 
