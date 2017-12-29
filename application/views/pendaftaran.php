@@ -11,34 +11,52 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Daftar Pendaftaran</h3>
+						<h3 class="box-title">Daftar Pendaftaran <b><?php echo $this->uri->segment(3); ?> </b></h3>
 						<br />
 						<br />
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-4">
 							</div>
 							<div class="col-md-1">
 								<p>Filter List : </p>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
+									<!--<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>-->
+									<select id="filterEvent" name="filterEvent" onChange="window.location.href=this.value" >
+										<option value="">Pilih Event</option>
+										<?php
+											if(!empty($eventRecords)){
+												foreach($eventRecords as $record){
+													
+										?>
+										<option value="<?php echo base_url(); ?>pendaftaranListing/<?php echo $this->uri->segment(2); ?>/<?php echo $record->nama; ?>" <?php if($record->nama == $this->uri->segment(3)) {echo "selected=selected";} ?>><?php echo $record->nama; ?></option>
+										<?php
+												}
+											}
+										?>
+									</select>
+								</form>
+							</div>
+							<div class="col-md-1">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/semua/<?php echo $this->uri->segment(3); ?>" method="post">
 									<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>
 									<br>
 								</form>
 							</div>
 							<div class="col-md-1">
-								<form action="<?php echo base_url(); ?>pendaftaranListing/proses" method="post">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/proses/<?php echo $this->uri->segment(3); ?>" method="post">
 									<input id="proses" type="radio" name="filterStatus" onclick="javascript:submit()" value="proses" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'proses') echo ' checked="checked"';?> /><label for="datedesc">Proses</label>
 									<br>
 								</form>
 							</div>
 							<div class="col-md-1">
-								<form action="<?php echo base_url(); ?>pendaftaranListing/ditolak" method="post">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/ditolak/<?php echo $this->uri->segment(3); ?>" method="post">
 									<input id="ditolak" type="radio" name="filterStatus" onclick="javascript:submit()" value="ditolak" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'ditolak') echo ' checked="checked"';?> /><label for="datedesc">Ditolak</label>
 								</form>
 							</div>
 							<div class="col-md-2">
-								<form action="<?php echo base_url(); ?>pendaftaranListing/diterima" method="post">
+								<form action="<?php echo base_url(); ?>pendaftaranListing/diterima/<?php echo $this->uri->segment(3); ?>" method="post">
 									<input id="diterima" type="radio" name="filterStatus" onclick="javascript:submit()" value="diterima" <?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'diterima') echo ' checked="checked"';?> /><label for="datedesc">Diterima</label>
 									<br>
 								</form>
@@ -52,8 +70,9 @@
 								<th>No</th>
 								<th>NIM</th>
 								<th>Nama</th>
-								<th>CV</th>
-								<th>KRS</th>
+								<th>Prodi</th>
+								<th>Event</th>
+								<th>BERKAS</th>
 								<th>Status</th>
 								<th class="text-center">Detail</th>
 								<th></th>
@@ -70,11 +89,12 @@
 								<td><?php echo $no ?></td>
 								<td><?php echo $record->nim ?></td>
 								<td><?php echo $record->nama_mahasiswa ?></td>
+								<td><?php echo $record->prodi ?></td>
+								<td><?php echo $record->event ?></td>
 								<td>
 									<a href="<?php echo base_url();?>assets/mahasiswa/<?php echo $record->cv ?>" target="_blank" style="max-width: 5px;">
-									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a> 
-								</td>
-								<td>
+									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>
+
 									<a href="<?php echo base_url();?>assets/mahasiswa/<?php echo $record->krs ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>
 								</td>
