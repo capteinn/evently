@@ -2,16 +2,32 @@
 
 class Sie_model extends CI_Model
 {
+	/**
+     * This function is used to get the user listing count
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function sieListingCount($userId)
+    {
+        $this->db->select('id_sie, nama, deskripsi');
+        $this->db->from('sie');
+        $this->db->where('createdBy', $userId);
+        $query = $this->db->get();
+        
+        return count($query->result());
+    }
+	
     /**
      * This function is used to get the user listing count
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listSie($userId)
+    function listSie($userId, $page, $segment)
     {
         $this->db->select('id_sie, nama, deskripsi');
         $this->db->from('sie');
         $this->db->where('createdBy', $userId);
+		$this->db->limit($page, $segment);
         $query = $this->db->get();
         
         $result = $query->result();        

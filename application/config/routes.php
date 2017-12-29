@@ -67,6 +67,7 @@ $route['editEvent'] = "event/editEvent";
 
 /*********** ADMIN SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
+$route['sieListing/(:num)'] = "sie/sieListing/$1";
 $route['addNewSie'] = "sie/addNew";
 $route['addNewSieNow'] = "sie/addNewSie";
 $route['editOldSie/(:num)'] = "sie/editOld/$1";
