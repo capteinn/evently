@@ -190,7 +190,7 @@ clear: both;
 .team-container {
 max-width: 1000px;
 margin: auto;
-border-top: 1px #e9e9e9 solid;
+border-top: 2px #e9e9e9 solid;
 border-bottom: 1px #e9e9e9 solid;
 padding-top: 5em;
 padding-bottom: 5em;
@@ -233,6 +233,7 @@ text-align: center;
 margin: auto;
 max-width: 100%;
 height: auto;
+display: block;
 transition: 0.1s transform ease-in-out;
 }
 
@@ -299,6 +300,8 @@ margin: 15px auto;
 	border-bottom: 1px solid;
 }
 /* end of css button join */
+
+
 /* css buat tulisan oprec */
 
 /* end of css tulisan oprec */
