@@ -32,6 +32,7 @@ class Mapping_model extends CI_Model
         $this->db->join('sie as s', 'm.id_sie = s.id_sie');
         $this->db->where('m.createdBy', $userId);
 		$this->db->limit($page, $segment);
+		$this->db->order_by('m.id_event');
         $query = $this->db->get();
         
         $result = $query->result();        
@@ -93,7 +94,7 @@ class Mapping_model extends CI_Model
     function sieInfo($userId)
     {
         $this->db->select('id_sie, nama, deskripsi');
-        $this->db->from('sie');
+        $this->db->from('sie as s');
         $this->db->where('createdBy', $userId);
         $query = $this->db->get();
         
