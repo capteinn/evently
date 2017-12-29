@@ -2,16 +2,32 @@
 
 class Event_model extends CI_Model
 {
+	/**
+     * This function is used to get the user listing count
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function eventListingCount($userId)
+    {
+        $this->db->select('id_event, nama, deskripsi');
+        $this->db->from('event');
+        $this->db->where('createdBy', $userId);
+        $query = $this->db->get();
+        
+        return count($query->result());
+    }
+	
     /**
      * This function is used to get the user listing count
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listEvent($userId)
+    function listEvent($userId, $page, $segment)
     {
         $this->db->select('id_event, nama, deskripsi');
         $this->db->from('event');
         $this->db->where('createdBy', $userId);
+		$this->db->limit($page, $segment);
         $query = $this->db->get();
         
         $result = $query->result();        

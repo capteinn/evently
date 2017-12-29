@@ -37,8 +37,14 @@ class Sie extends BaseController
     function sieListing()
     {   
         $userId = $this->vendorId;
+		
+		$this->load->library('pagination');
             
-        $data['sieRecords'] = $this->sie_model->listSie($userId);
+        $count = $this->sie_model->sieListingCount($userId);
+
+		$returns = $this->paginationCompress ( "sieListing/", $count, 5 );
+            
+        $data['sieRecords'] = $this->sie_model->listSie($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Sie';
             

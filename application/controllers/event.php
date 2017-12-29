@@ -37,8 +37,14 @@ class Event extends BaseController
     function eventListing()
     {   
         $userId = $this->vendorId;
+		
+		$this->load->library('pagination');
             
-        $data['eventRecords'] = $this->event_model->listEvent($userId);
+        $count = $this->event_model->eventListingCount($userId);
+
+		$returns = $this->paginationCompress ( "eventListing/", $count, 5 );
+            
+        $data['eventRecords'] = $this->event_model->listEvent($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Event';
             

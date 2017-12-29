@@ -46,6 +46,8 @@ $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+// pagination masih error boss.. mumet
+// $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
@@ -53,9 +55,11 @@ $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListi
 
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
+$route['mahasiswaListing/(:num)'] = "mahasiswa/mahasiswaListing/$1";
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
+$route['eventListing/(:num)'] = "event/eventListing/$1";
 $route['addNewEvent'] = "event/addNew";
 $route['addNewEventNow'] = "event/addNewEvent";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
@@ -63,6 +67,7 @@ $route['editEvent'] = "event/editEvent";
 
 /*********** ADMIN SIE DEFINED ROUTES *******************/
 $route['sieListing'] = 'sie/sieListing';
+$route['sieListing/(:num)'] = "sie/sieListing/$1";
 $route['addNewSie'] = "sie/addNew";
 $route['addNewSieNow'] = "sie/addNewSie";
 $route['editOldSie/(:num)'] = "sie/editOld/$1";
@@ -70,6 +75,7 @@ $route['editSie'] = "sie/editSie";
 
 /*********** ADMIN MAPPING EVENT DEFINED ROUTES *******************/
 $route['mappingListing'] = 'mapping/mappingListing';
+$route['mappingListing/(:num)'] = "mapping/mappingListing/$1";
 $route['addNewMapping'] = "mapping/addNew";
 $route['addNewMappingNow'] = "mapping/addNewMapping";
 $route['editOldMapping/(:num)'] = "mapping/editOld/$1";
@@ -77,6 +83,7 @@ $route['editMapping'] = "mapping/editMapping";
 
 /*********** ADMIN THREAD DEFINED ROUTES *******************/
 $route['threadListing'] = 'thread/threadListing';
+$route['threadListing/(:num)'] = "thread/threadListing/$1";
 $route['addNewThread'] = "thread/addNew";
 $route['addNewThreadNow'] = "thread/addNewThread";
 $route['editOldThread/(:num)'] = "thread/editOld/$1";
