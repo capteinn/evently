@@ -53,6 +53,7 @@ $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListi
 
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
+$route['mahasiswaListing/(:num)'] = "mahasiswa/mahasiswaListing/$1";
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';

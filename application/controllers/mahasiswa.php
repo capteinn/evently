@@ -37,8 +37,14 @@ class Mahasiswa extends BaseController
     function mahasiswaListing()
     {   
         $userId = $this->vendorId;
+		
+		$this->load->library('pagination');
             
-        $data['mahasiswaRecords'] = $this->mahasiswa_model->listMahasiswa($userId);
+        $count = $this->mahasiswa_model->mahasiswaListingCount($userId);
+
+		$returns = $this->paginationCompress ( "mahasiswaListing/", $count, 5 );
+            
+        $data['mahasiswaRecords'] = $this->mahasiswa_model->listMahasiswa($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Mahasiswa';
             
