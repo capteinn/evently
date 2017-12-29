@@ -1,117 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Form Registration Evently</title>
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
+<head>
+	<title>Form Registration Evently</title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 
-		<!-- Custom styles for this template -->
-		<link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
-		<link rel="shortcut icon" href="assets/images/lambangevent.ico">
-		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
-		<style>
-			body {margin: 0; padding: 0;}
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 
-			.navbar {padding-top: 5px;}
+	<!-- Custom styles for this template -->
+	<link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+	<link rel="shortcut icon" href="assets/images/lambangevent.ico">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
 
-			.navbarnya {display: inline-block;}
+		.navbar {
+			padding-top: 5px;
+		}
 
-			.well {width:700px;margin:auto;}
-			#cssmenu{float: right;}
+		.navbarnya {
+			display: inline-block;
+		}
 
-		</style>
-	</head>
+		.well {
+			width: 700px;
+			margin: auto;
+		}
 
-	<body>
-		<nav class="navbar navbar-expand-lg">
-		 <div class="container">
+		#cssmenu {
+			float: right;
+		}
+	</style>
+</head>
 
-			 <!-- LOGO -->
-			 <div class="navbarnya" style="margin-left: 4%;">
-				 <a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
-			 </div>
+<body>
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
 
-			 <div class="collapse" id='cssmenu'>
-	<ul>
-			<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
-			<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
-			<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
-	</ul>
- </div>
+			<!-- LOGO -->
+			<div class="navbarnya" style="margin-left: 4%;">
+				<a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
+			</div>
+
+			<div class="collapse" id='cssmenu'>
+				<ul>
+					<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+					<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
+					<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
+				</ul>
+			</div>
 
 
-		 </div>
-	 </nav>
-		<div class="container" style="">
+		</div>
+	</nav>
+	<div class="container" style="">
 
-			<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post"  id="contact_form">
+		<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post" id="contact_form">
 
-				<fieldset>
-					<!-- Form Name -->
-					<legend>Lengkapi Identitas Anda</legend>
+			<fieldset>
+				<!-- Form Name -->
+				<legend>Lengkapi Identitas Anda</legend>
 
-					  <!-- Text input-->
+				<!-- Text input-->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label">Nama</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input  name="nama" placeholder="Nama Lengkap" class="form-control"  type="text">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Nama</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="nama" placeholder="Nama Lengkap" class="form-control" type="text">
 						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
+				<!-- Text input-->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >NIM</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control"  type="text">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">NIM</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control" type="text">
 						</div>
 					</div>
+				</div>
 
-					<!-- radio checks -->
-					<div class="form-group">
-						<label class="col-md-4 control-label">Jenis Kelamin</label>
-						<div class="col-md-6">
-							<div class="radio">
-								<label>
+				<!-- radio checks -->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Jenis Kelamin</label>
+					<div class="col-md-6">
+						<div class="radio">
+							<label>
 								<input type="radio" name="jenkel" value="L" checked /> Laki-Laki
 								</label>
-							</div>
-							<div class="radio">
-								<label>
+						</div>
+						<div class="radio">
+							<label>
 								<input type="radio" name="jenkel" value="P" /> Perempuan
 								</label>
-							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
+				<!-- Text input-->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label">Nomor Telpon #</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Nomor Telpon #</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
 						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" >Prodi</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<select class="form-control required" id="prodi" name="prodi">
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Prodi</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<select class="form-control required" id="prodi" name="prodi">
                                             <option value="">Pilih Prodi</option>
                                                 <option value="1">KOMSI</option>
                                                 <option value="2">METINS</option>
@@ -119,78 +132,78 @@
                                                 <option value="4">DTJ</option>
                                                 <option value="5">ELINS</option>
                                         </select>
-							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >Angkatan</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control"  type="text">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Angkatan</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control" type="text">
 						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
+				<!-- Text input-->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >Kelas</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="kelas" class="form-control"  type="text">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Kelas</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="kelas" class="form-control" type="text">
 						</div>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >CV</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="cv" class="form-control"  type="file">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">CV</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="cv" class="form-control" type="file">
 						</div>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >KRS</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="krs" placeholder="Ekstensi PDF" class="form-control"  type="file">
-							</div>
+				<div class="form-group">
+					<label class="col-md-4 control-label">KRS</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="krs" placeholder="Ekstensi PDF" class="form-control" type="file">
 						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
-					<legend>Pilih Sie Anda!</legend>
+				<!-- Text input-->
+				<legend>Pilih Sie Anda!</legend>
 
-					<!-- Text input-->
+				<!-- Text input-->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label" >Event</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Event</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
 							<?php
                                 if(!empty($event)){
                                     	foreach ($event as $ev){?>
-								<p class="form-control" ><b><?php echo $ev->nama ?></b></p>
-							<?php
+								<p class="form-control"><b><?php echo $ev->nama ?></b></p>
+								<?php
                                         }
                                 }
                             ?>
-							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- Select Radio Button -->
+				<!-- Select Radio Button -->
 
-					<div class="form-group">
-						<label class="col-md-4 control-label">Pilih Sie</label>
-						<div class="col-md-6">
+				<div class="form-group">
+					<label class="col-md-4 control-label">Pilih Sie</label>
+					<div class="col-md-6">
 						<?php
                             if(!empty($sie))
                                 {
@@ -201,53 +214,53 @@
                                     <input type="checkbox" id="sie" name="sie[]" value="<?php echo $si->id_sie ?>">  <?php echo $si->nama."=>".$si->id_sie ?>
                             	</label>
 							</div>
-                        <?php
+							<?php
                                 		}
                                 }?>
+					</div>
+				</div>
+
+				<!-- Text area -->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Alasan</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<textarea class="form-control" name="alasan" placeholder="Project Description"></textarea>
 						</div>
 					</div>
-
-					<!-- Text area -->
-
-					<div class="form-group">
-						<label class="col-md-4 control-label">Alasan</label>
-						<div class="col-md-6 inputGroupContainer">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-								<textarea class="form-control" name="alasan" placeholder="Project Description"></textarea>
-							</div>
-						</div>
+				</div>
+				<br>
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-success">DAFTAR SEKARANG <span class="glyphicon glyphicon-send"></span></button>
 					</div>
-					<br>
-					<!-- Button -->
-					<div class="form-group">
-						<label class="col-md-4 control-label"></label>
-						<div class="col-md-4">
-							<button type="submit" class="btn btn-success" >DAFTAR SEKARANG <span class="glyphicon glyphicon-send"></span></button>
-						</div>
-					</div>
+				</div>
 
-				</fieldset>
-			</form>
-		</div>
+			</fieldset>
+		</form>
+	</div>
 
-	</body>
-	<!-- Footer -->
-    <footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:120%;" >
-        <p class="text-center" >Copyright &copy; Evently 2017</p>
+</body>
+<!-- Footer -->
+<footer style="padding: 15px 0 10px;margin-top: 20px; background-color: #343a40; color: white; font-size:120%;">
+	<p class="text-center">Copyright &copy; Evently 2017</p>
 
-      <!-- /.container -->
-    </footer>
-  <!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
-	<script type="text/javascript">
-		$(':checkbox').change(function(){
-			var len = $(':checkbox:checked').length;
-			$(':checkbox').not(':checked').prop('disabled',len >= 2)
-		});
-		$(document).ready(function() {
+	<!-- /.container -->
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
+<script type="text/javascript">
+	$(':checkbox').change(function() {
+		var len = $(':checkbox:checked').length;
+		$(':checkbox').not(':checked').prop('disabled', len >= 2)
+	});
+	$(document).ready(function() {
 		$('#contact_form').bootstrapValidator({
 			// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
 			feedbackIcons: {
@@ -259,51 +272,51 @@
 				nama: {
 					validators: {
 						regexp: {
-              regexp: /^[a-z\s]+$/i,
-              message: 'Nama lengkap hanya berisi huruf dan spasi'
-            },
+							regexp: /^[a-z\s]+$/i,
+							message: 'Nama lengkap hanya berisi huruf dan spasi'
+						},
 						stringLength: {
 							min: 4,
 							max: 50,
 							message: 'Minimal 4 karakter, Maksimal 50 karakter'
 						},
-							notEmpty: {
-									message: 'Nama tidak boleh kosong'
-							}
+						notEmpty: {
+							message: 'Nama tidak boleh kosong'
+						}
 					}
 				},
 				nim: {
 					validators: {
-									integer: {
-									message: 'Inputan harus angka',
-									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
-									decimalSeparator: '.' //ini ga boleh ada titik
-							},
-									stringLength: {
-										min: 5,
-										max: 5,
-										message: 'NIM hanya terdiri dari 5 angka'
-									},
-									notEmpty: {
-									message: 'NIM tidak boleh kosong'
-							}
+						integer: {
+							message: 'Inputan harus angka',
+							thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+							decimalSeparator: '.' //ini ga boleh ada titik
+						},
+						stringLength: {
+							min: 5,
+							max: 5,
+							message: 'NIM hanya terdiri dari 5 angka'
+						},
+						notEmpty: {
+							message: 'NIM tidak boleh kosong'
+						}
 					}
 				},
 				angkatan: {
 					validators: {
-									integer: {
-									message: 'Inputan harus angka',
-									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
-									decimalSeparator: '.' //ini ga boleh ada titik
-							},
-									stringLength: {
-										min: 4,
-										max: 4,
-										message: 'Wrong'
-									},
-									notEmpty: {
-									message: 'Angkatan tidak boleh kosong'
-							}
+						integer: {
+							message: 'Inputan harus angka',
+							thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+							decimalSeparator: '.' //ini ga boleh ada titik
+						},
+						stringLength: {
+							min: 4,
+							max: 4,
+							message: 'Wrong'
+						},
+						notEmpty: {
+							message: 'Angkatan tidak boleh kosong'
+						}
 					}
 				},
 				prodi: {
@@ -315,19 +328,19 @@
 				},
 				telepon: {
 					validators: {
-									number: {
-									message: 'Nomor kurang tepat',
-									thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
-									decimalSeparator: '.' //ini ga boleh ada titik
-							},
-									stringLength: {
-										min: 12,
-										max: 12,
-										message: 'Wrong number'
-									},
-									notEmpty: {
-									message: 'Nomer telfon tidak boleh kosong'
-							}
+						number: {
+							message: 'Nomor kurang tepat',
+							thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
+							decimalSeparator: '.' //ini ga boleh ada titik
+						},
+						stringLength: {
+							min: 10,
+							max: 13,
+							message: 'Wrong number'
+						},
+						notEmpty: {
+							message: 'Nomer telfon tidak boleh kosong'
+						}
 					}
 				},
 				kelas: {
@@ -342,25 +355,25 @@
 				},
 				cv: {
 					validators: {
-            notEmpty: {
-              message: 'Mohon lampirkan cv anda (.pdf)'
-            },
-            file: {
-              extension: 'pdf',
-              message: 'Input file harus pdf'
-            }
-          }
+						notEmpty: {
+							message: 'Mohon lampirkan cv anda (.pdf)'
+						},
+						file: {
+							extension: 'pdf',
+							message: 'Input file harus pdf'
+						}
+					}
 				},
 				krs: {
 					validators: {
-            notEmpty: {
-              message: 'Mohon lampirkan krs anda (.pdf)'
-            },
-            file: {
-              extension: 'pdf',
-              message: 'Input file harus pdf'
-            }
-          }
+						notEmpty: {
+							message: 'Mohon lampirkan krs anda (.pdf)'
+						},
+						file: {
+							extension: 'pdf',
+							message: 'Input file harus pdf'
+						}
+					}
 				},
 				sie: {
 					validators: {
@@ -371,18 +384,19 @@
 				},
 				alasan: {
 					validators: {
-						  stringLength: {
+						stringLength: {
 							min: 10,
 							max: 500,
-							message:'Please enter at least 10 characters and no more than 500 characters'
+							message: 'Please enter at least 10 characters and no more than 500 characters'
 						},
 						notEmpty: {
 							message: 'Mohon isikan alasan Anda'
 						}
-						}
 					}
 				}
-			});
+			}
 		});
-	</script>
+	});
+</script>
+
 </html>
