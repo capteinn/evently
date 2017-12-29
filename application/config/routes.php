@@ -46,6 +46,8 @@ $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+// pagination masih error boss.. mumet
+// $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
@@ -78,6 +80,7 @@ $route['editMapping'] = "mapping/editMapping";
 
 /*********** ADMIN THREAD DEFINED ROUTES *******************/
 $route['threadListing'] = 'thread/threadListing';
+$route['threadListing/(:num)'] = "thread/threadListing/$1";
 $route['addNewThread'] = "thread/addNew";
 $route['addNewThreadNow'] = "thread/addNewThread";
 $route['editOldThread/(:num)'] = "thread/editOld/$1";

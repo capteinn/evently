@@ -2,17 +2,34 @@
 
 class Thread_model extends CI_Model
 {
-    /**
+	/**
      * This function is used to get the user listing count
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listThread($userId)
+    function threadListingCount($userId)
     {
         $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.status, e.nama');
         $this->db->from('thread as t');
         $this->db->join('event as e', 't.id_event = e.id_event');
         $this->db->where('t.createdBy', $userId);
+        $query = $this->db->get();
+        
+        return count($query->result());
+    }
+	
+    /**
+     * This function is used to get the user listing count
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function listThread($userId, $page, $segment)
+    {
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, t.status, e.nama');
+        $this->db->from('thread as t');
+        $this->db->join('event as e', 't.id_event = e.id_event');
+        $this->db->where('t.createdBy', $userId);
+		$this->db->limit($page, $segment);
         $query = $this->db->get();
         
         $result = $query->result();        

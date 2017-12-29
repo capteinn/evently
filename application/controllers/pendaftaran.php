@@ -37,8 +37,17 @@ class Pendaftaran extends BaseController
     function pendaftaranListing($ztatuz, $event='')
     {   
         $userId = $this->vendorId;
+		
+		// pagination masih error boss.. mumet
+		// $this->load->library('pagination');
             
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
+        // $count = $this->pendaftaran_model->pendaftaranListingCount($userId, $ztatuz, $event);
+
+		// $returns = $this->paginationCompress ( "pendaftaranListing/semua/$event/", $count, 5 );
+            
+        // $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event, $returns["page"], $returns["segment"]);
+        
+		$data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
         
 		$data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
 		

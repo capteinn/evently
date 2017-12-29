@@ -37,8 +37,14 @@ class Thread extends BaseController
     function threadListing()
     {   
         $userId = $this->vendorId;
+		
+		$this->load->library('pagination');
             
-        $data['threadRecords'] = $this->thread_model->listThread($userId);
+        $count = $this->thread_model->threadListingCount($userId);
+
+		$returns = $this->paginationCompress ( "threadListing/", $count, 5 );
+            
+        $data['threadRecords'] = $this->thread_model->listThread($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Thread';
             
