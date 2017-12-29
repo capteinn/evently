@@ -300,6 +300,31 @@ margin: 15px auto;
 	border-bottom: 1px solid;
 }
 /* end of css button join */
+.centered {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
 
+.desc {
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  left: 10%;
+  right: 10%;
+}
+
+.caption {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.row {
+  flex: 100%;
+}
+/* end of css button join */
 /* css buat tulisan oprec */
 /* end of css tulisan oprec */

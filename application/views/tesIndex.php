@@ -27,35 +27,6 @@
   <link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
 </head>
-
-<style type="text/css">
-  .centered {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-  }
-
-  .desc {
-    position: absolute;
-    text-align: center;
-    top: 45%;
-    left: 10%;
-    right: 10%;
-  }
-
-  .caption {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-  }
-
-  .row {
-    flex: 100%;
-  }
-</style>
-
 <body>
   <nav class="navbar navbar-expand-md bg-white fixed-top">
     <!-- LOGO -->
@@ -77,87 +48,87 @@
     <!-- end of navbar -->
   </nav>
   <!-- Navigation -->
-
-
   <br>
-
   <div class="container-fluid">
     <div class="row">
       <!-- apa itu evently -->
       <!-- <div class="col-sm-12 col-md-12 col-lg-12"> -->
-      <img src="assets/images/ugm.jpg" alt="ugm" style="width: 100%" onclick="window.location='<?php echo base_url(); ?>about'" gitu?; ">
-        <div class="centered "><h1 style="color: #FFF ">Apa itu Evently?</h1></div>
-        <div class="desc "><h5 style="color: #FFF ">Sebuah untuk website promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5></div>
-        <div class="caption "><h3 style="color: #FFF; ">"Mari raih karir organisasimu dengan Evently! "</h3></div>
+      <img src="assets/images/ugm.jpg" alt="ugm" style="width: 100%" onclick="window.location='<?php echo base_url(); ?>about'">
+      <div class="centered">
+        <h1 style="color: #FFF ">Apa itu Evently?</h1></div>
+      <div class="desc">
+        <h5 style="color: #FFF ">Sebuah untuk website promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5></div>
+      <div class="caption">
+        <h3 style="color: #FFF; ">"Mari raih karir organisasimu dengan Evently! "</h3></div>
     </div>
   </div>
-      <!-- </div> -->
-      <!-- end of apa itu evently -->
+  <!-- </div> -->
+  <!-- end of apa itu evently -->
 
-      <!-- oprec terdeadline -->
-      <div class="col-lg-12 " style="background: #FECE1A; font-family: Roboto Condensed; ">
-      <br>
-      <br>
-        <center>
-          <h2 style="color: #fff; ">OPREC TERDEADLINE!</h2></center>
+  <!-- oprec terdeadline -->
+  <div class="col-lg-12 " style="background: #FECE1A; font-family: Roboto Condensed;">
+    <br>
+    <br>
+    <center>
+      <h2 style="color: #fff;">OPREC TERDEADLINE!</h2></center>
+    <br>
+    <div id="owl-demo2" style="width: 80%; margin: auto; display: block;">
+      <div class="item">
+        <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+        <h3 style="color: #FECE1A;">Vocomfest</h3>
+        <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
         <br>
-        <div id="owl-demo2 " style="width: 80%; margin: auto; display: block; ">
-          <div class="item ">
-            <img class="gambarOWL " src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-      <h3 style="color: #FECE1A;">Vocomfest</h3>
-      <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-      <br>
-      <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-      <br>
-      <br>
-      <a href="#" class="action-button shadow animate blue">Join</a>
+        <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+        <br>
+        <br>
+        <a href="#" class="action-button shadow animate blue">Join</a>
+      </div>
+      <span style="display:inline-block;"></span>
+      <div class="item">
+        <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+        <h3 style="color: #FECE1A;">Vocomfest</h3>
+        <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+        <br>
+        <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+        <br>
+        <br>
+        <a href="#" class="action-button shadow animate blue">Join</a>
+      </div>
+      <span style="display:inline-block;"></span>
+      <div class="item">
+        <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+        <h3 style="color: #FECE1A;">Vocomfest</h3>
+        <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+        <br>
+        <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+        <br>
+        <br>
+        <a href="#" class="action-button shadow animate blue">Join</a>
+      </div>
+      <span style="display:inline-block;"></span>
+      <div class="item">
+        <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+        <h3 style="color: #FECE1A;">Vocomfest</h3>
+        <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+        <br>
+        <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+        <br>
+        <br>
+        <a href="#" class="action-button shadow animate blue">Join</a>
+      </div>
+      <span style="display:inline-block;"></span>
+      <div class="item">
+        <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+        <h3 style="color: #FECE1A;">Vocomfest</h3>
+        <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+        <br>
+        <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+        <br>
+        <br>
+        <a href="#" class="action-button shadow animate blue">Join</a>
+      </div>
+      <span style="display:inline-block;"></span>
     </div>
-    <span style="display:inline-block;"></span>
-    <div class="item">
-      <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-      <h3 style="color: #FECE1A;">Vocomfest</h3>
-      <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-      <br>
-      <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-      <br>
-      <br>
-      <a href="#" class="action-button shadow animate blue">Join</a>
-    </div>
-    <span style="display:inline-block;"></span>
-    <div class="item">
-      <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-      <h3 style="color: #FECE1A;">Vocomfest</h3>
-      <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-      <br>
-      <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-      <br>
-      <br>
-      <a href="#" class="action-button shadow animate blue">Join</a>
-    </div>
-    <span style="display:inline-block;"></span>
-    <div class="item">
-      <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-      <h3 style="color: #FECE1A;">Vocomfest</h3>
-      <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-      <br>
-      <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-      <br>
-      <br>
-      <a href="#" class="action-button shadow animate blue">Join</a>
-    </div>
-    <span style="display:inline-block;"></span>
-    <div class="item">
-      <img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-      <h3 style="color: #FECE1A;">Vocomfest</h3>
-      <span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-      <br>
-      <span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-      <br>
-      <br>
-      <a href="#" class="action-button shadow animate blue">Join</a>
-    </div>
-    <span style="display:inline-block;"></span>
-  </div>
   </div>
   <!-- end of oprec terdeadline -->
 
@@ -232,35 +203,35 @@
       <h1 class="team-h1">Our Team</h1>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
         <h3>Abdurrahman Trimanto</h3>
         <span>Back End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" src="<?php echo base_url();?>assets/pp/pepy.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/pepy.jpg">
         <h3>Jeffri Junianto</h3>
         <span>Back End</span>
         <a class="email" href="mailto:email@something.com"><span>email</span></a>
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" src="<?php echo base_url();?>assets/pp/fadli.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/fadli.jpg">
         <h3>Muhammad Nur Fadli</h3>
         <span>Front End</span>
         <a class="email" href="mailto:muhammadnurfadlifadli@gmail.com"><span >email</span></a>
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
         <h3>Shafira Fitrianisa</h3>
         <span>Front End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
         <h3>Fitryanti Hutabarat</h3>
         <span>Front End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>
