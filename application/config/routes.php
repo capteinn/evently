@@ -59,6 +59,7 @@ $route['mahasiswaListing/(:num)'] = "mahasiswa/mahasiswaListing/$1";
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';
+$route['eventListing/(:num)'] = "event/eventListing/$1";
 $route['addNewEvent'] = "event/addNew";
 $route['addNewEventNow'] = "event/addNewEvent";
 $route['editOldEvent/(:num)'] = "event/editOld/$1";
