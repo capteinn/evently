@@ -2,18 +2,36 @@
 
 class Mapping_model extends CI_Model
 {
-    /**
+	/**
      * This function is used to get the user listing count
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listMapping($userId)
+    function mappingListingCount($userId)
     {
         $this->db->select('m.id_mapping_event, m.id_event, m.id_sie, m.deskripsi, e.nama as nama_event, s.nama as nama_sie');
         $this->db->from('mapping_event as m');
         $this->db->join('event as e', 'm.id_event = e.id_event');
         $this->db->join('sie as s', 'm.id_sie = s.id_sie');
         $this->db->where('m.createdBy', $userId);
+        $query = $this->db->get();
+        
+        return count($query->result());
+    }
+	
+    /**
+     * This function is used to get the user listing count
+     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * @return array $result : This is result
+     */
+    function listMapping($userId, $page, $segment)
+    {
+        $this->db->select('m.id_mapping_event, m.id_event, m.id_sie, m.deskripsi, e.nama as nama_event, s.nama as nama_sie');
+        $this->db->from('mapping_event as m');
+        $this->db->join('event as e', 'm.id_event = e.id_event');
+        $this->db->join('sie as s', 'm.id_sie = s.id_sie');
+        $this->db->where('m.createdBy', $userId);
+		$this->db->limit($page, $segment);
         $query = $this->db->get();
         
         $result = $query->result();        

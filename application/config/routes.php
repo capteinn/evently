@@ -75,6 +75,7 @@ $route['editSie'] = "sie/editSie";
 
 /*********** ADMIN MAPPING EVENT DEFINED ROUTES *******************/
 $route['mappingListing'] = 'mapping/mappingListing';
+$route['mappingListing/(:num)'] = "mapping/mappingListing/$1";
 $route['addNewMapping'] = "mapping/addNew";
 $route['addNewMappingNow'] = "mapping/addNewMapping";
 $route['editOldMapping/(:num)'] = "mapping/editOld/$1";

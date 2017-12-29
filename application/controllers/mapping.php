@@ -37,8 +37,14 @@ class Mapping extends BaseController
     function mappingListing()
     {   
         $userId = $this->vendorId;
+		
+		$this->load->library('pagination');
             
-        $data['mappingRecords'] = $this->mapping_model->listMapping($userId);
+        $count = $this->mapping_model->mappingListingCount($userId);
+
+		$returns = $this->paginationCompress ( "mappingListing/", $count, 5 );
+            
+        $data['mappingRecords'] = $this->mapping_model->listMapping($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Mapping';
             
