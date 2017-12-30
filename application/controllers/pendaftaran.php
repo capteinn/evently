@@ -37,7 +37,7 @@ class Pendaftaran extends BaseController
     function pendaftaranListing()
     {   
         $userId = $this->vendorId;
-		
+
 		$this->load->library('pagination');
         $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "proses");
 		$returns = $this->paginationCompress ( "pendaftaranListing/", $count, 5 );
@@ -50,7 +50,16 @@ class Pendaftaran extends BaseController
 	
 	function pendaftaranDiterimaListing()
     {   
-	
+		$userId = $this->vendorId;
+        
+        $this->load->library('pagination');
+        $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "diterima");
+        $returns = $this->paginationCompress ( "pendaftaranDiterimaListing/", $count, 5 );
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaranDiterima($userId, $returns["page"], $returns["segment"]);
+        // $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
+        $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
+        $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
+        $this->loadViews("pendaftaran", $this->global, $data, NULL);
     }
 	
 	function pendaftaranDitolakListing()

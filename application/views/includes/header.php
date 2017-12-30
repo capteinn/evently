@@ -110,7 +110,7 @@
 			  </a>
 			  <ul class="treeview-menu">
 				<li><a href="<?php echo base_url(); ?>pendaftaranListing"><i class="fa fa-list-alt"></i> Sedang diproses</a></li>
-				<li><a href="#"><i class="fa fa-check"></i> Yang Diterima</a></li>
+				<li><a href="<?php echo base_url(); ?>pendaftaranDiterimaListing"><i class="fa fa-check"></i> Yang Diterima</a></li>
 				<li><a href="<?php echo base_url(); ?>pendaftaranDitolakListing"><i class="fa fa-close"></i> Yang Ditolak</a></li>
 			  </ul>
 			</li>

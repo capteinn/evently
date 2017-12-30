@@ -73,11 +73,11 @@ class Pendaftaran_model extends CI_Model
         $this->db->join('detail_pendaftaran as dp', 'dp.id_pendaftaran = p.id_pendaftaran');
         $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
         $this->db->join('event as e', 'me.id_event=e.id_event');
+        $this->db->where('p.status', 'ditolak');
         $this->db->where('me.createdBy', $userId);
 		$this->db->limit($page, $segment);
 		$this->db->group_by('p.id_pendaftaran');
 		
-        $this->db->where('p.status', 'ditolak');
 		
 		// if($event != "") {
 			// $this->db->where('e.nama', $event);
@@ -94,7 +94,7 @@ class Pendaftaran_model extends CI_Model
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listPendaftaranDiterima($userId)
+    function listPendaftaranDiterima($userId, $page, $segment)
     {	 
 		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, pr.nama as prodi, e.nama as event, p.cv, p.krs, p.status');
         $this->db->from('pendaftaran as p');
@@ -103,12 +103,12 @@ class Pendaftaran_model extends CI_Model
         $this->db->join('detail_pendaftaran as dp', 'dp.id_pendaftaran = p.id_pendaftaran');
         $this->db->join('mapping_event as me', 'dp.id_mapping_event=me.id_mapping_event');
         $this->db->join('event as e', 'me.id_event=e.id_event');
+        $this->db->where('p.status', 'diterima');
         $this->db->where('me.createdBy', $userId);
 		// pagination masih error boss.. mumet
-		// $this->db->limit($page, $segment);
+		$this->db->limit($page, $segment);
 		$this->db->group_by('p.id_pendaftaran');
 		
-		$this->db->where('p.status', 'ditolak');
 		
 		// if($event != "") {
 			// $this->db->where('e.nama', $event);
@@ -120,6 +120,7 @@ class Pendaftaran_model extends CI_Model
         return $result;
     }
 	
+
 	function getEvent($userId) {
 		$this->db->select('nama');
 		$this->db->from('event');

@@ -47,6 +47,12 @@ $route['admin'] = 'login';
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
 $route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
 $route['pendaftaranListing/(:num)'] = 'pendaftaran/pendaftaranListing/$1';
+
+$route['pendaftaranDiterimaListing'] = 'pendaftaran/pendaftaranDiterimaListing';
+$route['pendaftaranDiterimaListing/(:num)'] = 'pendaftaran/pendaftaranDiterimaListing/$1';
+
+$route['pendaftaranDitolakListing'] = 'pendaftaran/pendaftaranDitolakListing';
+$route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakListing/$1';
 // pagination masih error boss.. mumet
 // $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
