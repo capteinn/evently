@@ -31,12 +31,11 @@
 							<?php
 							if(!empty($sieRecords))
 							{
-								$no = 1;
 								foreach($sieRecords as $record)
 								{
 							?>
 							<tr>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nama ?></td>
 								<td><?php echo $record->deskripsi ?></td>
 								<td class="text-center">
@@ -44,7 +43,7 @@
 								</td>
 							</tr>
 							<?php
-								$no++;
+								$page++;
 								}
 							}
 							?>
