@@ -39,12 +39,11 @@ class Pendaftaran extends BaseController
         $userId = $this->vendorId;
 		
 		// pagination masih error boss.. mumet
-		// $this->load->library('pagination');
-        // $count = $this->pendaftaran_model->pendaftaranListingCount($userId, $ztatuz, $event);
-		// $returns = $this->paginationCompress ( "pendaftaranListing/semua/$event/", $count, 5 );
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId);
+		$this->load->library('pagination');
+        $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "proses");
+		$returns = $this->paginationCompress ( "pendaftaranListing/", $count, 5 );
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $returns["page"], $returns["segment"]);
         
-		// $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
 		// $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
