@@ -50,6 +50,10 @@ $route['pendaftaranListing/(:num)'] = 'pendaftaran/pendaftaranListing/$1';
 // pagination masih error boss.. mumet
 // $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
+// pendaftaran yang ditolak
+$route['pendaftaranDitolakListing'] = 'pendaftaran/pendaftaranDitolakListing';
+$route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakListing/$1';
+
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
 $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListing/$1';
