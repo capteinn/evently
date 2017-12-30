@@ -31,7 +31,12 @@
   <nav class="navbar navbar-expand-md bg-white fixed-top">
     <!-- LOGO -->
     <a class="navbar-brand" style="margin-left: 3%;" href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently"/></a>
-    <button style="font-size: 25px;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button style="font-size: 25px background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 

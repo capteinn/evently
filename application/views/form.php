@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 	<title>Form Registration Evently</title>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css"> -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrapValidator.min.css">
 
 	<!-- Custom styles for this template -->
@@ -38,7 +41,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg">
+	<nav class="navbar navbar-expand-lg fixed-top">
 		<div class="container">
 
 			<!-- LOGO -->
@@ -57,7 +60,8 @@
 
 		</div>
 	</nav>
-	<div class="container" style="">
+
+	<div class="container" style="margin-top: 3%;">
 
 		<form enctype="multipart/form-data" class="well form-horizontal" action="<?php echo base_url() ?>upload/do_upload/<?php echo $this->uri->segment('2');?>" method="post" id="contact_form">
 
@@ -141,7 +145,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="angkatan" placeholder="Angkatan (contoh : 2015)" class="form-control" type="text">
+							<input name="angkatan" placeholder="(contoh : 2015)" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -153,7 +157,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="kelas" class="form-control" type="text">
+							<input name="kelas" placeholder="(contoh : A 2015)" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
