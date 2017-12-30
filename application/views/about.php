@@ -68,11 +68,12 @@
         <div class="col-lg-6" style="margin-top: 5%;">
           <img class="img-fluid rounded mb-4" src="assets/images/logougm.jpg" alt="">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" style="text-align: justify;">
           <h2>Cikal Bakal Evently</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+          <p>Department Teknik Elektro dan Informatika (TEDI) adalah salah satu departmen yang ada di Sekolah Vokasi Universitas Gadjah Mada dengan 5 program studi dan himpunan mahasiswa yaitu Teknik Elektro (HMTE), Ilmu Komputer dan Sistem Informasi (HIMAKOMSI), Metrologi dan Instrumentasi (HMMI), Elektronika dan Instrumentasi (HMDEI) ,D4 Teknologi Jaringan (Forkom TJ) dan KM TEDI untuk menanungi se Department.</p>
+          <p>KM TEDI dan Himpunan Mahasiswa setiap prodi memiliki program kerja event yang membutuhkan panitia yang diambil dari mahasiswa TEDI. Dan biasanya penyebaran informasi open recruitment panitia yang dilakukan masih manual yang menyebab kan informasi yang didapatkan tidak maksimal.</p>
+          <p>Untuk itu, evently hadir untuk memaksimal informasi dalam recruitment event yang ada di TEDI.</p>
+        </div>
         </div>
       </div>
       <!-- /.row -->
@@ -80,7 +81,7 @@
       <!-- Our Customers -->
       <br>
       <br>
-      <h4 style="text-align: center;">Departemen TEDI SV UGM</h4>
+      <h4 style="text-align: center; margin-bottom: 2%;">Departemen TEDI SV UGM</h4>
       <div class="row">
         <div class="col-lg-2 col-sm-4 mb-4">
           <img class="img-fluid" src="assets/images/elins.png" alt="">
