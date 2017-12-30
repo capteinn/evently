@@ -208,7 +208,7 @@
       <h1 class="team-h1">Our Team</h1>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/abdur.jpg">
         <h3>Abdurrahman Trimanto</h3>
         <span>Back End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>
@@ -229,7 +229,7 @@
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/Portfolio01.png">
         <h3>Shafira Fitrianisa</h3>
         <span>Front End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>

@@ -7,7 +7,7 @@
  * @version : 1.1
  * @since : 15 November 2016
  */
-class tes extends CI_Controller
+class Tes extends CI_Controller
 {
     /**
      * This is default constructor of the class
