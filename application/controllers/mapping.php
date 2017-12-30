@@ -43,6 +43,8 @@ class Mapping extends BaseController
         $count = $this->mapping_model->mappingListingCount($userId);
 
 		$returns = $this->paginationCompress ( "mappingListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['mappingRecords'] = $this->mapping_model->listMapping($userId, $returns["page"], $returns["segment"]);
             
