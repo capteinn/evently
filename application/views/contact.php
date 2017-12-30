@@ -16,29 +16,37 @@
 		<!-- Custom styles for this template -->
     	<link href="<?php echo base_url(); ?>assets/css/modern-business.css" rel="stylesheet">
 		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/lambangevent.ico" />
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
 	</head>
 
   <body>
 
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
-      <div class="container">
-	  
-        <!-- LOGO -->
-        <div class="logo" style="width: 250px"> 
-			<a href="<?php echo base_url(); ?>" title="Evently"><img src="<?php echo base_url(); ?>assets/images/evently.png" alt="Evently" /></a>
-        </div>
+		<nav class="navbar navbar-expand-md bg-white fixed-top">
+	    <!-- LOGO -->
+	    <a class="navbar-brand" style="margin-left: 3%;" href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently"/></a>
+	    <button style="font-size: 25px background-color: Transparent;
+	    background-repeat:no-repeat;
+	    border: none;
+	    cursor:pointer;
+	    overflow: hidden;
+	    outline:none;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	          </button>
 
-        <div class="collapse" id='cssmenu'>
-			<ul>
-				<li><a href='<?php echo base_url(); ?>'>Event</a></li>
-				<li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
-				<li class='active'><a href='#'>Kontak</a></li>
-			</ul>
-		</div>
-    </nav>
+	    <div class="collapse navbar-collapse" id="navbarNav">
+	      <div id="cssmenu" style="position: absolute; right: 0;margin-right: 3%;">
+	        <ul class="navbar-nav">
+	          <li class="nav-item"><a class="nav-link" href='<?php echo base_url(); ?>'>Event</a></li>
+	          <li class="nav-item"><a class="nav-link" href='<?php echo base_url(); ?>about'>Tentang</a></li>
+	          <li class="nav-item active"><a class="nav-link" href='#'>Kontak</a></li>
+	        </ul>
+	        <!-- end of div collapse -->
+	      </div>
+	    </div>
+	    <!-- end of navbar -->
+	  </nav>
+	  <!-- Navigation -->
 
     <!-- Page Content -->
     <div class="container">
@@ -48,12 +56,12 @@
         <small>Evently</small>
       </h1>
 
-      <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="<?php echo base_url();?>">Beranda</a>
         </li>
         <li class="breadcrumb-item active">Kontak</li>
-      </ol>
+      </ol> -->
 
       <!-- Content Row -->
       <div class="row">
@@ -66,7 +74,7 @@
         <div class="col-lg-4 mb-4">
           <h3>Kontak Details</h3>
           <p>
-            55281 Sleman, Daerah Istimewa Yogyakarta 
+            55281 Sleman, Daerah Istimewa Yogyakarta
             <br>Sekip Unit 1, Catur Tunggal, Depok
             <br>
           </p>
