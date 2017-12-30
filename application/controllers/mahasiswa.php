@@ -52,6 +52,20 @@ class Mahasiswa extends BaseController
             
         $this->loadViews("mahasiswa", $this->global, $data, NULL);
     }
+	
+	/**
+     * This function is used to load the user list by criteria
+     */
+    function mahasiswaDetailListing($nim)
+    {   
+        // $userId = $this->vendorId;
+            
+        $data['mahasiswaDetailRecords'] = $this->mahasiswa_model->listMahasiswaDetail($nim);		
+		
+        $this->global['pageTitle'] = 'TEDI : List Detail Mahasiswa';
+            
+        $this->loadViews("mahasiswa_detail", $this->global, $data, NULL);
+    }
  
     function pageNotFound()
     {

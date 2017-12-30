@@ -24,6 +24,7 @@
 								<th>Jenis Kelamin</th>
 								<th>Telepon</th>
 								<th>Prodi</th>
+								<th class="text-center">Detail</th>
 							</tr>
 							<?php
 							if(!empty($mahasiswaRecords))
@@ -40,6 +41,9 @@
 								<td><?php echo $record->jenkel ?></td>
 								<td><?php echo $record->no_telp ?></td>
 								<td><?php echo $record->nama_prodi ?></td>
+								<td class="text-center">
+									<a class="btn btn-sm btn-info" href="<?php echo base_url(); ?>mahasiswa_detail/<?php echo $record->nim; ?>"><i class="fa fa-pencil"></i></a>
+								</td>
 							</tr>
 							<?php
 								$page++;}
