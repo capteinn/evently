@@ -50,7 +50,7 @@ class Mahasiswa extends BaseController
             
         $this->loadViews("mahasiswa", $this->global, $data, NULL);
     }
-
+ 
     function pageNotFound()
     {
         $this->global['pageTitle'] = 'TEDI : 404 - Page Not Found';
