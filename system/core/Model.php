@@ -25,6 +25,7 @@
  * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/config.html
  */
+
 class CI_Model {
 
 	/**
@@ -32,6 +33,7 @@ class CI_Model {
 	 *
 	 * @access public
 	 */
+
 	function __construct()
 	{
 		log_message('debug', "Model Class Initialized");
@@ -52,6 +54,7 @@ class CI_Model {
 		return $CI->$key;
 	}
 }
+
 // END Model Class
 
 /* End of file Model.php */
