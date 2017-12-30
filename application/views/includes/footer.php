@@ -16,14 +16,18 @@
     <script src="<?php echo base_url(); ?>assets/js/jquery.validate.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/validation.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var windowURL = window.location.href;
-        pageURL = windowURL.substring(0, windowURL.lastIndexOf('/'));
-        var x= $('a[href="'+pageURL+'"]');
-            x.addClass('active');
-            x.parent().addClass('active');
-        var y= $('a[href="'+windowURL+'"]');
-            y.addClass('active');
-            y.parent().addClass('active');
+        /** add active class and stay opened when selected */
+		var url = window.location;
+
+		// for sidebar menu entirely but not cover treeview
+		$('ul.sidebar-menu a').filter(function() {
+			 return this.href == url;
+		}).parent().addClass('active');
+
+		// for treeview
+		$('ul.treeview-menu a').filter(function() {
+			 return this.href == url;
+		}).parentsUntil(".sidebar-menu > .treeview-menu").addClass('active');
     </script>
   </body>
 </html>

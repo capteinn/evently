@@ -43,6 +43,8 @@ class Sie extends BaseController
         $count = $this->sie_model->sieListingCount($userId);
 
 		$returns = $this->paginationCompress ( "sieListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['sieRecords'] = $this->sie_model->listSie($userId, $returns["page"], $returns["segment"]);
             

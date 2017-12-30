@@ -45,9 +45,20 @@ $route['404_override'] = 'error';
 $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
-$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+$route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
+$route['pendaftaranListing/(:num)'] = 'pendaftaran/pendaftaranListing/$1';
+
+$route['pendaftaranDiterimaListing'] = 'pendaftaran/pendaftaranDiterimaListing';
+$route['pendaftaranDiterimaListing/(:num)'] = 'pendaftaran/pendaftaranDiterimaListing/$1';
+
+$route['pendaftaranDitolakListing'] = 'pendaftaran/pendaftaranDitolakListing';
+$route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakListing/$1';
 // pagination masih error boss.. mumet
 // $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
+
+// pendaftaran yang ditolak
+$route['pendaftaranDitolakListing'] = 'pendaftaran/pendaftaranDitolakListing';
+$route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakListing/$1';
 
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';

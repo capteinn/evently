@@ -11,10 +11,10 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Daftar Pendaftaran <b><?php echo $this->uri->segment(3); ?> </b></h3>
+						<h3 class="box-title">List Pendaftaran <b><?php echo $this->uri->segment(3); ?> </b></h3>
 						<br />
 						<br />
-						<div class="row">
+						<!--<div class="row">
 							<div class="col-md-4">
 							</div>
 							<div class="col-md-1">
@@ -22,7 +22,6 @@
 							</div>
 							<div class="col-md-2">
 								<form action="<?php echo base_url(); ?>pendaftaranListing/semua" method="post">
-									<!--<input id="semua" type="radio" name="filterStatus" onclick="javascript:submit()" value="semua"<?php if (isset($_POST['filterStatus']) && $_POST['filterStatus'] == 'semua') echo ' checked="checked"';?>/><label for="dateasc">Semua</label>-->
 									<select id="filterEvent" name="filterEvent" onChange="window.location.href=this.value" >
 										<option value="">Pilih Event</option>
 										<?php
@@ -61,7 +60,7 @@
 									<br>
 								</form>
 							</div>
-						</div>
+						</div>-->
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -80,13 +79,12 @@
 							<?php
 							if(!empty($pendaftaranRecords))
 							{
-								$no = 1;
 								foreach($pendaftaranRecords as $record)
 								{
 							?>
 							<tr>
 								<td></td>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nim ?></td>
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td><?php echo $record->prodi ?></td>
@@ -125,7 +123,7 @@
 								</td>
 							</tr>
 							<?php
-								$no++;}
+								$page++;}
 							}
 							?>
 						</table> 

@@ -43,6 +43,8 @@ class Mahasiswa extends BaseController
         $count = $this->mahasiswa_model->mahasiswaListingCount($userId);
 
 		$returns = $this->paginationCompress ( "mahasiswaListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['mahasiswaRecords'] = $this->mahasiswa_model->listMahasiswa($userId, $returns["page"], $returns["segment"]);
             
