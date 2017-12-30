@@ -62,7 +62,7 @@
       <div class="centered">
         <h1 style="color: #FFF ">Apa itu Evently?</h1></div>
       <div class="desc">
-        <h5 style="color: #FFF ">Sebuah untuk website promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5></div>
+        <h5 style="color: #FFF ">Sebuah website untuk promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5></div>
       <div class="caption">
         <h3 style="color: #FFF; ">"Mari raih karir organisasimu dengan Evently! "</h3></div>
     </div>
@@ -236,7 +236,7 @@
       </div>
       <!-- member-->
       <div class="team-member">
-        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44742/profile/profile-512_2.jpg">
+        <img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url(); ?>assets/pp/fitri.jpg">
         <h3>Fitryanti Hutabarat</h3>
         <span>Front End</span>
         <a class="email" href="mailto:email@something.com"><span >email</span></a>
