@@ -43,6 +43,8 @@ class Thread extends BaseController
         $count = $this->thread_model->threadListingCount($userId);
 
 		$returns = $this->paginationCompress ( "threadListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['threadRecords'] = $this->thread_model->listThread($userId, $returns["page"], $returns["segment"]);
             
