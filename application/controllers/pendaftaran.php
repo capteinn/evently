@@ -34,7 +34,7 @@ class Pendaftaran extends BaseController
     /**
      * This function is used to load the user list by criteria
      */
-    function pendaftaranListing($ztatuz, $event='')
+    function pendaftaranListing()
     {   
         $userId = $this->vendorId;
 		
@@ -42,10 +42,10 @@ class Pendaftaran extends BaseController
 		// $this->load->library('pagination');
         // $count = $this->pendaftaran_model->pendaftaranListingCount($userId, $ztatuz, $event);
 		// $returns = $this->paginationCompress ( "pendaftaranListing/semua/$event/", $count, 5 );
-        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
+        $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId);
         
 		// $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
-		$data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
+		// $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
     }

@@ -7,7 +7,7 @@ class Pendaftaran_model extends CI_Model
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    // function pendaftaranListingCount($userId, $ztatuz, $event)
+    // function pendaftaranListingCount($userId)
     // {	 
 		// $this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, pr.nama as prodi, e.nama as event, p.cv, p.krs, p.status');
         // $this->db->from('pendaftaran as p');
@@ -23,9 +23,9 @@ class Pendaftaran_model extends CI_Model
             // $this->db->where('p.status', $ztatuz);
         // }
 		
-		// if($event != "") {
-			// $this->db->where('e.nama', $event);
-		// }
+		// // if($event != "") {
+			// // $this->db->where('e.nama', $event);
+		// // }
 		
         // $query = $this->db->get();
         
@@ -37,7 +37,7 @@ class Pendaftaran_model extends CI_Model
      * @param string $userId : mengambil session user/panitia yang login saat ini
      * @return array $result : This is result
      */
-    function listPendaftaran($userId, $ztatuz, $event)
+    function listPendaftaran($userId)
     {	 
 		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, pr.nama as prodi, e.nama as event, p.cv, p.krs, p.status');
         $this->db->from('pendaftaran as p');
@@ -51,13 +51,11 @@ class Pendaftaran_model extends CI_Model
 		// $this->db->limit($page, $segment);
 		$this->db->group_by('p.id_pendaftaran');
 		
-		if($ztatuz != "semua"){
-            $this->db->where('p.status', $ztatuz);
-        }
+		$this->db->where('p.status', 'proses');
 		
-		if($event != "") {
-			$this->db->where('e.nama', $event);
-		}
+		// if($event != "") {
+			// $this->db->where('e.nama', $event);
+		// }
 		
         $query = $this->db->get();
         

@@ -45,7 +45,8 @@ $route['404_override'] = 'error';
 $route['admin'] = 'login';
 
 /*********** ADMIN PENDAFTARAN DEFINED ROUTES *******************/
-$route['pendaftaranListing/(:any)'] = 'pendaftaran/pendaftaranListing/$1';
+$route['pendaftaranListing'] = 'pendaftaran/pendaftaranListing';
+$route['pendaftaranListing/(:num)'] = 'pendaftaran/pendaftaranListing/$1';
 // pagination masih error boss.. mumet
 // $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
