@@ -82,6 +82,7 @@ class Mahasiswa_model extends CI_Model
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');
         $this->db->join('mapping_event as me', 'dp.id_mapping_event = me.id_mapping_event');
         $this->db->join('event as e', 'me.id_event = e.id_event');
+        // $this->db->join('thread as t', 't.id_event = e.id_event');
         $this->db->join('sie as s', 'me.id_sie = s.id_sie');
         $this->db->join('prodi as pr', 'm.id_prodi = pr.id_prodi');
         $this->db->where('m.nim', $nim);

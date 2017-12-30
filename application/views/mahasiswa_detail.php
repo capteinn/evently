@@ -24,6 +24,7 @@
 							<tr>
 								<th>No</th>
 								<th>Event</th>
+								<!--<th>Tanggal Mulai</th>-->
 								<th>Sie</th>
 								<th>Status</th>
 							</tr>
@@ -37,6 +38,7 @@
 							<tr>
 								<td><?php echo $no ?></td>
 								<td><?php echo $record->nama_event ?></td>
+								<!--<td><?php echo $record->tgl_mulai ?></td>-->
 								<td><?php echo $record->nama_sie ?></td>
 								<td>
 									<?php 
