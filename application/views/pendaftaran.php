@@ -79,13 +79,12 @@
 							<?php
 							if(!empty($pendaftaranRecords))
 							{
-								$no = 1;
 								foreach($pendaftaranRecords as $record)
 								{
 							?>
 							<tr>
 								<td></td>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nim ?></td>
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td><?php echo $record->prodi ?></td>
@@ -124,7 +123,7 @@
 								</td>
 							</tr>
 							<?php
-								$no++;}
+								$page++;}
 							}
 							?>
 						</table> 

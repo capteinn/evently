@@ -41,6 +41,7 @@ class Pendaftaran extends BaseController
 		$this->load->library('pagination');
         $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "proses");
 		$returns = $this->paginationCompress ( "pendaftaranListing/", $count, 5 );
+		$data["page"] = $returns["segment"] + 1;
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $returns["page"], $returns["segment"]);
         
 		// $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
@@ -55,9 +56,10 @@ class Pendaftaran extends BaseController
         $this->load->library('pagination');
         $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "diterima");
         $returns = $this->paginationCompress ( "pendaftaranDiterimaListing/", $count, 5 );
+		$data["page"] = $returns["segment"] + 1;
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaranDiterima($userId, $returns["page"], $returns["segment"]);
-        // $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaran($userId, $ztatuz, $event);
-        $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
+        
+		// $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
         $this->global['pageTitle'] = 'TEDI : List Pendaftaran';
         $this->loadViews("pendaftaran", $this->global, $data, NULL);
     }
@@ -69,6 +71,7 @@ class Pendaftaran extends BaseController
 		$this->load->library('pagination');
         $count = $this->pendaftaran_model->pendaftaranListingCount($userId, "ditolak");
 		$returns = $this->paginationCompress ( "pendaftaranDitolakListing/", $count, 5 );
+		$data["page"] = $returns["segment"] + 1;
         $data['pendaftaranRecords'] = $this->pendaftaran_model->listPendaftaranDitolak($userId, $returns["page"], $returns["segment"]);
 
 		// $data['eventRecords'] = $this->pendaftaran_model->getEvent($userId);
