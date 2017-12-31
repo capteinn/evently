@@ -36,7 +36,7 @@ class Pendaftaran_model extends CI_Model
      */
     function listPendaftaran($userId, $page, $segment)
     {	 
-		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, pr.nama as prodi, e.nama as event, p.cv, p.krs, p.status');
+		$this->db->select('p.id_pendaftaran, m.nim, m.nama as nama_mahasiswa, pr.nama as prodi, e.nama as event, p.cv, p.krs, p.status, p.createdDtm');
         $this->db->from('pendaftaran as p');
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');
         $this->db->join('prodi as pr', 'm.id_prodi = pr.id_prodi');
