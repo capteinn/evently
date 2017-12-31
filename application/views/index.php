@@ -1,142 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <head>
+	  <title>Evently | E-Recruitment </title>
+	  <!-- Bootstrap core CSS -->
+	  <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <!-- Custom styles for this template -->
+	  <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
+	  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/lambangevent.ico">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	  <!-- css buat owl carousel -->
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css">
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.theme.css">
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.transition.css">
+	  <!-- end of css buat owl carousel -->
+	  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md bg-white fixed-top">
+			<!-- LOGO -->
+			<a class="navbar-brand" style="margin-left: 3%;" href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently"/></a>
+			<button style="font-size: 25px background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden; outline:none;" id="btn" class="navbar-toggler fa fa-bars" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <title>Evently | E-Recruitment </title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/lambangevent.ico">
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
-      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-      <style type="text/css">
-        /*disamping*/
-        #wktBeranda{font-size:10px;  float: right; margin-top: 8px; background-color: #b1b1b1; padding: 3px 5px 3px 5px; border-radius: 3px;}
-        /*dibawah*/
-        /*#wktBeranda{font-size:10px;  display: block; margin-top: 3px; background-color: #b1b1b1; padding: 1px 5px 1px 5px; border-radius: 3px; width: 190px; text-align: center;}*/
-
-	  </style>
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-white fixed-top">
-      <div class="container">
-
-        <!-- LOGO -->
-        <div class="logo" style="width: 250px">
-          <a href="<?php echo base_url();?>" title="Evently"><img src="<?php echo base_url();?>assets/images/evently.png" alt="Evently" /></a>
-        </div>
-
-
-
-        <div class="collapse" id='cssmenu'>
-            <ul class="topnav">
-                <li class='active'><a href='#'>Event</a></li>
-                <li><a href='<?php echo base_url(); ?>about'>Tentang</a></li>
-                <li><a href="<?php echo base_url(); ?>contact">Kontak</a></li>
-                <li class="icon">
-                  <a href="javascript:void(0);" onclick="myFunction()">☰</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-
-    <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active">
-            <img src="<?php echo base_url();?>assets/poster/vocomfest.jpg">
-          </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" >
-            <img src="<?php echo base_url();?>assets/poster/child.jpg">
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item">
-            <img src="<?php echo base_url();?>assets/poster/algorithm.jpg">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </header>
-
-    <div class="container">
-    <!-- Page Content
-
-		<!-- Portfolio Section -->
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<div id="cssmenu" style="position: absolute; right: 0;margin-right: 3%;">
+					<ul class="navbar-nav">
+						<li class="nav-item active"><a class="nav-link" href='#'>Event</a></li>
+						<li class="nav-item"><a class="nav-link" href='<?php echo base_url(); ?>about'>Tentang</a></li>
+						<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>contact">Kontak</a></li>
+					</ul>
+					<!-- end of div collapse -->
+				</div>
+			</div>
+			<!-- end of navbar -->
+		</nav>
+		<!-- Navigation -->
 		<br>
-		<center><h2>Evently</h2></center>
-		<br>
-      <div class="row">
-		<?php
-			if(!empty($threadRecords))
-			{
-				foreach($threadRecords as $record)
-				{
-		?>
-		<div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt=""></a>
-            <div class="card-footer text-muted">
-              <p style="float: right; padding: 0; margin: 0; font-size: 12px;" ><?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y')." - ".DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></p>
-            </div>
-			<div class="card-body">
-				<h4 class="card-title">
-					<font color="#007bff"><?php echo $record->nama; ?></font>
-				</h4>
-				<p ><i>"<?php echo $record->judul; ?>"</i></p>
-				<p ><?php echo $record->deskripsi; ?></p>
+		<div class="container-fluid">
+			<div class="row">
+				<!-- apa itu evently -->
+				<img src="assets/images/ugm.jpg" alt="ugm" style="width: 100%" onclick="window.location='<?php echo base_url(); ?>about'">
+				<div class="centered">
+					<h1 style="color: #FFF ">Apa itu Evently?</h1>
+				</div>
+				<div class="desc">
+					<h5 style="color: #FFF ">Sebuah website untuk promosi dan pendaftaran kepanitiaan event maupun re-organisasi di Departemen Teknik Elektro dan Informatika Sekolah Vokasi Universitas Gadjah Mada</h5>
+				</div>
+				<div class="caption">
+					<h3 style="color: #FFF; ">"Mari raih karir organisasimu dengan Evently! "</h3>
+				</div>
+			</div>
+		</div>
+		<!-- end of apa itu evently -->
 
-            </div>
-			    <a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" type="button" class="btn btn-info">DETAIL</a>
-          </div>
-        </div>
-		<?php
-				}
-			}
-		?>
-      <!-- /.row -->
+		<!-- oprec terdeadline -->
+		<div class="col-lg-12 " style="background: #FECE1A; font-family: Roboto Condensed;">
+			<br>
+			<br>
+			<center><h2 style="color: #fff;">OPREC TERDEADLINE!</h2></center>
+			<br>
+			<div id="owl-demo2" style="width: 80%; margin: auto; display: block;">
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
+					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<br>
+					<br>
+					<a href="#" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
+					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<br>
+					<br>
+					<a href="#" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
+					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<br>
+					<br>
+					<a href="#" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
+					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<br>
+					<br>
+					<a href="#" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
+					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<br>
+					<br>
+					<a href="#" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+			</div>
+			<br>
+			<br>
+		</div>
+		<!-- end of oprec terdeadline -->
 
-    </div>
-	</div>
-    <!-- /.container -->
+		<!-- opcrec terbaru -->
+		<div class="col-lg-12" style="background:#000000; font-family: Roboto Condensed;">
+			<br>
+			<br>
+			<center><h2 style="color: #fff;">OPREC TERBARU!</h2></center>
+			<br>
+			<div id="owl-demo" style="width: 80%; margin: auto; display: block;">
+				<?php
+					if(!empty($threadRecords))
+					{
+						foreach($threadRecords as $record)
+						{
+				?>
+				<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt="Owl Image">
+					<h3 style="color: #FECE1A;"><?php echo $record->nama; ?></h3>
+					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
+					<br>
+					<br>
+					<a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<?php
+						}
+					}
+				?>
+			</div>
+			<br>
+			<br>
+		</div>
+		<!-- end of oprec terbaru -->
 
-  </body>
-    <!-- Footer -->
-    <footer class="py-3 bg-dark">
-        <p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
+		<div class="col-sm-12 col-md-12 col-lg-12" id="backgroundTeam">
+			<!-- this section wraps the team members as a container-->
+			<section class="cf team-container">
+				<h1 class="team-h1">Our Team</h1>
+				<!-- member-->
+				<div class="team-member">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/abdur.jpg">
+					<h3>Abdurrahman Trimanto</h3>
+					<span>Back End</span>
+					<a class="email" href="mailto:email@something.com"><span >email</span></a>
+				</div>
+				<!-- member-->
+				<div class="team-member">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/pepy.jpg">
+					<h3>Jeffri Junianto</h3>
+					<span>Back End</span>
+					<a class="email" href="mailto:email@something.com"><span>email</span></a>
+				</div>
+				<!-- member-->
+				<div class="team-member">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/fadli.jpg">
+					<h3>Muhammad Nur Fadli</h3>
+					<span>Front End</span>
+					<a class="email" href="mailto:muhammadnurfadlifadli@gmail.com"><span >email</span></a>
+				</div>
+				<!-- member-->
+				<div class="team-member">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/Portfolio01.png">
+					<h3>Shafira Fitrianisa</h3>
+					<span>Front End</span>
+					<a class="email" href="mailto:email@something.com"><span >email</span></a>
+				</div>
+				<!-- member-->
+				<div class="team-member">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url(); ?>assets/pp/fitri.jpg">
+					<h3>Fitryanti Hutabarat</h3>
+					<span>Front End</span>
+					<a class="email" href="mailto:email@something.com"><span >email</span></a>
+				</div>
+			</section>
+		</div>
+		<!-- ./ div our team -->
+	</body>
+	
+	<!-- Footer -->
+	<footer class="py-3 bg-dark">
+		<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
+	  <!-- /.container -->
+	</footer>
+	
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/jQueryUI/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
+	<!-- js buat owl carousel -->
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.js"></script>
+	<!-- end of line js buat owl carousel -->
+	<!-- DC Horizontal Carousel JS -->
+	<script type="text/javascript">
+		// owl demo2 js
+		$(document).ready(function() {
 
-      <!-- /.container -->
-    </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="<?php echo base_url(); ?>/assets/jQueryUI/jquery.min.js">
-  </script>
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js">
-  </script>
+			$("#owl-demo2").owlCarousel({
+
+				// Most important owl features
+				items: 5,
+				itemsDesktop: [1199, 3],
+				itemsDesktopSmall: [979, 3],
+				itemsTablet: [768, 2],
+				itemsMobile: [479, 1],
+
+				//Autoplay
+				autoPlay: 3000, //Set AutoPlay to 3 seconds
+				stopOnHover: true,
+
+				//Basic Speeds
+				slideSpeed: 200,
+				paginationSpeed: 800,
+				rewindSpeed: 1000,
+
+				// Navigation
+				navigation: false,
+				navigationText: ["prev", "next"],
+				rewindNav: true,
+				scrollPerPage: false,
+
+				//Pagination
+				pagination: false,
+				paginationNumbers: false,
+
+				// CSS Styles
+				baseClass: "owl-carousel",
+				theme: "owl-theme",
+
+				//Auto height
+				autoHeight: false,
+
+				//Mouse Events
+				dragBeforeAnimFinish: true,
+				mouseDrag: true,
+				touchDrag: true,
+
+				//Transitions
+				transitionStyle: false,
+
+			});
+
+		});
+		
+		// end of owl demo2 js
+		// owl demo js
+		$(document).ready(function() {
+
+			$("#owl-demo").owlCarousel({
+
+				// Most important owl features
+				items: 5,
+				itemsDesktop: [1199, 3],
+				itemsDesktopSmall: [979, 3],
+				itemsTablet: [768, 2],
+				itemsMobile: [479, 1],
+
+				//Autoplay
+				autoPlay: 3000, //Set AutoPlay to 3 seconds
+				stopOnHover: true,
+
+				//Basic Speeds
+				slideSpeed: 200,
+				paginationSpeed: 800,
+				rewindSpeed: 1000,
+
+				// Navigation
+				navigation: false,
+				navigationText: ["prev", "next"],
+				rewindNav: true,
+				scrollPerPage: false,
+
+				//Pagination
+				pagination: false,
+				paginationNumbers: false,
+
+				// CSS Styles
+				baseClass: "owl-carousel",
+				theme: "owl-theme",
+
+				//Auto height
+				autoHeight: false,
+
+				//Mouse Events
+				dragBeforeAnimFinish: true,
+				mouseDrag: true,
+				touchDrag: true,
+
+				//Transitions
+				transitionStyle: false,
+			});
+
+		});
+	  // end of owl demo js
+	</script>
 </html>

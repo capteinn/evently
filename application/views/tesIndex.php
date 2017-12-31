@@ -5,15 +5,12 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	  <title>Evently | E-Recruitment </title>
-	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 	  <!-- Bootstrap core CSS -->
 	  <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	  <!-- Custom styles for this template -->
 	  <link href="<?php echo base_url();?>assets/css/modern-business.css" rel="stylesheet">
-	  <link rel="shortcut icon" href="assets/images/lambangevent.ico">
+	  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/lambangevent.ico">
 
 	  <!-- css buat owl carousel -->
 	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css">
@@ -21,8 +18,7 @@
 	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.transition.css">
 	  <!-- end of css buat owl carousel -->
 	  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" href="css/core.css">
-	  <link rel="stylesheet" href="assets/vendor/bootstrap/css/styles.css">
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/styles.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-md bg-white fixed-top">
@@ -71,8 +67,8 @@
 			<br>
 			<div id="owl-demo2" style="width: 80%; margin: auto; display: block;">
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
@@ -82,8 +78,8 @@
 				</div>
 				<span style="display:inline-block;"></span>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
@@ -93,8 +89,8 @@
 				</div>
 				<span style="display:inline-block;"></span>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
@@ -104,8 +100,8 @@
 				</div>
 				<span style="display:inline-block;"></span>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
@@ -115,8 +111,8 @@
 				</div>
 				<span style="display:inline-block;"></span>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
+					<h3 style="color: #000;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
@@ -126,16 +122,41 @@
 				</div>
 				<span style="display:inline-block;"></span>
 			</div>
+			<br>
+			<br>
 		</div>
 		<!-- end of oprec terdeadline -->
 
 		<!-- opcrec terbaru -->
 		<div class="col-lg-12" style="background:#000000; font-family: Roboto Condensed;">
+			<br>
+			<br>
 			<center><h2 style="color: #fff;">OPREC TERBARU!</h2></center>
 			<br>
 			<div id="owl-demo" style="width: 80%; margin: auto; display: block;">
+				<?php
+					if(!empty($threadRecords))
+					{
+						foreach($threadRecords as $record)
+						{
+				?>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt="Owl Image">
+					<h3 style="color: #FECE1A;"><?php echo $record->nama; ?></h3>
+					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></span>
+					<br>
+					<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
+					<br>
+					<br>
+					<a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" class="action-button shadow animate blue">Join</a>
+				</div>
+				<span style="display:inline-block;"></span>
+				<?php
+						}
+					}
+				?>
+				<!--<div class="item">
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
 					<h3 style="color: #FECE1A;">Vocomfest</h3>
 					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
 					<br>
@@ -177,19 +198,10 @@
 					<br>
 					<a href="#" class="action-button shadow animate blue">Join</a>
 				</div>
-				<span style="display:inline-block;"></span>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest.jpg" alt="Owl Image">
-					<h3 style="color: #FECE1A;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-					<br>
-					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
+				<span style="display:inline-block;"></span>-->
 			</div>
+			<br>
+			<br>
 		</div>
 		<!-- end of oprec terbaru -->
 
