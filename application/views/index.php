@@ -128,7 +128,7 @@
 		<!-- end of oprec terdeadline -->
 
 		<!-- opcrec terbaru -->
-		<div class="col-lg-12" style="background:#000000; font-family: Roboto Condensed;">
+		<div class="col-md-12" style="background:#000000; font-family: Roboto Condensed;">
 			<br>
 			<br>
 			<center><h2 style="color: #fff;">OPREC TERBARU!</h2></center>
@@ -142,8 +142,9 @@
 				?>
 				<div class="item">
 					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt="Owl Image">
+					<br>
 					<h3 style="color: #FECE1A;"><?php echo $record->nama; ?></h3>
-					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?></span>
+					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?> - <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
 					<br>
 					<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
 					<br>

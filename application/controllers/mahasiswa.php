@@ -62,7 +62,9 @@ class Mahasiswa extends BaseController
             
         $data['mahasiswaDetailRecords'] = $this->mahasiswa_model->listMahasiswaDetail($nim);		
 		
-        $this->global['pageTitle'] = 'TEDI : List Detail Mahasiswa';
+        $data['countEvent'] = $this->mahasiswa_model->countEvent($nim);
+		
+		$this->global['pageTitle'] = 'TEDI : List Detail Mahasiswa';
             
         $this->loadViews("mahasiswa_detail", $this->global, $data, NULL);
     }

@@ -11,7 +11,7 @@
     
         <div class="row">
             <!-- left column -->
-            <div class="col-xs-8">
+            <div class="col-md-9 col-xs-12">
               <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
@@ -63,6 +63,19 @@
                     </div>
                 </div>
             </div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box">
+				<span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+				<div class="info-box-content">
+				  <span class="info-box-text">Event yang diikuti</span>
+				  <span style="font-size: 40px;" class="info-box-number"><?php echo $countEvent; ?></span>
+				</div>
+				<!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+			<!-- /.col -->
         </div>    
     </section>
 </div>
