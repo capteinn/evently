@@ -76,7 +76,7 @@ class Mahasiswa_model extends CI_Model
      */
     function listMahasiswaDetail($nim)
     {
-        $this->db->select('m.nama, m.nim, e.nama as nama_event, s.nama as nama_sie, dp.status');
+        $this->db->select('m.nama, m.nim, e.nama as nama_event, s.nama as nama_sie, dp.status, p.createdDtm');
         $this->db->from('detail_pendaftaran as dp');
         $this->db->join('pendaftaran as p', 'dp.id_pendaftaran = p.id_pendaftaran');
         $this->db->join('mahasiswa as m', 'p.nim = m.nim');

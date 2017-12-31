@@ -24,7 +24,8 @@
 							<tr>
 								<th>No</th>
 								<th>Event</th>
-								<!--<th>Tanggal Mulai</th>-->
+								<th>Tanggal Mendaftar</th>
+								<th>Jam Mendaftar</th>
 								<th>Sie</th>
 								<th>Status</th>
 							</tr>
@@ -38,7 +39,8 @@
 							<tr>
 								<td><?php echo $no ?></td>
 								<td><?php echo $record->nama_event ?></td>
-								<!--<td><?php echo $record->tgl_mulai ?></td>-->
+								<td><?php echo date('j M Y', strtotime($record->createdDtm)); ?></td>
+								<td><?php echo date('g:i A', strtotime($record->createdDtm)); ?></td>
 								<td><?php echo $record->nama_sie ?></td>
 								<td>
 									<?php 
