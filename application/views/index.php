@@ -66,61 +66,27 @@
 			<center><h2 style="color: #fff;">OPREC TERDEADLINE!</h2></center>
 			<br>
 			<div id="owl-demo2" style="width: 80%; margin: auto; display: block;">
+				<?php
+					if(!empty($threadDeadlineRecords))
+					{
+						foreach($threadDeadlineRecords as $record)
+						{
+				?>
 				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
-					<h3 style="color: #000;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
+					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt="Owl Image">
 					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
+					<h3 style="color: #000;"><?php echo $record->nama; ?></h3>
+					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?> - <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
 					<br>
+					<!--<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>-->
 					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
+					<a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" class="action-button shadow animate blue">Join</a>
 				</div>
 				<span style="display:inline-block;"></span>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
-					<h3 style="color: #000;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-					<br>
-					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
-					<h3 style="color: #000;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-					<br>
-					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
-					<h3 style="color: #000;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-					<br>
-					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/vocomfest1.jpg" alt="Owl Image">
-					<h3 style="color: #000;">Vocomfest</h3>
-					<span style="color: #FFF">Tanggal Daftar: 2 Januari 2018</span>
-					<br>
-					<span style="color: #FFF">Tanggal Acara: 2 Februari 2018</span>
-					<br>
-					<br>
-					<a href="#" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
+				<?php
+						}
+					}
+				?>
 			</div>
 			<br>
 			<br>
@@ -146,8 +112,7 @@
 					<h3 style="color: #FECE1A;"><?php echo $record->nama; ?></h3>
 					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?> - <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
 					<br>
-					<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
-					<br>
+					<!--<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>-->
 					<br>
 					<a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" class="action-button shadow animate blue">Join</a>
 				</div>
