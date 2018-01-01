@@ -71,6 +71,8 @@
 								<th>Nama</th>
 								<th>Prodi</th>
 								<th>Event</th>
+								<th>Tanggal Mendaftar</th>
+								<th>Jam Mendaftar</th>
 								<th>BERKAS</th>
 								<th>Status</th>
 								<th class="text-center">Detail</th>
@@ -89,6 +91,8 @@
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td><?php echo $record->prodi ?></td>
 								<td><?php echo $record->event ?></td>
+								<td><?php echo date('j M Y', strtotime($record->createdDtm)); ?></td>
+								<td><?php echo date('g:i A', strtotime($record->createdDtm)); ?></td>
 								<td>
 									<a href="<?php echo base_url();?>assets/mahasiswa/<?php echo $record->cv ?>" target="_blank" style="max-width: 5px;">
 									<img src="<?php echo base_url();?>/assets/images/pdf.png" style="max-width: 30px;"></a>

@@ -3,8 +3,7 @@
 class Beranda_model extends CI_Model
 {
     /**
-     * This function is used to get the user listing count
-     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * This function is used to get the Thread listing
      * @return array $result : This is result
      */
     function listThread()
@@ -14,10 +13,33 @@ class Beranda_model extends CI_Model
         $this->db->join('event as e', 't.id_event = e.id_event');
         $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
         $this->db->join('sie as s', 'me.id_sie = s.id_sie');
+		$this->db->where('status', 'aktif');
 		$this->db->group_by('t.id_thread');
         $this->db->order_by('t.id_thread', 'desc');
-		$this->db->limit(9);
+		$this->db->limit(6);
         $query = $this->db->get();
+		
+        $result = $query->result();        
+        return $result;
+    }
+	
+	/**
+     * This function is used to get the Thread listing Deadline
+     * @return array $result : This is result
+     */
+    function listThreadDeadline()
+    {
+        $this->db->select('t.id_thread, t.judul, t.poster, t.tgl_mulai, t.tgl_selesai, t.deskripsi, e.nama, me.id_mapping_event, e.id_event, s.nama as nama_sie');
+        $this->db->from('thread as t');
+        $this->db->join('event as e', 't.id_event = e.id_event');
+        $this->db->join('mapping_event as me', 'me.id_event = e.id_event');
+        $this->db->join('sie as s', 'me.id_sie = s.id_sie');
+		$this->db->where('status', 'aktif');
+		$this->db->order_by('tgl_selesai', 'desc');
+		$this->db->group_by('t.id_thread');
+		$this->db->limit(6);
+        $query = $this->db->get();
+		
         $result = $query->result();        
         return $result;
     }
@@ -57,8 +79,8 @@ class Beranda_model extends CI_Model
     }
 	
 	/**
-     * This function is used to get the event listing
-     * @param string $userId : mengambil session user/panitia yang login saat ini
+     * This function is used to get the Sie listing
+     * @param string $id_event : mengambil id_event yang dimasukkan
      * @return array $result : This is result
      */
     function sieInfo($id_event)
