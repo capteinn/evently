@@ -51,13 +51,11 @@
 
 			<div class="collapse" id='cssmenu'>
 				<ul>
-					<li class='active'><a href='<?php echo base_url();?>'>Event</a></li>
+					<li><a href='<?php echo base_url();?>'>Event</a></li>
 					<li><a href='<?php echo base_url();?>about'>Tentang</a></li>
 					<li><a href='<?php echo base_url();?>contact'>Contact</a></li>
 				</ul>
 			</div>
-
-
 		</div>
 	</nav>
 
@@ -88,7 +86,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="nim" placeholder="Nim Fakultas (contoh : 09434)" class="form-control" type="text">
+							<input name="nim" data-bv-digits="true" placeholder="Nim Fakultas (contoh : 09434)" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -117,7 +115,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-							<input name="telepon" placeholder="0838-9555-1212" class="form-control" type="text">
+							<input name="telepon" data-bv-digits="true" placeholder="0838-9555-1212" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -145,7 +143,7 @@
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="angkatan" placeholder="(contoh : 2015)" class="form-control" type="text">
+							<input name="angkatan" data-bv-digits="true" placeholder="(contoh : 2015)" class="form-control" type="text">
 						</div>
 					</div>
 				</div>
@@ -291,7 +289,7 @@
 				},
 				nim: {
 					validators: {
-						integer: {
+						number: {
 							message: 'Inputan harus angka',
 							thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 							decimalSeparator: '.' //ini ga boleh ada titik
@@ -308,7 +306,7 @@
 				},
 				angkatan: {
 					validators: {
-						integer: {
+						number: {
 							message: 'Inputan harus angka',
 							thousandsSeparator: '', //maksudnya ini ga boleh ada spasi
 							decimalSeparator: '.' //ini ga boleh ada titik
@@ -316,7 +314,7 @@
 						stringLength: {
 							min: 4,
 							max: 4,
-							message: 'Wrong'
+							message: 'Salah'
 						},
 						notEmpty: {
 							message: 'Angkatan tidak boleh kosong'
@@ -340,7 +338,7 @@
 						stringLength: {
 							min: 10,
 							max: 13,
-							message: 'Wrong number'
+							message: 'Nomor Salah'
 						},
 						notEmpty: {
 							message: 'Nomer telfon tidak boleh kosong'
@@ -350,7 +348,7 @@
 				kelas: {
 					validators: {
 						stringLength: {
-							min: 1,
+							min: 4,
 						},
 						notEmpty: {
 							message: 'Mohon isi kelas Anda'
@@ -391,7 +389,7 @@
 						stringLength: {
 							min: 10,
 							max: 500,
-							message: 'Please enter at least 10 characters and no more than 500 characters'
+							message: 'Mohon masukan minimal 10 karakter dan maksimal 50 karakter'
 						},
 						notEmpty: {
 							message: 'Mohon isikan alasan Anda'

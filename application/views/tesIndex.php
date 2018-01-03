@@ -232,7 +232,7 @@
 				</div>
 				<!-- member-->
 				<div class="team-member">
-					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/Portfolio01.png">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/shepi.jpg">
 					<h3>Shafira Fitrianisa</h3>
 					<span>Front End</span>
 					<a class="email" href="mailto:email@something.com"><span >email</span></a>
@@ -248,13 +248,13 @@
 		</div>
 		<!-- ./ div our team -->
 	</body>
-	
+
 	<!-- Footer -->
 	<footer class="py-3 bg-dark">
 		<p class="m-0 text-center text-white">Copyright &copy; Evently 2017</p>
 	  <!-- /.container -->
 	</footer>
-	
+
 	<!-- Bootstrap core JavaScript -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/jQueryUI/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
@@ -312,7 +312,7 @@
 			});
 
 		});
-		
+
 		// end of owl demo2 js
 		// owl demo js
 		$(document).ready(function() {
