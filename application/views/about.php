@@ -56,13 +56,6 @@
         <small>Evently</small>
       </h1>
 
-      <!-- <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="<?php echo base_url();?>">Beranda</a>
-        </li>
-        <li class="breadcrumb-item active">About</li>
-      </ol> -->
-
       <!-- Intro Content -->
       <div class="row">
         <div class="col-lg-6" style="margin-top: 5%;">
