@@ -56,6 +56,10 @@ $route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakList
 // pagination masih error boss.. mumet
 // $route['pendaftaranListing/(:any)/(:any)/(:num)'] = 'pendaftaran/pendaftaranListing/$1/$2/$3';
 
+// pendaftaran yang ditolak
+$route['pendaftaranDitolakListing'] = 'pendaftaran/pendaftaranDitolakListing';
+$route['pendaftaranDitolakListing/(:num)'] = 'pendaftaran/pendaftaranDitolakListing/$1';
+
 $route['diterima/(:num)/(:num)'] = 'pendaftaran_detail/diterima/$1/$2';
 $route['ditolak/(:num)/(:num)'] = 'pendaftaran_detail/ditolak/$1/$2';
 $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListing/$1';
@@ -63,6 +67,8 @@ $route['pendaftaran_detail/(:num)'] = 'pendaftaran_detail/pendaftaranDetailListi
 /*********** ADMIN MAHASISWA DEFINED ROUTES *******************/
 $route['mahasiswaListing'] = 'mahasiswa/mahasiswaListing';
 $route['mahasiswaListing/(:num)'] = "mahasiswa/mahasiswaListing/$1";
+
+$route['mahasiswa_detail/(:num)'] = 'mahasiswa/mahasiswaDetailListing/$1';
 
 /*********** ADMIN EVENT DEFINED ROUTES *******************/
 $route['eventListing'] = 'event/eventListing';

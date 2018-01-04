@@ -43,6 +43,8 @@ class Event extends BaseController
         $count = $this->event_model->eventListingCount($userId);
 
 		$returns = $this->paginationCompress ( "eventListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['eventRecords'] = $this->event_model->listEvent($userId, $returns["page"], $returns["segment"]);
             

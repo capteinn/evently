@@ -104,7 +104,7 @@
 						</table>
 					</div>
                     <div class="box-footer">
-                        <a href="<?php echo base_url(); ?>pendaftaranListing/semua" type="button" class="btn btn-primary" />Kembali</a>
+                        <a href="<?php echo base_url(); ?>pendaftaranListing" type="button" class="btn btn-primary" />Kembali</a>
                     </div>
                 </div>
             </div>

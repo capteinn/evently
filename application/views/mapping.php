@@ -32,12 +32,11 @@
 							<?php
 							if(!empty($mappingRecords))
 							{
-								$no = 1;
 								foreach($mappingRecords as $record)
 								{
 							?>
 							<tr>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nama_event ?></td>
 								<td><?php echo $record->nama_sie ?></td>
 								<td><?php echo $record->deskripsi ?></td>
@@ -46,7 +45,7 @@
 								</td>
 							</tr>
 							<?php
-								$no++;
+								$page++;
 								}
 							}
 							?>

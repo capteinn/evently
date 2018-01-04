@@ -11,7 +11,7 @@
             <div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Daftar Mahasiswa</h3>
+						<h3 class="box-title">Daftar Mahasiswa </h3>
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
@@ -24,16 +24,16 @@
 								<th>Jenis Kelamin</th>
 								<th>Telepon</th>
 								<th>Prodi</th>
+								<th class="text-center">Detail</th>
 							</tr>
 							<?php
 							if(!empty($mahasiswaRecords))
 							{
-								$no = 1;
 								foreach($mahasiswaRecords as $record)
 								{	
 							?>
 							<tr>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nim ?></td>
 								<td><?php echo $record->nama_mahasiswa ?></td>
 								<td><?php echo $record->kelas ?></td>
@@ -41,9 +41,12 @@
 								<td><?php echo $record->jenkel ?></td>
 								<td><?php echo $record->no_telp ?></td>
 								<td><?php echo $record->nama_prodi ?></td>
+								<td class="text-center">
+									<a class="btn btn-sm btn-info" href="<?php echo base_url(); ?>mahasiswa_detail/<?php echo $record->nim; ?>"><i class="fa fa-pencil"></i></a>
+								</td>
 							</tr>
 							<?php
-								$no++;}
+								$page++;}
 							}
 							?>
 						</table> 

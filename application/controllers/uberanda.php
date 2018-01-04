@@ -25,6 +25,7 @@ class Uberanda extends CI_Controller
     public function index()
     {
 		$data['threadRecords'] = $this->beranda_model->listThread();
+		$data['threadDeadlineRecords'] = $this->beranda_model->listThreadDeadline();
         $this->load->view("index.php", $data);
     }
 	

@@ -43,12 +43,30 @@ class Mahasiswa extends BaseController
         $count = $this->mahasiswa_model->mahasiswaListingCount($userId);
 
 		$returns = $this->paginationCompress ( "mahasiswaListing/", $count, 5 );
+		
+		$data["page"] = $returns["segment"] + 1;
             
         $data['mahasiswaRecords'] = $this->mahasiswa_model->listMahasiswa($userId, $returns["page"], $returns["segment"]);
             
         $this->global['pageTitle'] = 'TEDI : List Mahasiswa';
             
         $this->loadViews("mahasiswa", $this->global, $data, NULL);
+    }
+	
+	/**
+     * This function is used to load the user list by criteria
+     */
+    function mahasiswaDetailListing($nim)
+    {   
+        // $userId = $this->vendorId;
+            
+        $data['mahasiswaDetailRecords'] = $this->mahasiswa_model->listMahasiswaDetail($nim);		
+		
+        $data['countEvent'] = $this->mahasiswa_model->countEvent($nim);
+		
+		$this->global['pageTitle'] = 'TEDI : List Detail Mahasiswa';
+            
+        $this->loadViews("mahasiswa_detail", $this->global, $data, NULL);
     }
  
     function pageNotFound()

@@ -77,33 +77,23 @@
 						
 						<p><?php echo $deskripsi; ?>.</p>
 						<hr>
+						<p>
+						<h6>Sie yang dibutuhkan : </h6>
+						<br>
+						<?php
+							if(!empty($sie))
+							{
+								foreach ($sie as $si)
+								{
+						?>
+						<a class="btn btn-primary"><font color="white" ><?php echo $si->nama; ?></font></a>
+						<?php 
+								}
+							}
+						?>
+						</p>
 						<br>
 					</div>
-					
-					<!-- Sidebar Widgets Column 
-					<div class="col-md-4">
-						
-						<div class="card mb-4">
-							<h5 class="card-header">Daftar Sekarang!</h5>
-							<div class="card-body">
-								<?php if (date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "<p>Pendaftaran belum dibuka / sudah ditutup</p>";}?>
-								<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
-									<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')<=DateTime::createFromFormat('Y-m-d', $mulai)->format('j F Y') and date('Y-m-d')>=DateTime::createFromFormat('Y-m-d', $selesai)->format('j F Y')) {echo "";}else{echo "disabled=true";}?> >
-								</form>
-							</div>
-						</div>
-
-						
-						<div class="card my-4">
-							<h5 class="card-header">Tanggal Registrasi</h5>
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<p>Dari<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $mulai)->format('F Y'); ?> </p>
-									</div>	
-									<div class="col-md-6" >
-										<p>Sampai<br><font size="20px;"><b><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('j'); ?></b></font> <br><?php echo DateTime::createFromFormat('Y-m-d', $selesai)->format('F Y'); ?> </p>
-									</div>-->
 
 				<!-- Sidebar Widgets Column -->
 				<div class="col-md-4">
@@ -125,7 +115,6 @@
 					<div class="card mb-4">
 						<h5 class="card-header">Daftar Sekarang!</h5>
 						<div class="card-body">
-								<br>
 							<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
 								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')>=$mulai and date('Y-m-d')<=$selesai) {echo "";}else{echo "disabled=true";}?> >
 							</form>
@@ -145,28 +134,29 @@
 								</div>
 							</div>
 						</div>
+					</div>
 					  
-						<!-- Categories Widget -->
-						<div class="card my-4">
-							<h5 class="card-header">Sie</h5>
-							<div class="card-body">
-								<div class="row">
-									<div class="col-lg-6">
-										<ul class="list-unstyled mb-0">
-											<?php
-												if(!empty($sie))
+					<!-- Categories Widget -->
+					<div class="card my-4">
+						<h5 class="card-header">Sie yang tersedia</h5>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-lg-6">
+									<ul class="list-unstyled mb-0">
+										<?php
+											if(!empty($sie))
+											{
+												foreach ($sie as $si)
 												{
-													foreach ($sie as $si)
-											{?>
-											<li>
-												<a><font color="#007bff"><?php echo $si->nama; ?></font></a>
-											</li>
-											<?php 
-													}
+										?>
+										<li>
+											<a><font color="#007bff"><?php echo $si->nama; ?></font></a>
+										</li>
+										<?php 
 												}
-											?>
-										</ul>
-									</div>
+											}
+										?>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -186,8 +176,8 @@
 		</footer>
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="<?php echo base_url();?>vendor/jquery/jquery.min.js"></script>
-		<script src="<?php echo base_url();?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+		<script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	</body>
 </html>

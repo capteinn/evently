@@ -36,12 +36,11 @@
 							<?php
 							if(!empty($threadRecords))
 							{
-								$no = 1;
 								foreach($threadRecords as $record)
 								{
 							?>
 							<tr>
-								<td><?php echo $no ?></td>
+								<td><?php echo $page ?></td>
 								<td><?php echo $record->nama ?></td>
 								<td><?php echo $record->judul ?></td>
 								<td><img src="<?php echo base_url();?>assets/poster/<?php echo $record->poster ?>" style="max-width: 50px;"></td>
@@ -54,7 +53,7 @@
 								</td>
 							</tr>
 							<?php
-								$no++;
+								$page++;
 								}
 							}
 							?>
