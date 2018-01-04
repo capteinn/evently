@@ -145,10 +145,10 @@
 				</div>
 				<!-- member-->
 				<div class="team-member">
-					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/pepy.jpg">
-					<h3>Jeffri Junianto</h3>
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/jjs.jpg">
+					<h3>Jeffri Junianto S</h3>
 					<span>Back End</span>
-					<a class="email" href="mailto:email@something.com"><span>email</span></a>
+					<a class="email" href="mailto:jeffri.junianto.s@mail.ugm.ac.id"><span>jeffri.junianto.s@mail.ugm.ac.id</span></a>
 				</div>
 				<!-- member-->
 				<div class="team-member">
