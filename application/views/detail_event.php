@@ -115,6 +115,11 @@
 					<div class="card mb-4">
 						<h5 class="card-header">Daftar Sekarang!</h5>
 						<div class="card-body">
+							<?php if (date('Y-m-d')>=$mulai and date('Y-m-d')<=$selesai) {
+										echo "<center><h6>Pendaftaran Dibuka</h6></center><br>";
+									}else{
+										echo "<center><h6>Pendaftaran Ditutup</h6></center><br>";
+									}?>
 							<form method="post" action="<?php echo base_url(); ?>viewDetail/<?php echo $id_event; ?>">
 								<input style="width: 100%;" class="btn btn-info" type="submit" value="Daftar" <?php if (date('Y-m-d')>=$mulai and date('Y-m-d')<=$selesai) {echo "";}else{echo "disabled=true";}?> >
 							</form>

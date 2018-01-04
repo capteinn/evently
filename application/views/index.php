@@ -70,20 +70,25 @@
 					if(!empty($threadDeadlineRecords))
 					{
 						foreach($threadDeadlineRecords as $record)
-						{
-				?>
-				<div class="item">
-					<img class="gambarOWL" src="<?php echo base_url(); ?>assets/poster/<?php echo $record->poster; ?>" alt="Owl Image">
-					<br>
-					<h3 style="color: #000;"><?php echo $record->nama; ?></h3>
-					<span style="color: #FFF">Tanggal Daftar: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y'); ?> - <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>
-					<br>
-					<!--<span style="color: #FFF">Tanggal Acara: <?php echo DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y'); ?></span>-->
-					<br>
-					<a href="<?php echo base_url(); ?>detail_event/<?php echo $record->id_thread; ?>" class="action-button shadow animate blue">Join</a>
-				</div>
-				<span style="display:inline-block;"></span>
-				<?php
+						{ 
+							$mulai = DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y');
+							$selesai = DateTime::createFromFormat('Y-m-d', $record->tgl_selesai)->format('j F Y');
+							$fSelesai = date('d',strtotime($selesai));
+							$count = date('d')-$fSelesai;
+							if ( $count==-1 OR $count==0) {
+								echo '
+								<div class="item">
+									<img class="gambarOWL" src="'.  base_url() .'assets/poster/'.  $record->poster.'" alt="Owl Image">
+									<br>
+									<h3 style="color: #000;">'.  $record->nama .'</h3>
+									<span style="color: #FFF">Tanggal Daftar:'.  $mulai.' - '.  $selesai .'</span>
+									<br>
+									<br>
+									<a href="'.  base_url().'detail_event/'. $record->id_thread .'" class="action-button shadow animate blue">Join</a>
+								</div>
+								<span style="display:inline-block;"></span>
+								';
+							}
 						}
 					}
 				?>
