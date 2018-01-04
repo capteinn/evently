@@ -110,6 +110,11 @@ class User extends BaseController
         
         $this->loadViews("404", $this->global, NULL, NULL);
     }
+	
+	function logout() {
+		$this->session->sess_destroy();
+		redirect('admin');
+	}
 }
 
 ?>
