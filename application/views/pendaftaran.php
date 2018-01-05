@@ -2,15 +2,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
 		<h1>
-			<i class="fa fa-list"></i> Daftar Pendaftaran
-			<small>Lihat Daftar Pendaftaran</small>
+			<i class="fa fa-list"></i> List Pendaftar
+			<small>Lihat Pendaftar</small>
 		</h1>
     </section>
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
 				<div class="box">
-					<div class="box-header">
+					<!-- <div class="box-header">
 						<h3 class="box-title">List Pendaftaran <b><?php echo $this->uri->segment(3); ?> </b></h3>
 						<br />
 						<br />
@@ -38,7 +38,7 @@
 								</form>
 							</div>
 						</div>
-					</div><!-- /.box-header -->
+					</div> --><!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
 							<tr>
