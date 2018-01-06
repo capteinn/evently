@@ -69,6 +69,7 @@
 				<?php
 					if(!empty($threadDeadlineRecords))
 					{
+						$total = 0;
 						foreach($threadDeadlineRecords as $record)
 						{ 
 							$mulai = DateTime::createFromFormat('Y-m-d', $record->tgl_mulai)->format('j F Y');
@@ -88,11 +89,17 @@
 								</div>
 								<span style="display:inline-block;"></span>
 								';
+								$total++;
 							}
 						}
-					}
 				?>
 			</div>
+			<?php
+						if ($total==0){
+							echo '<h5 class="text-center"><i>Belum ada OPREC TERDEADLINE yang tersedia</i></h5>';
+						}
+					}
+			?>
 			<br>
 			<br>
 		</div>
@@ -159,7 +166,7 @@
 				</div>
 				<!-- member-->
 				<div class="team-member">
-					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/Portfolio01.png">
+					<img class="team-photo" style="width: 140px; height: 130px; display: block;" src="<?php echo base_url();?>assets/pp/shepi.jpg">
 					<h3>Shafira Fitrianisa</h3>
 					<span>Front End</span>
 					<a class="email" href="mailto:email@something.com"><span >email</span></a>
