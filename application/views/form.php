@@ -161,16 +161,6 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-md-4 control-label">Kelas</label>
-					<div class="col-md-6 inputGroupContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input name="kelas" placeholder="(contoh : A 2015)" class="form-control" type="text">
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">
 					<label class="col-md-4 control-label">CV</label>
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
