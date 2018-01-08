@@ -161,6 +161,16 @@
 				</div>
 
 				<div class="form-group">
+					<label class="col-md-4 control-label">Kelas</label>
+					<div class="col-md-6 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input name="kelas" placeholder="(contoh : A 2015)" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
 					<label class="col-md-4 control-label">CV</label>
 					<div class="col-md-6 inputGroupContainer">
 						<div class="input-group">
@@ -254,6 +264,7 @@
 	<!-- /.container -->
 </footer>
 <!-- Bootstrap core JavaScript -->
+
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrapvalidator.min.js"></script>
