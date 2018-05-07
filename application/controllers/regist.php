@@ -78,7 +78,7 @@ class Regist extends CI_Controller
             $config['max_width'] = 1024;
             $config['max_height'] = 768;
             $config['file_name'] = $namaFile; //nama yang terupload nantinya
-
+			
             $this->load->library('upload', $config);
             //masih error boss, belum bisa upload gambar ke directory assets/poster
             
